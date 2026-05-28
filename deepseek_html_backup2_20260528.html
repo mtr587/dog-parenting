@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐶</text></svg>" />
+  <title>9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day" />
+  <meta property="og:description" content="A week in the life with Cooper. How the right gear cuts weekday dog chores in half and doubles the quality of your weekend time together." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mtr58.github.io/dog-parenting/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day" />
+  <meta name="twitter:description" content="A week in the life with Cooper. Real tools that save real time." />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#fafaf9;
+      --card:#ffffff;
+      --text:#1c1917;
+      --text-muted:#5c5752;
+      --accent:#d97706;
+      --accent-light:#fef3c7;
+      --border:#e7e5e4;
+      --radius:12px;
+      --radius-sm:8px;
+    }
+    /* Reading progress bar */
+    .progress-bar{
+      position:fixed;top:0;left:0;height:3px;
+      background:var(--accent);z-index:200;width:0%;
+      transition:width 0.1s linear;
+    }
+    body{
+      font-family:'Inter',-apple-system,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{max-width:720px;margin:0 auto;padding:0 20px}
+
+    .disclosure{
+      background:var(--accent-light);
+      border-bottom:1px solid var(--border);
+      padding:14px 20px;
+      text-align:center;
+      font-size:13px;
+      color:var(--text-muted);
+      line-height:1.5;
+    }
+    .disclosure strong{color:var(--accent);font-weight:600}
+
+    .hero{
+      padding:60px 20px 40px;
+      text-align:center;
+      border-bottom:1px solid var(--border);
+    }
+    .hero h1{
+      font-family:'Newsreader',Georgia,serif;
+      font-size:clamp(28px,5vw,44px);
+      font-weight:600;
+      line-height:1.2;
+      margin-bottom:16px;
+    }
+    .hero p{
+      font-size:17px;
+      color:var(--text-muted);
+      max-width:560px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+    .hero .meta{margin-top:16px;font-size:13px;color:var(--text-muted)}
+
+    .article{padding:40px 20px 60px}
+    .article h2{
+      font-family:'Newsreader',Georgia,serif;
+      font-size:26px;
+      font-weight:500;
+      margin:48px 0 16px;
+    }
+    .article h2:first-of-type{margin-top:0}
+    .article h3{
+      font-size:18px;
+      font-weight:600;
+      margin:32px 0 8px;
+    }
+    .article .time-marker{
+      display:inline-block;
+      font-size:13px;
+      font-weight:600;
+      color:var(--accent);
+      background:var(--accent-light);
+      padding:2px 10px;
+      border-radius:20px;
+      margin-bottom:8px;
+    }
+    .article blockquote{
+      border-left:3px solid var(--accent);
+      padding:12px 16px;
+      margin:16px 0 24px;
+      background:var(--card);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+      font-size:14px;
+      color:var(--text-muted);
+    }
+
+    .toc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:24px 0 28px}
+    .toc summary{font-size:14px;font-weight:600;cursor:pointer;color:var(--text);user-select:none;display:flex;align-items:center;justify-content:space-between}
+    .toc summary::-webkit-details-marker{display:none}
+    .toc summary::after{content:"\25B8";font-size:16px;transition:transform .2s;color:var(--accent)}
+    .toc[open] summary::after{transform:rotate(90deg)}
+    .toc nav{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+    .toc ol{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .toc li{font-size:14px}
+    .toc a{color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:6px;padding:4px 0;transition:color .15s}
+    .toc a:hover{color:#b45309;text-decoration:underline}.back-arrow{display:inline-block;font-size:12px;color:var(--accent);text-decoration:none;margin-left:12px;font-weight:500}.back-arrow:hover{text-decoration:underline}.back-arrow{display:inline-block;font-size:12px;color:var(--accent);text-decoration:none;margin-left:12px;font-weight:500}.back-arrow:hover{text-decoration:underline}
+    .article h3[id]{scroll-margin-top:24px}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+    .carousel-dots .dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:all .2s}
+    .carousel-dots .dot.active{background:var(--accent);width:20px;border-radius:4px}
+    .lightbox-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.85);justify-content:center;align-items:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+    .lightbox-overlay.open{display:flex}
+    .lightbox-overlay img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.4);object-fit:contain}
+    .lightbox-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+    .lightbox-close:hover{background:rgba(255,255,255,.3)}
+    .carousel{user-select:none;outline:none}
+    .carousel.dragging{cursor:grabbing;scroll-behavior:auto}
+    .carousel:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--radius-sm)}
+    .carousel-item .rating{display:block;font-size:12px;color:var(--accent);font-weight:500;margin-top:2px}
+    .carousel-item .thumb:has(img[src])::before{display:none}
+    .carousel-item .thumb:has(img[src]){background:var(--card)}
+    .carousel-item .thumb img{cursor:pointer}
+    @media(min-width:769px){.float-share{display:none}}
+    @media(max-width:480px){.carousel-item{flex:0 0 100%}.carousel-btn{display:none}}
+    .article hr{
+      border:none;
+      border-top:1px solid var(--border);
+      margin:48px 0;
+    }
+
+    .carousel-section{margin:20px 0 32px}
+    .carousel-section .label{
+      font-size:13px;
+      font-weight:600;
+      color:var(--text-muted);
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .carousel-wrapper{position:relative}
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:2;
+      width:32px;height:32px;
+      border-radius:50%;
+      border:1px solid var(--border);
+      background:var(--card);
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      color:var(--text);
+      box-shadow:0 2px 8px rgba(0,0,0,.1);
+      transition:box-shadow .15s,transform .15s;
+      opacity:0;
+    }
+    .carousel-wrapper:hover .carousel-btn{opacity:1}
+    .carousel-btn:hover{box-shadow:0 3px 12px rgba(0,0,0,.15)}
+    .carousel-btn.prev{left:-14px}
+    .carousel-btn.next{right:-14px}
+    .carousel-btn.hidden{display:none}
+    .carousel{
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding:4px 0 8px;
+      scroll-snap-type:x mandatory;
+    }
+    .carousel-item{
+      flex:0 0 calc(50% - 6px);
+      scroll-snap-align:start;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      padding:12px;
+      text-align:center;
+      transition:box-shadow .15s;
+    }
+    .carousel-item:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .carousel-item .thumb{
+      width:100%;
+      aspect-ratio:1;
+      max-height:200px;
+      border-radius:6px;
+      margin-bottom:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:#f0efed;position:relative;
+    }
+    .carousel-item .thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,#f0efed 30%,#e8e6e3 50%,#f0efed 70%);background-size:200% 100%;animation:skeleton-pulse 1.5s ease-in-out infinite;z-index:0}
+    @keyframes skeleton-pulse{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .carousel-item .thumb img{position:relative;z-index:1;cursor:pointer
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+    }
+    .carousel-item .thumb:has(img):not(:has(> img[src=""])){
+      font-size:0;
+    }
+    .carousel-item a{
+      display:block;
+      font-size:13px;
+      font-weight:600;
+      color:var(--text);
+      text-decoration:none;
+      line-height:1.3;
+    }
+    .carousel-item a:hover{color:var(--accent)}
+
+    .section-divider{
+      text-align:center;
+      padding:40px 0;
+      font-family:'Newsreader',Georgia,serif;
+      font-size:20px;
+      font-weight:500;
+      color:var(--accent);
+    }
+
+    .table-wrap{overflow-x:auto;margin:24px 0}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+    th{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted)}
+    td:first-child{font-weight:600} td:first-child a:hover{color:var(--accent)}
+    .check{color:#16a34a;font-weight:700}
+
+    .share-bar{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:32px 0 24px;
+    }
+    .share-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 18px;
+      border-radius:24px;
+      border:1px solid var(--border);
+      background:var(--card);
+      font-size:14px;
+      font-weight:500;
+      color:var(--text);
+      cursor:pointer;
+      text-decoration:none;
+      transition:all .15s;
+    }
+    .share-btn:hover{box-shadow:0 2px 8px rgba(0,0,0,.08);border-color:var(--accent);color:var(--accent)}
+    .share-btn .icon{font-size:18px;line-height:1}
+
+    /* Floating share bar */
+    .float-share{
+      position:fixed;
+      bottom:24px;
+      right:24px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      z-index:100;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .3s,transform .3s;
+      pointer-events:none;
+    }
+    .float-share.visible{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .float-btn{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid var(--border);
+      background:var(--card);
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 2px 12px rgba(0,0,0,.1);
+      transition:all .15s;
+    }
+    .float-btn:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);border-color:var(--accent);color:var(--accent);transform:scale(1.05)}
+
+    .share-btn-wrap{position:relative}
+
+    /* Share popup — shows on hover */
+    .share-popup{
+      position:absolute;
+      bottom:52px;
+      right:0;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.12);
+      display:none;
+      flex-direction:column;
+      gap:6px;
+      min-width:160px;
+    }
+    .float-share .share-btn-wrap:hover .share-popup,
+    .share-popup:hover{
+      display:flex;
+    }
+    /* Keep popup open when hovering between button and popup */
+    .share-btn-wrap.hover .share-popup{
+      display:flex;
+    }
+    .share-popup .popup-btn{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:none;
+      background:none;
+      cursor:pointer;
+      font-size:14px;
+      color:var(--text);
+      border-radius:6px;
+      text-decoration:none;
+      transition:background .1s;
+    }
+    .share-popup .popup-btn:hover{background:var(--bg)}
+
+    @media(max-width:480px){
+      .float-share{bottom:16px;right:16px}
+    }
+
+    .footer{
+      text-align:center;
+      padding:40px 20px;
+      font-size:13px;
+      color:var(--text-muted);
+      border-top:1px solid var(--border);
+    }
+    .footer a{color:var(--accent);text-decoration:none}
+
+    @media(max-width:480px){
+      .carousel-item .thumb{aspect-ratio:1;max-height:150px}
+      .carousel-btn{width:28px;height:28px;font-size:14px}
+    }
+    @media print{
+      .disclosure{background:#eee}
+      .carousel-item{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ==================== FTC DISCLOSURE ==================== -->
+<div class="disclosure">
+  <strong>Affiliate Disclosure:</strong> This post contains affiliate links. If you buy something through these links, I may earn a small commission at no extra cost to you. I only recommend products I personally use and believe in.
+</div>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <h1>9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day</h1>
+  <p style="font-style:italic;color:var(--accent);font-family:'Newsreader',Georgia,serif;font-size:20px;margin-bottom:20px">"I used to feel guilty every morning. Now we both win."</p>
+  <p>For every busy professional who loves their dog but just doesn't have the time. A week in the life with Cooper.</p>
+  <p class="meta">Reading time: 8 minutes &bull; Products available on Amazon &bull; Created for the US market</p>
+</header>
+
+<!-- ==================== ARTICLE ==================== -->
+<div class="article container">
+
+<p>I have a dog named Cooper. He doesn't know what a meeting is, what a deadline is, or why I can't just play with him whenever I want.</p>
+<p>Cooper knows three things: you left, you came back, and — is it Sunday yet? Can we go to the big park?</p>
+<p>I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?</p>
+<p>Turns out, the question isn't whether it works. <strong>The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.</strong></p>
+<p>Here's what a real week looks like.</p>
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<details class="toc" id="toc">
+  <summary>📖 Table of Contents</summary>
+  <nav>
+    <ol>
+      <li><a href="#weekday">☕ Monday — Friday</a></li>
+      <li><a href="#weekend">🌿 Saturday &amp; Sunday</a></li>
+      <li><a href="#math">📊 The Math</a></li>
+      <li><a href="#products">📋 Full Product List</a></li>
+    </ol>
+  </nav>
+</details>
+
+<!-- ============================================================ -->
+<!-- ===================== WORKWEEK ============================= -->
+<!-- ============================================================ -->
+<div class="share-bar">
+  <p style="width:100%;text-align:center;font-size:13px;font-weight:600;color:var(--text-muted);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Share this article</p>
+  <button class="share-btn" onclick="shareNative()" id="shareNativeBtn" style="display:none" aria-label="Share via system share"><span class="icon">📤</span> Share</button>
+  <a class="share-btn" href="#" onclick="return shareTwitter()" target="_blank" aria-label="Share on Twitter"><span class="icon" role="img" aria-hidden="true">𝕏</span> Twitter</a>
+  <a class="share-btn" href="#" onclick="return shareFacebook()" target="_blank" aria-label="Share on Facebook"><span class="icon" role="img" aria-hidden="true" style="font-weight:700">f</span> Facebook</a>
+  <a class="share-btn" href="#" onclick="return sharePinterest()" target="_blank" aria-label="Share on Pinterest"><span class="icon">📌</span> Pinterest</a>
+  <a class="share-btn" href="#" onclick="return shareEmail()" target="_blank" aria-label="Share via email"><span class="icon">✉️</span> Email</a>
+  <button class="share-btn" onclick="copyLinkFromBtn(this)" aria-label="Copy link to clipboard"><span class="icon">🔗</span> Copy Link</button>
+</div>
+
+<div class="section-divider" id="weekday">☕ Monday — Friday</div>
+<p>One rule for the workweek: <strong>if a machine can do it, let it.</strong></p>
+
+<!-- 7:00AM -->
+<h3 id="morning">🌅 7:00 AM — The alarm goes off. So does the dog.</h3>
+<p>Cooper is already standing by my bed, staring at me like, "You're awake. Finally. I've been waiting all night."</p>
+<p><strong>Before:</strong> Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.</p>
+<p><strong>Now:</strong> I pet him on the head and head for the sink to brush my teeth. Why?</p>
+<p>Because I have an <strong>automatic pet feeder</strong>. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.</p>
+<p>And his <strong>water fountain</strong> keeps fresh water running all day. I clean it once a week instead of scrubbing a slimy bowl every morning. That alone is worth it.</p>
+
+<div class="carousel-section" id="carousel-feeder" role="region" aria-roledescription="carousel">
+  <div class="label">🍼 Automatic Pet Feeder</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel" aria-labelledby="label-clicker" tabindex="0" role="list" aria-labelledby="label-robot" tabindex="0" role="list" aria-labelledby="label-puzzle" tabindex="0" role="list" aria-labelledby="label-leash" tabindex="0" role="list" aria-labelledby="label-poop" tabindex="0" role="list" aria-labelledby="label-bed" tabindex="0" role="list" aria-labelledby="label-camera" tabindex="0" role="list" aria-labelledby="label-kong" tabindex="0" role="list" aria-labelledby="label-fountain" tabindex="0" role="list" aria-labelledby="label-feeder" tabindex="0" role="list">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/feeder-1.jpg" alt="PETLIBRO 5G WiFi Auto Feeder" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4nOBqle" target="_blank" rel="noopener" data-slot="feeder-1">PETLIBRO 5G WiFi Auto Feeder 5L</a>
+        <span class="rating">4.0★ (6,315 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/feeder-2.jpg" alt="4L Auto Feeder with Voice Recorder" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4v7f7d1" target="_blank" rel="noopener" data-slot="feeder-2">4L Cat/Dog Feeder with Voice Recorder</a>
+        <span class="rating">4.5★ (2,413 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<div class="carousel-section" id="carousel-fountain" role="region" aria-roledescription="carousel">
+  <div class="label">💧 Pet Water Fountain</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/fountain-1.jpg" alt="FEELNEEDY Wireless Steel Fountain" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/49iPc9K" target="_blank" rel="noopener" data-slot="fountain-1">FEELNEEDY Wireless Stainless Steel Fountain</a>
+        <span class="rating">3.9★ (685 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/fountain-2.jpg" alt="Veken Pet Water Fountain" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/3RykLGx" data-slot="fountain-2" target="_blank" rel="noopener">Veken 95oz Pet Fountain with Replacement Filters</a>
+        <span class="rating">4.4★ (16,699 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next hidden" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- 7:30AM -->
+<h3 id="breakfast">🍳 7:30 AM — Breakfast for two</h3>
+<p>I'm eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: "Are you done? Can we play?"</p>
+<p><strong>Before:</strong> Scarf down my food, play for 5 minutes, rush out the door feeling guilty.</p>
+<p><strong>Now:</strong> I grab a <strong>Kong toy</strong> I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.</p>
+
+<div class="carousel-section" id="carousel-kong" role="region" aria-roledescription="carousel">
+  <div class="label">🧸 Kong Toy</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/kong-1.jpg" alt="KONG Classic Large Dog Toy" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4e3HT8x" target="_blank" rel="noopener" data-slot="kong-1">KONG Classic Large Dog Toy</a>
+        <span class="rating">4.6★ (91,934 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- 9AM - 12PM -->
+<h3 id="worktime">💼 9:00 AM — 12:00 PM — While I'm at work</h3>
+<p>While I'm in meetings, Cooper is most likely napping on his <strong>dog bed</strong>, or chewing on the Kong I left him.</p>
+<p><strong>Before:</strong> I'd sit at my desk and just miss the little guy. That first week back after a long weekend was the worst — I kept thinking about him at home, wondering what he was up to. No way to just reach over and pet him. It sucks being away from your best friend for nine hours.</p>
+<p><strong>Now:</strong> I open the <strong>pet camera</strong> app on my phone for 3 seconds. There he is, curled up on his bed, snoozing away. Just seeing his face makes the rest of the afternoon go by easier.</p>
+
+<div class="carousel-section" id="carousel-camera" role="region" aria-roledescription="carousel">
+  <div class="label">📹 Pet Camera</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/camera-1.jpg" alt="Furbo 360 Dog Camera" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4wU9KQ4" target="_blank" rel="noopener" data-slot="camera-1">Furbo 360 Dog Camera</a>
+        <span class="rating">4.1★ (4,298 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/camera-2.jpg" alt="eufy 4K Indoor Cam E30" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4vcnPXg" target="_blank" rel="noopener" data-slot="camera-2">eufy Security 4K Indoor Cam E30</a>
+        <span class="rating">4.5★ (2,420 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<div class="carousel-section" id="carousel-bed" role="region" aria-roledescription="carousel">
+  <div class="label">🛏️ Dog Bed</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/bed-1.jpg" alt="EHEYCIGA Orthopedic Dog Bed" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/42V9nHk" target="_blank" rel="noopener" data-slot="bed-1">EHEYCIGA Orthopedic Dog Bed 44x32</a>
+        <span class="rating">4.5★ (20,705 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/bed-2.jpg" alt="Bedsure Orthopedic Large Dog Bed" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4dJojx1" target="_blank" rel="noopener" data-slot="bed-2">Bedsure Orthopedic Large Dog Bed</a>
+        <span class="rating">4.5★ (51,194 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/bed-3.jpg" alt="XL Washable Orthopedic Dog Sofa" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4uxQCpn" target="_blank" rel="noopener" data-slot="bed-3">XL Washable Orthopedic Dog Sofa</a>
+        <span class="rating">4.5★ (2,539 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- 12PM -->
+<h3 id="lunch">🍱 12:00 PM — Didn't even think about it</h3>
+<p>At noon, the feeder does its thing. Cooper eats lunch. I'm in a meeting. Nobody had to go home.</p>
+
+<!-- 3PM -->
+<h3 id="coffee">☕ 3:00 PM — Coffee break + a peek at home</h3>
+<p>Best part of my afternoon. I open the pet camera app. Cooper hears my voice through the speaker — ears perk up, tail wags.</p>
+<p>I tap "treat." A piece flies across the room. Cooper loses his mind.</p>
+<p><strong>Three minutes of this and I'm in a better mood. Way better than scrolling Instagram.</strong></p>
+
+<!-- Poop wand -->
+<h3 id="poop">💩 The unsung hero of every walk</h3>
+<p>Here's the thing that changed everything: a <strong>telescoping poop bag wand</strong>.</p>
+<p>It's a slender plastic rod that collapses down to about the length of a TV remote. Lives clipped to my leash. When I need it, I pull it out — section by section — to about 24 inches.</p>
+<p>Clip a bag onto the ring at the end. Reach out. Scoop. Flip the bag. Tie it. Collapse the wand. Back in my pocket.</p>
+<p><strong>Your back stays straight. Your hands touch nothing.</strong></p>
+<p>Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella in one hand and a leash in the other. Summer heat — you know that smell.</p>
+<p>Fifteen bucks fixed all of it.</p>
+
+<div class="carousel-section" id="carousel-poop" role="region" aria-roledescription="carousel">
+  <div class="label">📡 Telescoping Poop Bag Wand</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/poop-1.jpg" alt="Hands-Free Pooper Scooper" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/49lR3ut" target="_blank" rel="noopener" data-slot="poop-1">Foldable Hands-Free Pooper Scooper</a>
+        <span class="rating">4.5★ (35 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/poop-2.jpg" alt="GoGo Stik XP Ergonomic Scooper" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/3Rwszsr" target="_blank" rel="noopener" data-slot="poop-2">GoGo Stik XP Ergonomic Scooper</a>
+        <span class="rating">3.9★ (992 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- 7PM - Evening walk -->
+<h3 id="evening">🌆 7:00 PM — The evening walk</h3>
+<p>After dinner, I've had a chance to rest and Cooper is ready to go.</p>
+<p>Now it's time for the real walk — not the backyard pit stop from earlier.</p>
+<p>I clip on the <strong>hands-free leash belt</strong>, grab the <strong>telescoping poop bag wand</strong> off the hook by the door, and we head out. This time I take the longer route — through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.</p>
+<p>For 20 minutes I can:</p>
+<p>
+  &bull; Answer texts I've been ignoring all day 📱<br>
+  &bull; Call my mom on the walk 📞<br>
+  &bull; Listen to the latest podcast episode 🎧<br>
+  &bull; Just enjoy the quiet — which is rare these days 🌳
+</p>
+<p>This is the real walk. The one where Cooper and I actually hang out together after a long day.</p>
+
+<div class="carousel-section" id="carousel-leash" role="region" aria-roledescription="carousel">
+  <div class="label">🎒 Hands-Free Leash Belt</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/leash-1.jpg" alt="Hands Free Dog Leash" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4u2eVef" target="_blank" rel="noopener" data-slot="leash-1">Hands Free Dog Leash with Pouch</a>
+        <span class="rating">4.6★ (20,839 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next hidden" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- 8PM -->
+<h3 id="couch">🛋️ 8:00 PM — Couch time</h3>
+<p>Back from the walk. Cooper is satisfied. I'm relaxed.</p>
+<p>I settle into the couch. Cooper comes over. He doesn't need another walk — he just wants to do something together.</p>
+<p>I grab a <strong>puzzle toy</strong>, stuff a few treats in, and let him figure it out. He rolls it around on his bed, totally focused.</p>
+<p>I watch a show. He's at my feet, busy but close.</p>
+<p><strong>We're doing our own thing, but together. It's the best kind of quiet.</strong></p>
+
+<div class="carousel-section" id="carousel-puzzle" role="region" aria-roledescription="carousel">
+  <div class="label">🧩 Puzzle Toy</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/puzzle-1.jpg" alt="DR CATCH Dog Puzzle Toy" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4uDZfPi" target="_blank" rel="noopener" data-slot="puzzle-1">DR CATCH Dog Puzzle Toy</a>
+        <span class="rating">4.4★ (16,162 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/puzzle-2.jpg" alt="PETSTA Dog Puzzle Toys" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4fJ2Cjh" target="_blank" rel="noopener" data-slot="puzzle-2">PETSTA Dog Puzzle Toys</a>
+        <span class="rating">4.5★ (8,759 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next hidden" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- 10PM -->
+<h3 id="bedtime">🌙 10:00 PM — Last trip before bed</h3>
+<p>Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard — open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.</p>
+<p>Cooper curls up on his bed.</p>
+<p>I turn off the light and think: I spent maybe 30 minutes actively taking care of him today. <strong>But we had real moments together:</strong></p>
+<p>
+  ① Breakfast — we ate at the same time<br>
+  ② 3:00 PM — I called his name through the camera and he wagged his tail<br>
+  ③ The evening walk — just the two of us, no rush<br>
+  ④ He played at my feet while I watched TV
+</p>
+<p>That's a lot more than I used to have.</p>
+
+<hr />
+
+<!-- ============================================================ -->
+<!-- ===================== WEEKEND ============================= -->
+<!-- ============================================================ -->
+<div class="section-divider" id="weekend">🌿 Saturday &amp; Sunday</div>
+<p>Weekdays are for getting things done. Weekends are for <strong>actually hanging out with your dog</strong> — while catching up on the stuff you can't do Monday through Friday.</p>
+
+<!-- SAT AM -->
+<h3 id="sat-morning">🛌 Saturday morning — The dog is my alarm clock</h3>
+<p><strong>Before:</strong> Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately (he's been holding it all night), then we're both too tired to do anything productive. Half the morning gone.</p>
+<p><strong>Now:</strong> The <strong>automatic feeder</strong> handles breakfast. Cooper eats. I sleep an extra 30 minutes.</p>
+<p>8:00 AM — I'm actually awake. Leash belt on. Pocket the poop wand. We head out.</p>
+<p><strong>Weekend walks are different.</strong> We take the long route to the park. I grab a coffee on the way. Cooper sniffs everything. I'm not rushing anywhere.</p>
+<p>Not just a walk. This is me and Cooper, finally hanging out.</p>
+
+<!-- SAT PM -->
+<h3 id="sat-afternoon">🛍️ Saturday afternoon — Out and about</h3>
+<p>A hike at the local park. Coffee on a dog-friendly patio. Maybe a quick trip to PetSmart for supplies. Errands are better when Cooper is along.</p>
+<p>Before I walk out, I tap the <strong>robot vacuum</strong> app. It starts cleaning while we're gone. No more coming home to tumbleweeds of dog hair.</p>
+<p>Cooper and I head out together. The house gets cleaned while we're gone. Win-win.</p>
+
+<div class="carousel-section" id="carousel-robot" role="region" aria-roledescription="carousel">
+  <div class="label">🤖 Robot Vacuum</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/robot-1.jpg" alt="Shark AI Ultra Robot Vacuum" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4vd1c52" target="_blank" rel="noopener" data-slot="robot-1">Shark AI Ultra Robot Vacuum</a>
+        <span class="rating">4.3★ (3,200+ ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/robot-2.jpg" alt="eufy C10 Robot Vacuum" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4v9NJLl" target="_blank" rel="noopener" data-slot="robot-2">eufy C10 Robot Vacuum</a>
+        <span class="rating">4.4★ (6,492 ratings)</span>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/robot-3.jpg" alt="eufy C28 Robot Vacuum Mop" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4fDF3bC" target="_blank" rel="noopener" data-slot="robot-3">eufy C28 Robot Vacuum & Mop</a>
+        <span class="rating">4.4★ (6,492 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- SUN AM -->
+<h3 id="sun-morning">☕ Sunday morning — Coffee + clicker training</h3>
+<p>Sunday is Cooper's favorite day.</p>
+<p>Not because we go anywhere fancy. Because we do something together.</p>
+<p>I grab a <strong>clicker training kit</strong>. Fifteen minutes in the backyard. We work on a new trick — "spin." By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.</p>
+<p><strong>This is different from walking. I'm teaching him. He's learning from me.</strong> His eyes change from "when will you notice me" to "we're a team."</p>
+
+<div class="carousel-section" id="carousel-clicker" role="region" aria-roledescription="carousel">
+  <div class="label">🔔 Clicker Training</div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
+    <div class="carousel">
+      <div class="carousel-item" role="listitem">
+        <div class="thumb"><img src="images/clicker-1.jpg" alt="Dog Training Clicker" loading="lazy" width="200" height="200" /></div>
+        <a href="https://amzn.to/4vglwCM" target="_blank" rel="noopener" data-slot="clicker-1">Dog Training Clicker with Wrist Strap</a>
+        <span class="rating">4.3★ (40,250 ratings)</span>
+      </div>
+    </div>
+    <button class="carousel-btn next hidden" aria-label="Next">›</button>
+  </div>
+</div>
+
+<!-- SUN PM -->
+<h3 id="sun-afternoon">🛋️ Sunday afternoon — The recharge</h3>
+<p>Sunday afternoon is for doing nothing.</p>
+<p>Cooper is on his bed next to the couch. I'm reading a book or watching a game. No toys. No walks. No gadgets.</p>
+<p>He just knows I'm here. And I know he's here.</p>
+<p>That's the whole point of weekends.</p>
+
+<hr />
+
+<!-- ========== THE MATH ========== -->
+<h2 id="math">📊 The math: time invested vs time saved</h2>
+
+<h3>Weekday time savings</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Time</th><th>Before</th><th>Time</th><th>After</th><th>Time</th><th>Saved</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>🌅 7:00 AM</td><td>Scoop food, refill water</td><td>10 min</td><td>Auto feeder + fountain</td><td>0</td><td><span class="check">+10 min</span></td></tr>
+    <tr><td>🍳 7:30 AM</td><td>Rushed play before work</td><td>15 min</td><td>Kong toy while you eat</td><td>2 min</td><td><span class="check">+13 min</span></td></tr>
+    <tr><td>🍱 12:00 PM</td><td>Rush home or feel guilty</td><td>30 min</td><td>Auto feeder scheduled</td><td>0</td><td><span class="check">+30 min</span></td></tr>
+    <tr><td>🐕 7:00 PM</td><td>Fumbling walk (hands full)</td><td>30 min</td><td>Hands-free leash</td><td>22 min</td><td><span class="check">+8 min</span></td></tr>
+    <tr><td>💩 Poop pickup</td><td>Bend down in all weather</td><td>3 min</td><td>Telescoping wand</td><td>1 min</td><td><span class="check">+2 min</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p style="font-size:15px;font-weight:600;color:var(--text);margin-top:12px">~63 minutes saved per weekday × 5 days = ~5.25 hours per week</p>
+
+<hr />
+
+<!-- ========== FULL LIST ========== -->
+<h2 id="products">📋 Full product list</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Category</th><th>When</th><th>Saves time</th><th>Better bonding</th></tr></thead>
+  <tbody>
+    <tr><td><a href="#carousel-feeder" style="color:inherit;text-decoration:none;display:block">🍼 Auto Feeder</td></a><td>Daily</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-fountain" style="color:inherit;text-decoration:none;display:block">💧 Water Fountain</td></a><td>Daily</td><td><span class="check">✓</span></td><td></td></tr>
+    <tr><td><a href="#carousel-bed" style="color:inherit;text-decoration:none;display:block">🛏️ Dog Bed</td></a><td>Daily</td><td><span class="check">✓</span></td><td></td></tr>
+    <tr><td><a href="#carousel-camera" style="color:inherit;text-decoration:none;display:block">📹 Pet Camera</td></a><td>Daily</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-kong" style="color:inherit;text-decoration:none;display:block">🧶 Stuffable Treat Toy (Kong-style)</td></a><td>Daily</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-puzzle" style="color:inherit;text-decoration:none;display:block">🧩 Puzzle Toy</td></a><td>Daily</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-leash" style="color:inherit;text-decoration:none;display:block">🎒 Hands-Free Leash</td></a><td>Daily</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-poop" style="color:inherit;text-decoration:none;display:block">📡 Poop Bag Wand</td></a><td>Daily</td><td><span class="check">✓</span></td><td></td></tr>
+    <tr><td><a href="#carousel-robot" style="color:inherit;text-decoration:none;display:block">🤖 Robot Vacuum</td></a><td>Weekend</td><td><span class="check">✓</span></td><td></td></tr>
+    <tr><td><a href="#carousel-clicker" style="color:inherit;text-decoration:none;display:block">🔔 Clicker Training Kit</td></a><td>Weekend</td><td></td><td><span class="check">✓</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<hr />
+
+<!-- ========== CONCLUSION ========== -->
+<h2>One last thing</h2>
+<p>Your dog doesn't understand why you leave every day. They don't know what "work" means.</p>
+<p>But they understand:</p>
+<p>&bull; The feeder beeps — food is here<br>
+&bull; Your voice comes through the speaker — you're thinking of me<br>
+&bull; The door opens — you're back<br>
+&bull; On weekends, all your time is my time</p>
+<p><strong>Having a dog isn't about how much time you spend on chores. It's about the time you actually spend together.</strong></p>
+<p>Get the tools that shrink the boring stuff. Spend the extra time on what matters.</p>
+<p>Not sure where to start? <strong>The auto feeder is the single biggest time-saver.</strong> Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.</p>
+<p>Pick the one thing that bugs you the most right now. Start there.</p>
+<p>That's the whole deal.</p>
+<p style="font-size:13px;color:var(--text-muted);margin-top:24px"><em>This article contains affiliate links. As an Amazon Associate I earn from qualifying purchases.</em></p>
+
+</div><!-- /article -->
+
+<!-- ==================== FLOATING SHARE ==================== -->
+<div class="float-share" id="floatShare">
+  <div class="share-btn-wrap">
+    <div class="share-popup" id="sharePopup">
+      <button class="popup-btn" onclick="shareTwitter()"><span>𝕏</span> Twitter</button>
+      <button class="popup-btn" onclick="shareFacebook()"><span>f</span> Facebook</button>
+      <button class="popup-btn" onclick="shareInstagram(event)"><span>📷</span> Instagram</button>
+      <button class="popup-btn" onclick="shareSnapchat()"><span>👻</span> Snapchat</button>
+      <button class="popup-btn" onclick="shareTiktok(event)"><span>🎵</span> TikTok</button>
+      <button class="popup-btn" onclick="sharePinterest()"><span>📌</span> Pinterest</button>
+      <button class="popup-btn" onclick="shareEmail()"><span>✉️</span> Email</button>
+      <button class="popup-btn" onclick="shareNative()" id="floatNativeBtn" style="display:none"><span>📤</span> More</button>
+      <button class="popup-btn" onclick="copyLink(event)"><span>🔗</span> Copy Link</button>
+    </div>
+    <button class="float-btn" id="shareToggle" title="Share">📤</button>
+  </div>
+  <a class="float-btn" href="#" title="Back to top" style="font-size:16px">↑</a>
+        
+      </div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image enlarged view">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img id="lightboxImg" src="" alt="Enlarged product image" />
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <p>Written for busy dog parents &bull; Made with 🐕 and coffee &bull; <a href="#">Back to top</a></p>
+</footer>
+
+<script>
+// ===================== CAROUSEL FIX (precision scroll) =====================
+document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+  const carousel = wrapper.querySelector('.carousel');
+  const prev = wrapper.querySelector('.prev');
+  const next = wrapper.querySelector('.next');
+  const items = Array.from(carousel.children);
+  if (items.length === 0) return;
+
+  function updateButtons() {
+    if (!carousel) return;
+    const scrollLeft = carousel.scrollLeft;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    prev.classList.toggle('hidden', scrollLeft <= 5);
+    next.classList.toggle('hidden', scrollLeft >= maxScroll - 5);
+  }
+
+  function scrollToItem(index) {
+    if (index < 0) index = 0;
+    if (index >= items.length) index = items.length - 1;
+    const target = items[index];
+    if (target) {
+      carousel.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    }
+  }
+
+  let currentIndex = 0;
+  function getClosestIndex() {
+    const scrollLeft = carousel.scrollLeft;
+    let closest = 0;
+    let minDist = Infinity;
+    items.forEach((item, idx) => {
+      const offset = item.offsetLeft;
+      const dist = Math.abs(offset - scrollLeft);
+      if (dist < minDist) {
+        minDist = dist;
+        closest = idx;
+      }
+    });
+    return closest;
+  }
+
+  if (prev) {
+    prev.addEventListener('click', () => {
+      let idx = getClosestIndex();
+      if (idx > 0) idx--;
+      scrollToItem(idx);
+    });
+  }
+  if (next) {
+    next.addEventListener('click', () => {
+      let idx = getClosestIndex();
+      if (idx < items.length - 1) idx++;
+      scrollToItem(idx);
+    });
+  }
+
+  carousel.addEventListener('scroll', () => updateButtons());
+  window.addEventListener('resize', () => updateButtons());
+  updateButtons();
+});
+
+// ===================== FLOATING SHARE BAR =====================
+(function() {
+  'use strict';
+  var floatBar = document.getElementById('floatShare');
+  if (!floatBar) return;
+  
+  var topBtn = floatBar.querySelector('a[href="#"]');
+  
+  // Show native share button if available
+  var nativeBtn = document.getElementById('shareNativeBtn');
+  var floatNative = document.getElementById('floatNativeBtn');
+  if (navigator.share) {
+    if (nativeBtn) nativeBtn.style.display = 'inline-flex';
+    if (floatNative) floatNative.style.display = 'flex';
+  }
+  
+  var checkScroll = function() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    floatBar.classList.toggle('visible', scrollY > window.innerHeight * 0.6);
+  };
+  setTimeout(checkScroll, 50);
+  window.addEventListener('scroll', checkScroll);
+  
+  // Hover handling for popup
+  var shareWrap = floatBar.querySelector('.share-btn-wrap');
+  if (shareWrap) {
+    var hoverTimer;
+    shareWrap.addEventListener('mouseenter', function() {
+      clearTimeout(hoverTimer);
+      shareWrap.classList.add('hover');
+    });
+    shareWrap.addEventListener('mouseleave', function() {
+      hoverTimer = setTimeout(function() {
+        shareWrap.classList.remove('hover');
+      }, 200);
+    });
+  }
+
+  // Smooth scroll to top
+  if (topBtn) {
+    topBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+
+// ===================== SHARE FUNCTIONS =====================
+function getShareUrl() {
+  return 'https://mtr58.github.io/dog-parenting/';
+}
+function getShareText() {
+  return '9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day';
+}
+
+function shareNative() {
+  if (navigator.share) {
+    navigator.share({
+      title: getShareText(),
+      text: 'A week in the life with Cooper. Real tools that save real time with your dog.',
+      url: getShareUrl()
+    }).catch(() => {});
+  }
+  return false;
+}
+
+function shareTwitter() {
+  const url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(getShareText() + ' - A week in the life with Cooper.') + '&url=' + encodeURIComponent(getShareUrl());
+  window.open(url, '_blank', 'width=600,height=400');
+  return false;
+}
+
+function shareFacebook() {
+  const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(getShareUrl());
+  window.open(url, '_blank', 'width=600,height=400');
+  return false;
+}
+
+function sharePinterest() {
+  const url = 'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(getShareUrl()) + '&description=' + encodeURIComponent(getShareText());
+  window.open(url, '_blank', 'width=750,height=600');
+  return false;
+}
+
+function shareEmail() {
+  const url = 'mailto:?subject=' + encodeURIComponent(getShareText()) + '&body=' + encodeURIComponent('Check this out: ' + getShareUrl());
+  window.open(url, '_blank');
+  return false;
+}
+
+function shareInstagram(event) {
+  if (navigator.share) {
+    navigator.share({ title: getShareText(), url: getShareUrl() }).catch(() => copyLink(event));
+  } else {
+    copyLink(event);
+  }
+  return false;
+}
+
+function shareSnapchat() {
+  const url = 'https://www.snapchat.com/scan/attachment/?url=' + encodeURIComponent(getShareUrl());
+  window.open(url, '_blank', 'width=600,height=600');
+  return false;
+}
+
+function shareTiktok(event) {
+  if (navigator.share) {
+    navigator.share({ title: getShareText(), url: getShareUrl() }).catch(() => copyLink(event));
+  } else {
+    copyLink(event);
+  }
+  return false;
+}
+
+function copyLink(event) {
+  const url = getShareUrl();
+  let btn = null;
+  if (event && event.target) {
+    btn = event.target.closest('.popup-btn');
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<span>✅</span> Copied!';
+        setTimeout(() => { btn.innerHTML = orig; }, 1500);
+      }
+    }).catch(() => fallbackCopy(url, btn));
+  } else {
+    fallbackCopy(url, btn);
+  }
+  return false;
+}
+
+function fallbackCopy(url, btn) {
+  const input = document.createElement('textarea');
+  input.value = url;
+  document.body.appendChild(input);
+  input.select();
+  try {
+    document.execCommand('copy');
+    if (btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>✅</span> Copied!';
+      setTimeout(() => { btn.innerHTML = orig; }, 1500);
+    }
+  } catch(e) {}
+  document.body.removeChild(input);
+}
+
+function copyLinkFromBtn(btn) {
+  const url = getShareUrl();
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span class="icon">✅</span> Copied!';
+      setTimeout(() => { btn.innerHTML = orig; }, 1500);
+    });
+  } else {
+    const orig = btn.innerHTML;
+    const input = document.createElement('textarea');
+    input.value = url;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    btn.innerHTML = '<span class="icon">✅</span> Copied!';
+    setTimeout(() => { btn.innerHTML = orig; }, 1500);
+  }
+}
+
+// ---- NEW FEATURES ----
+
+// LIGHTBOX
+(function() {
+  var overlay = document.getElementById('lightbox');
+  var imgEl = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+  if (!overlay || !imgEl) return;
+  function openLB(src, alt) {
+    imgEl.src = src;
+    imgEl.alt = alt || 'Product image';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLB() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (closeBtn) closeBtn.addEventListener('click', closeLB);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeLB();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeLB();
+  });
+  document.querySelectorAll('.carousel-item .thumb img').forEach(function(img) {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLB(this.src, this.alt);
+    });
+  });
+})();
+
+// CAROUSEL DRAG-TO-SCROLL
+document.querySelectorAll('.carousel').forEach(function(carousel) {
+  var isDown = false, startX = 0, scrollLeft = 0;
+  carousel.addEventListener('mousedown', function(e) {
+    isDown = true;
+    carousel.classList.add('dragging');
+    startX = e.pageX - this.offsetLeft;
+    scrollLeft = this.scrollLeft;
+  });
+  carousel.addEventListener('mouseleave', function() {
+    isDown = false;
+    carousel.classList.remove('dragging');
+  });
+  carousel.addEventListener('mouseup', function() {
+    isDown = false;
+    carousel.classList.remove('dragging');
+  });
+  carousel.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    this.scrollLeft = scrollLeft - (e.pageX - this.offsetLeft - startX) * 1.5;
+  });
+  carousel.addEventListener('keydown', function(e) {
+    var items = this.querySelectorAll('.carousel-item');
+    if (items.length === 0) return;
+    var step = items[0].offsetWidth + 12;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); this.scrollBy({ left: -step, behavior: 'smooth' }); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); this.scrollBy({ left: step, behavior: 'smooth' }); }
+  });
+});
+
+// CAROUSEL DOTS
+document.querySelectorAll('.carousel-section').forEach(function(section) {
+  var carousel = section.querySelector('.carousel');
+  var dotsContainer = section.querySelector('.carousel-dots');
+  if (!carousel || !dotsContainer) return;
+  var items = carousel.querySelectorAll('.carousel-item');
+  if (items.length <= 1) { dotsContainer.style.display = 'none'; return; }
+  items.forEach(function(item, idx) {
+    var dot = document.createElement('button');
+    dot.className = 'dot' + (idx === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to item ' + (idx + 1));
+    dot.addEventListener('click', function() {
+      carousel.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
+    });
+    dotsContainer.appendChild(dot);
+  });
+  carousel.addEventListener('scroll', function() {
+    var scrollLeft = carousel.scrollLeft;
+    var dots = dotsContainer.querySelectorAll('.dot');
+    var closest = 0, minDist = Infinity;
+    items.forEach(function(item, idx) {
+      var dist = Math.abs(item.offsetLeft - scrollLeft);
+      if (dist < minDist) { minDist = dist; closest = idx; }
+    });
+    dots.forEach(function(d, idx) { d.classList.toggle('active', idx === closest); });
+  });
+});
+
+// READING PROGRESS BAR
+(function() {
+  var bar = document.getElementById('progressBar');
+  if (!bar) return;
+  function update() {
+    var scrollTop = window.scrollY || window.pageYOffset;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (scrollTop / Math.max(docHeight, 1) * 100) + '%';
+  }
+  window.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
