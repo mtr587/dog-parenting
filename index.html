@@ -146,7 +146,7 @@
     .carousel-item .thumb:has(img[src]){background:var(--card)}
     .carousel-item .thumb img{cursor:pointer}
     @media(min-width:769px){.float-share{display:none}}
-    @media(max-width:480px){.carousel-item{flex:0 0 100%}.carousel-btn{display:none}}
+    @media(max-width:480px){.carousel-item{flex:0 0 100%}.carousel-btn{display:none}.carousel-item .thumb{max-height:none}}
 
     /* LAYOUT: sidebar TOC + main content */
     .article-layout{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;gap:40px;align-items:flex-start}
@@ -244,21 +244,17 @@
     .carousel-item .thumb{
       width:100%;
       aspect-ratio:1;
-      max-height:200px;
       border-radius:6px;
       margin-bottom:8px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:block;
       overflow:hidden;
       background:#f0efed;position:relative;
     }
     .carousel-item .thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,#f0efed 30%,#e8e6e3 50%,#f0efed 70%);background-size:200% 100%;animation:skeleton-pulse 1.5s ease-in-out infinite;z-index:0}
     @keyframes skeleton-pulse{0%{background-position:200% 0}100%{background-position:-200% 0}}
-    .carousel-item .thumb img{position:relative;z-index:1;cursor:pointer
+    .carousel-item .thumb img{position:relative;z-index:1;cursor:pointer;
       width:100%;
-      height:auto;
-      aspect-ratio:1;
+      height:100%;
       object-fit:contain;
       display:block;
     }
