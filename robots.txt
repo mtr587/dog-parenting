@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mtr587.github.io/dog-parenting/sitemap.xml
