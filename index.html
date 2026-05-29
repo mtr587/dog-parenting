@@ -28,6 +28,16 @@
   <meta name="twitter:description" content="A week in the life with Cooper. How the right gear cuts weekday dog chores in half and doubles the quality of your weekend time together." />
   <meta name="twitter:image" content="https://mtr587.github.io/dog-parenting/images/feeder-1.jpg" />
   <style>
+
+    /* Language switcher */
+    .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--text);color:#fff;display:flex;align-items:center;justify-content:flex-end;gap:4px;padding:4px 20px;font-size:12px}
+    .lang-bar .lang-label{color:rgba(255,255,255,.5);margin-right:4px}
+    .lang-btn{background:none;border:1px solid transparent;color:rgba(255,255,255,.6);padding:3px 8px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'Inter',sans-serif;transition:all .15s}
+    .lang-btn:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+    .lang-btn.active{color:#fff;background:var(--accent);border-color:var(--accent);font-weight:600}
+    body{padding-top:28px}
+    @media(max-width:480px){.lang-bar{padding:4px 12px;font-size:11px}.lang-btn{padding:2px 6px;font-size:11px}}
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --bg:#fafaf9;
@@ -448,20 +458,27 @@
   <link rel="sitemap" href="https://mtr587.github.io/dog-parenting/sitemap.xml" />
 </head>
 <body>
+  
+<div class="lang-bar" id="langBar">
+  <span class="lang-label">🌐</span>
+  <button class="lang-btn active" data-lang="en" onclick="switchLanguage('en')">EN</button>
+  <button class="lang-btn" data-lang="zh" onclick="switchLanguage('zh')">中文</button>
+  <button class="lang-btn" data-lang="es" onclick="switchLanguage('es')">ES</button>
+</div>
 
 <!-- Reading progress bar -->
 <div class="progress-bar" id="progressBar"></div>
 
 <!-- ==================== FTC DISCLOSURE ==================== -->
 <div class="disclosure">
-  <strong>Affiliate Disclosure:</strong> This post contains affiliate links. If you buy something through these links, I may earn a small commission at no extra cost to you. I only recommend products I personally use and believe in.
+  <strong data-i18n="Affiliate Disclosure:">Affiliate\ Disclosure:</strong> This post contains affiliate links. If you buy something through these links, I may earn a small commission at no extra cost to you. I only recommend products I personally use and believe in.
 </div>
 
 <!-- ==================== HERO ==================== -->
 <header class="hero">
-  <h1>9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day</h1>
-  <p style="font-style:italic;color:var(--accent);font-family:'Newsreader',Georgia,serif;font-size:20px;margin-bottom:20px">"I used to feel guilty every morning. Now we both win."</p>
-  <p>For every busy professional who loves their dog but just doesn't have the time. A week in the life with Cooper.</p>
+  <h1 data-i18n="9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day">9\-to\-5\ Dog\ Parenting:\ How\ the\ Right\ Gear\ Saves\ You\ an\ Hour\ a\ Day</h1>
+  <p style="font-style:italic;color:var(--accent);font-family:'Newsreader',Georgia,serif;font-size:20px;margin-bottom:20px" data-i18n="&quot;I used to feel guilty every morning. Now we both win.&quot;">"I\ used\ to\ feel\ guilty\ every\ morning\.\ Now\ we\ both\ win\."</p>
+  <p data-i18n="For every busy professional who loves their dog but just doesn&#x27;t have the time. A week in the life with Cooper.">For\ every\ busy\ professional\ who\ loves\ their\ dog\ but\ just\ doesn't\ have\ the\ time\.\ A\ week\ in\ the\ life\ with\ Cooper\.</p>
   <p class="meta">Reading time: 8 minutes &bull; Products available on Amazon &bull; Created for the US market</p>
 </header>
 
@@ -469,48 +486,48 @@
 <div class="article-layout">
   <aside class="toc-sidebar" id="tocSidebar">
     <nav class="toc-sticky">
-      <p class="toc-sidebar-label">On this page</p>
+      <p class="toc-sidebar-label" data-i18n="On this page">On\ this\ page</p>
       <ul class="toc-sidebar-list" id="tocSidebarList">
         <li>
-          <a href="#weekday" class="toc-link toc-section">☕ Mon — Fri</a>
+          <a href="#weekday" class="toc-link toc-section" data-i18n="☕ Mon — Fri">☕\ Mon\ —\ Fri</a>
           <ul class="toc-sublist">
-            <li><a href="#morning" class="toc-link toc-active">7:00 AM</a></li>
-            <li><a href="#breakfast" class="toc-link">7:30 AM</a></li>
-            <li><a href="#worktime" class="toc-link">9:00 AM</a></li>
-            <li><a href="#lunch" class="toc-link">12:00 PM</a></li>
-            <li><a href="#coffee" class="toc-link">3:00 PM</a></li>
-            <li><a href="#evening" class="toc-link">7:00 PM</a></li>
-            <li><a href="#couch" class="toc-link">8:00 PM</a></li>
-            <li><a href="#bedtime" class="toc-link">10:00 PM</a></li>
+            <li><a href="#morning" class="toc-link toc-active" data-i18n="7:00 AM">7:00\ AM</a></li>
+            <li><a href="#breakfast" class="toc-link" data-i18n="7:30 AM">7:30\ AM</a></li>
+            <li><a href="#worktime" class="toc-link" data-i18n="9:00 AM">9:00\ AM</a></li>
+            <li><a href="#lunch" class="toc-link" data-i18n="12:00 PM">12:00\ PM</a></li>
+            <li><a href="#coffee" class="toc-link" data-i18n="3:00 PM">3:00\ PM</a></li>
+            <li><a href="#evening" class="toc-link" data-i18n="7:00 PM">7:00\ PM</a></li>
+            <li><a href="#couch" class="toc-link" data-i18n="8:00 PM">8:00\ PM</a></li>
+            <li><a href="#bedtime" class="toc-link" data-i18n="10:00 PM">10:00\ PM</a></li>
           </ul>
         </li>
         <li>
-          <a href="#weekend" class="toc-link toc-section">🌿 Weekend</a>
+          <a href="#weekend" class="toc-link toc-section" data-i18n="🌿 Weekend">🌿\ Weekend</a>
           <ul class="toc-sublist">
-            <li><a href="#sat-morning" class="toc-link">Sat morning</a></li>
-            <li><a href="#sun-morning" class="toc-link">Sun morning</a></li>
+            <li><a href="#sat-morning" class="toc-link" data-i18n="Sat morning">Sat\ morning</a></li>
+            <li><a href="#sun-morning" class="toc-link" data-i18n="Sun morning">Sun\ morning</a></li>
           </ul>
         </li>
-        <li><a href="#math" class="toc-link toc-section">📊 The Math</a></li>
-        <li><a href="#products" class="toc-link toc-section">📋 Full Product List</a></li>
-        <li><a href="#conclusion" class="toc-link toc-section">💬 One Last Thing</a></li>
+        <li><a href="#math" class="toc-link toc-section" data-i18n="📊 The Math">📊\ The\ Math</a></li>
+        <li><a href="#products" class="toc-link toc-section" data-i18n="📋 Full Product List">📋\ Full\ Product\ List</a></li>
+        <li><a href="#conclusion" class="toc-link toc-section" data-i18n="💬 One Last Thing">💬\ One\ Last\ Thing</a></li>
       </ul>
       <div class="toc-rating-note">⭐ Ratings from Amazon</div>
     </nav>
   </aside>
   <main class="article container">
 
-<p>I have a dog named Cooper. He doesn't know what a meeting is, what a deadline is, or why I can't just play with him whenever I want.</p>
-<p>Cooper knows three things: you left, you came back, and — is it Sunday yet? Can we go to the big park?</p>
-<p>I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?</p>
-<p>Turns out, the question isn't whether it works. <strong>The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.</strong></p>
-<p>Here's what a real week looks like.</p>
+<p data-i18n="I have a dog named Cooper. He doesn&#x27;t know what a meeting is, what a deadline is, or why I can&#x27;t just play with him whenever I want.">I\ have\ a\ dog\ named\ Cooper\.\ He\ doesn't\ know\ what\ a\ meeting\ is,\ what\ a\ deadline\ is,\ or\ why\ I\ can't\ just\ play\ with\ him\ whenever\ I\ want\.</p>
+<p data-i18n="Cooper knows three things: you left, you came back, and — is it Sunday yet? Can we go to the big park?">Cooper\ knows\ three\ things:\ you\ left,\ you\ came\ back,\ and\ —\ is\ it\ Sunday\ yet\?\ Can\ we\ go\ to\ the\ big\ park\?</p>
+<p data-i18n="I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?">I\ used\ to\ feel\ guilty\ every\ time\ I\ closed\ the\ door\ and\ heard\ him\ whimper\.\ Can\ a\ 9\-to\-5\ job\ really\ work\ with\ a\ dog\?</p>
+<p>Turns out, the question isn't whether it works. <strong data-i18n="The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.">The\ question\ is\ how\ you\ set\ it\ up\.\ Good\ gear\ cuts\ weekday\ chores\ in\ half\ and\ doubles\ the\ quality\ of\ your\ weekend\ time\ together\.</strong></p>
+<p data-i18n="Here&#x27;s what a real week looks like.">Here's\ what\ a\ real\ week\ looks\ like\.</p>
 
 <!-- ============================================================ -->
 <!-- ===================== WORKWEEK ============================= -->
 <!-- ============================================================ -->
 <div class="share-bar">
-  <p style="width:100%;text-align:center;font-size:13px;font-weight:600;color:var(--text-muted);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Share this article</p>
+  <p style="width:100%;text-align:center;font-size:13px;font-weight:600;color:var(--text-muted);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px" data-i18n="Share this article">Share\ this\ article</p>
   <button class="share-btn" onclick="shareNative()" id="shareNativeBtn" style="display:none" aria-label="Share via system share"><span class="icon">📤</span> Share</button>
   <a class="share-btn" href="#" onclick="return shareTwitter()" target="_blank" aria-label="Share on Twitter"><span class="icon" role="img" aria-hidden="true">𝕏</span> Twitter</a>
   <a class="share-btn" href="#" onclick="return shareFacebook()" target="_blank" aria-label="Share on Facebook"><span class="icon" role="img" aria-hidden="true" style="font-weight:700">f</span> Facebook</a>
@@ -519,33 +536,33 @@
   <button class="share-btn" onclick="copyLinkFromBtn(this)" aria-label="Copy link to clipboard"><span class="icon">🔗</span> Copy Link</button>
 </div>
 
-<div class="section-divider" id="weekday">☕ Monday — Friday</div>
-<p>One rule for the workweek: <strong>if a machine can do it, let it.</strong></p>
+<div class="section-divider" id="weekday" data-i18n="☕ Monday — Friday">☕\ Monday\ —\ Friday</div>
+<p>One rule for the workweek: <strong data-i18n="if a machine can do it, let it.">if\ a\ machine\ can\ do\ it,\ let\ it\.</strong></p>
 
 <!-- 7:00AM -->
-<h3 id="morning">🌅 7:00 AM — The alarm goes off. So does the dog.</h3>
-<p>Cooper is already standing by my bed, staring at me like, "You're awake. Finally. I've been waiting all night."</p>
-<p><strong>Before:</strong> Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.</p>
-<p><strong>Now:</strong> I pet him on the head and head for the sink to brush my teeth. Why?</p>
-<p>Because I have an <strong>automatic pet feeder</strong>. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.</p>
-<p>And his <strong>water fountain</strong> keeps fresh water running all day. I clean it once a week instead of scrubbing a slimy bowl every morning. That alone is worth it.</p>
+<h3 id="morning" data-i18n="🌅 7:00 AM — The alarm goes off. So does the dog.">🌅\ 7:00\ AM\ —\ The\ alarm\ goes\ off\.\ So\ does\ the\ dog\.</h3>
+<p data-i18n="Cooper is already standing by my bed, staring at me like, &quot;You&#x27;re awake. Finally. I&#x27;ve been waiting all night.&quot;">Cooper\ is\ already\ standing\ by\ my\ bed,\ staring\ at\ me\ like,\ "You're\ awake\.\ Finally\.\ I've\ been\ waiting\ all\ night\."</p>
+<p><strong data-i18n="Before:">Before:</strong> Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.</p>
+<p><strong data-i18n="Now:">Now:</strong> I pet him on the head and head for the sink to brush my teeth. Why?</p>
+<p>Because I have an <strong data-i18n="automatic pet feeder">automatic\ pet\ feeder</strong>. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.</p>
+<p>And his <strong data-i18n="water fountain">water\ fountain</strong> keeps fresh water running all day. I clean it once a week instead of scrubbing a slimy bowl every morning. That alone is worth it.</p>
 
 <div class="carousel-section" id="carousel-feeder" role="region" aria-roledescription="carousel">
-  <div class="label">🍼 Automatic Pet Feeder</div>
+  <div class="label" data-i18n="🍼 Automatic Pet Feeder">🍼\ Automatic\ Pet\ Feeder</div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
     <div class="carousel" aria-labelledby="label-clicker" tabindex="0" role="list" aria-labelledby="label-robot" tabindex="0" role="list" aria-labelledby="label-puzzle" tabindex="0" role="list" aria-labelledby="label-leash" tabindex="0" role="list" aria-labelledby="label-poop" tabindex="0" role="list" aria-labelledby="label-bed" tabindex="0" role="list" aria-labelledby="label-camera" tabindex="0" role="list" aria-labelledby="label-kong" tabindex="0" role="list" aria-labelledby="label-fountain" tabindex="0" role="list" aria-labelledby="label-feeder" tabindex="0" role="list">
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/feeder-1.jpg" alt="PETLIBRO 5G WiFi Auto Feeder" fetchpriority="high" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4nOBqle" target="_blank" rel="noopener" data-slot="feeder-1" class="item-title">PETLIBRO 5G WiFi Auto Feeder 5L</a>
+          <a href="https://amzn.to/4nOBqle" target="_blank" rel="noopener" data-slot="feeder-1" class="item-title" data-i18n="PETLIBRO 5G WiFi Auto Feeder 5L">PETLIBRO\ 5G\ WiFi\ Auto\ Feeder\ 5L</a>
           <span class="rating">4.0★ (6,315 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/feeder-2.jpg" alt="4L Auto Feeder with Voice Recorder" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4v7f7d1" target="_blank" rel="noopener" data-slot="feeder-2" class="item-title">4L Cat/Dog Feeder with Voice Recorder</a>
+          <a href="https://amzn.to/4v7f7d1" target="_blank" rel="noopener" data-slot="feeder-2" class="item-title" data-i18n="4L Cat/Dog Feeder with Voice Recorder">4L\ Cat/Dog\ Feeder\ with\ Voice\ Recorder</a>
           <span class="rating">4.5★ (2,413 ratings)</span>
         </div>
       </div>
@@ -555,21 +572,21 @@
 </div>
 
 <div class="carousel-section" id="carousel-fountain" role="region" aria-roledescription="carousel">
-  <div class="label">💧 Pet Water Fountain</div>
+  <div class="label" data-i18n="💧 Pet Water Fountain">💧\ Pet\ Water\ Fountain</div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
     <div class="carousel">
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/fountain-1.jpg" alt="FEELNEEDY Wireless Steel Fountain" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/49iPc9K" target="_blank" rel="noopener" data-slot="fountain-1" class="item-title">FEELNEEDY Wireless Stainless Steel Fountain</a>
+          <a href="https://amzn.to/49iPc9K" target="_blank" rel="noopener" data-slot="fountain-1" class="item-title" data-i18n="FEELNEEDY Wireless Stainless Steel Fountain">FEELNEEDY\ Wireless\ Stainless\ Steel\ Fountain</a>
           <span class="rating">3.9★ (685 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/fountain-2.jpg" alt="Veken Pet Water Fountain" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/3RykLGx" data-slot="fountain-2" target="_blank" rel="noopener" class="item-title">Veken 95oz Pet Fountain with Replacement Filters</a>
+          <a href="https://amzn.to/3RykLGx" data-slot="fountain-2" target="_blank" rel="noopener" class="item-title" data-i18n="Veken 95oz Pet Fountain with Replacement Filters">Veken\ 95oz\ Pet\ Fountain\ with\ Replacement\ Filters</a>
           <span class="rating">4.4★ (16,699 ratings)</span>
         </div>
       </div>
@@ -579,20 +596,20 @@
 </div>
 
 <!-- 7:30AM -->
-<h3 id="breakfast">🍳 7:30 AM — Breakfast for two</h3>
-<p>I'm eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: "Are you done? Can we play?"</p>
-<p><strong>Before:</strong> Scarf down my food, play for 5 minutes, rush out the door feeling guilty.</p>
-<p><strong>Now:</strong> I grab a <strong>Kong toy</strong> I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.</p>
+<h3 id="breakfast" data-i18n="🍳 7:30 AM — Breakfast for two">🍳\ 7:30\ AM\ —\ Breakfast\ for\ two</h3>
+<p data-i18n="I&#x27;m eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: &quot;Are you done? Can we play?&quot;">I'm\ eating\ toast\ and\ eggs\.\ Cooper\ has\ finished\ his\ breakfast\ and\ is\ now\ staring\ at\ me\ from\ the\ floor\.\ Translation:\ "Are\ you\ done\?\ Can\ we\ play\?"</p>
+<p><strong data-i18n="Before:">Before:</strong> Scarf down my food, play for 5 minutes, rush out the door feeling guilty.</p>
+<p><strong data-i18n="Now:">Now:</strong> I grab a <strong data-i18n="Kong toy">Kong\ toy</strong> I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.</p>
 
 <div class="carousel-section" id="carousel-kong" role="region" aria-roledescription="carousel">
-  <div class="label">🧸 Kong Toy</div>
+  <div class="label" data-i18n="🧸 Kong Toy">🧸\ Kong\ Toy</div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
     <div class="carousel">
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/kong-1.jpg" alt="KONG Classic Large Dog Toy" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4e3HT8x" target="_blank" rel="noopener" data-slot="kong-1" class="item-title">KONG Classic Large Dog Toy</a>
+          <a href="https://amzn.to/4e3HT8x" target="_blank" rel="noopener" data-slot="kong-1" class="item-title" data-i18n="KONG Classic Large Dog Toy">KONG\ Classic\ Large\ Dog\ Toy</a>
           <span class="rating">4.6★ (91,934 ratings)</span>
         </div>
       </div>
@@ -602,10 +619,10 @@
 </div>
 
 <!-- 9AM - 12PM -->
-<h3 id="worktime">💼 9:00 AM — 12:00 PM — While I'm at work</h3>
-<p>While I'm in meetings, Cooper is most likely napping on his <strong>dog bed</strong>, or chewing on the Kong I left him.</p>
-<p><strong>Before:</strong> I'd sit at my desk and just miss the little guy. That first week back after a long weekend was the worst — I kept thinking about him at home, wondering what he was up to. No way to just reach over and pet him. It sucks being away from your best friend for nine hours.</p>
-<p><strong>Now:</strong> I open the <strong>pet camera</strong> app on my phone for 3 seconds. There he is, curled up on his bed, snoozing away. Just seeing his face makes the rest of the afternoon go by easier.</p>
+<h3 id="worktime" data-i18n="💼 9:00 AM — 12:00 PM — While I&#x27;m at work">💼\ 9:00\ AM\ —\ 12:00\ PM\ —\ While\ I'm\ at\ work</h3>
+<p>While I'm in meetings, Cooper is most likely napping on his <strong data-i18n="dog bed">dog\ bed</strong>, or chewing on the Kong I left him.</p>
+<p><strong data-i18n="Before:">Before:</strong> I'd sit at my desk and just miss the little guy. That first week back after a long weekend was the worst — I kept thinking about him at home, wondering what he was up to. No way to just reach over and pet him. It sucks being away from your best friend for nine hours.</p>
+<p><strong data-i18n="Now:">Now:</strong> I open the <strong data-i18n="pet camera">pet\ camera</strong> app on my phone for 3 seconds. There he is, curled up on his bed, snoozing away. Just seeing his face makes the rest of the afternoon go by easier.</p>
 
 <div class="carousel-section" id="carousel-camera" role="region" aria-roledescription="carousel">
   <div class="label">📹 Pet Camera</div>
@@ -615,14 +632,14 @@
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/camera-1.jpg" alt="Furbo 360 Dog Camera" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4wU9KQ4" target="_blank" rel="noopener" data-slot="camera-1" class="item-title">Furbo 360 Dog Camera</a>
+          <a href="https://amzn.to/4wU9KQ4" target="_blank" rel="noopener" data-slot="camera-1" class="item-title" data-i18n="Furbo 360 Dog Camera">Furbo\ 360\ Dog\ Camera</a>
           <span class="rating">4.1★ (4,298 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/camera-2.jpg" alt="eufy 4K Indoor Cam E30" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4vcnPXg" target="_blank" rel="noopener" data-slot="camera-2" class="item-title">eufy Security 4K Indoor Cam E30</a>
+          <a href="https://amzn.to/4vcnPXg" target="_blank" rel="noopener" data-slot="camera-2" class="item-title" data-i18n="eufy Security 4K Indoor Cam E30">eufy\ Security\ 4K\ Indoor\ Cam\ E30</a>
           <span class="rating">4.5★ (2,420 ratings)</span>
         </div>
       </div>
@@ -639,21 +656,21 @@
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/bed-1.jpg" alt="EHEYCIGA Orthopedic Dog Bed" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/42V9nHk" target="_blank" rel="noopener" data-slot="bed-1" class="item-title">EHEYCIGA Orthopedic Dog Bed 44x32</a>
+          <a href="https://amzn.to/42V9nHk" target="_blank" rel="noopener" data-slot="bed-1" class="item-title" data-i18n="EHEYCIGA Orthopedic Dog Bed 44x32">EHEYCIGA\ Orthopedic\ Dog\ Bed\ 44x32</a>
           <span class="rating">4.5★ (20,705 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/bed-2.jpg" alt="Bedsure Orthopedic Large Dog Bed" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4dJojx1" target="_blank" rel="noopener" data-slot="bed-2" class="item-title">Bedsure Orthopedic Large Dog Bed</a>
+          <a href="https://amzn.to/4dJojx1" target="_blank" rel="noopener" data-slot="bed-2" class="item-title" data-i18n="Bedsure Orthopedic Large Dog Bed">Bedsure\ Orthopedic\ Large\ Dog\ Bed</a>
           <span class="rating">4.5★ (51,194 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/bed-3.jpg" alt="XL Washable Orthopedic Dog Sofa" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4uxQCpn" target="_blank" rel="noopener" data-slot="bed-3" class="item-title">XL Washable Orthopedic Dog Sofa</a>
+          <a href="https://amzn.to/4uxQCpn" target="_blank" rel="noopener" data-slot="bed-3" class="item-title" data-i18n="XL Washable Orthopedic Dog Sofa">XL\ Washable\ Orthopedic\ Dog\ Sofa</a>
           <span class="rating">4.5★ (2,539 ratings)</span>
         </div>
       </div>
@@ -663,40 +680,40 @@
 </div>
 
 <!-- 12PM -->
-<h3 id="lunch">🍱 12:00 PM — Didn't even think about it</h3>
-<p>At noon, the feeder does its thing. Cooper eats lunch. I'm in a meeting. Nobody had to go home.</p>
+<h3 id="lunch" data-i18n="🍱 12:00 PM — Didn&#x27;t even think about it">🍱\ 12:00\ PM\ —\ Didn't\ even\ think\ about\ it</h3>
+<p data-i18n="At noon, the feeder does its thing. Cooper eats lunch. I&#x27;m in a meeting. Nobody had to go home.">At\ noon,\ the\ feeder\ does\ its\ thing\.\ Cooper\ eats\ lunch\.\ I'm\ in\ a\ meeting\.\ Nobody\ had\ to\ go\ home\.</p>
 
 <!-- 3PM -->
-<h3 id="coffee">☕ 3:00 PM — Coffee break + a peek at home</h3>
-<p>Best part of my afternoon. I open the pet camera app. Cooper hears my voice through the speaker — ears perk up, tail wags.</p>
-<p>I tap "treat." A piece flies across the room. Cooper loses his mind.</p>
-<p><strong>Three minutes of this and I'm in a better mood. Way better than scrolling Instagram.</strong></p>
+<h3 id="coffee" data-i18n="☕ 3:00 PM — Coffee break + a peek at home">☕\ 3:00\ PM\ —\ Coffee\ break\ \+\ a\ peek\ at\ home</h3>
+<p data-i18n="Best part of my afternoon. I open the pet camera app. Cooper hears my voice through the speaker — ears perk up, tail wags.">Best\ part\ of\ my\ afternoon\.\ I\ open\ the\ pet\ camera\ app\.\ Cooper\ hears\ my\ voice\ through\ the\ speaker\ —\ ears\ perk\ up,\ tail\ wags\.</p>
+<p data-i18n="I tap &quot;treat.&quot; A piece flies across the room. Cooper loses his mind.">I\ tap\ "treat\."\ A\ piece\ flies\ across\ the\ room\.\ Cooper\ loses\ his\ mind\.</p>
+<p><strong data-i18n="Three minutes of this and I&#x27;m in a better mood. Way better than scrolling Instagram.">Three\ minutes\ of\ this\ and\ I'm\ in\ a\ better\ mood\.\ Way\ better\ than\ scrolling\ Instagram\.</strong></p>
 
 <!-- Poop wand -->
-<h3 id="poop">💩 The unsung hero of every walk</h3>
-<p>Here's the thing that changed everything: a <strong>telescoping poop bag wand</strong>.</p>
-<p>It's a slender plastic rod that collapses down to about the length of a TV remote. Lives clipped to my leash. When I need it, I pull it out — section by section — to about 24 inches.</p>
-<p>Clip a bag onto the ring at the end. Reach out. Scoop. Flip the bag. Tie it. Collapse the wand. Back in my pocket.</p>
-<p><strong>Your back stays straight. Your hands touch nothing.</strong></p>
-<p>Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella in one hand and a leash in the other. Summer heat — you know that smell.</p>
-<p>Fifteen bucks fixed all of it.</p>
+<h3 id="poop" data-i18n="💩 The unsung hero of every walk">💩\ The\ unsung\ hero\ of\ every\ walk</h3>
+<p>Here's the thing that changed everything: a <strong data-i18n="telescoping poop bag wand">telescoping\ poop\ bag\ wand</strong>.</p>
+<p data-i18n="It&#x27;s a slender plastic rod that collapses down to about the length of a TV remote. Lives clipped to my leash. When I need it, I pull it out — section by section — to about 24 inches.">It's\ a\ slender\ plastic\ rod\ that\ collapses\ down\ to\ about\ the\ length\ of\ a\ TV\ remote\.\ Lives\ clipped\ to\ my\ leash\.\ When\ I\ need\ it,\ I\ pull\ it\ out\ —\ section\ by\ section\ —\ to\ about\ 24\ inches\.</p>
+<p data-i18n="Clip a bag onto the ring at the end. Reach out. Scoop. Flip the bag. Tie it. Collapse the wand. Back in my pocket.">Clip\ a\ bag\ onto\ the\ ring\ at\ the\ end\.\ Reach\ out\.\ Scoop\.\ Flip\ the\ bag\.\ Tie\ it\.\ Collapse\ the\ wand\.\ Back\ in\ my\ pocket\.</p>
+<p><strong data-i18n="Your back stays straight. Your hands touch nothing.">Your\ back\ stays\ straight\.\ Your\ hands\ touch\ nothing\.</strong></p>
+<p data-i18n="Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella in one hand and a leash in the other. Summer heat — you know that smell.">Before\ I\ had\ this:\ freezing\ mornings,\ bending\ over,\ fingers\ too\ cold\ to\ open\ a\ bag\.\ Rainy\ days\ with\ an\ umbrella\ in\ one\ hand\ and\ a\ leash\ in\ the\ other\.\ Summer\ heat\ —\ you\ know\ that\ smell\.</p>
+<p data-i18n="Fifteen bucks fixed all of it.">Fifteen\ bucks\ fixed\ all\ of\ it\.</p>
 
 <div class="carousel-section" id="carousel-poop" role="region" aria-roledescription="carousel">
-  <div class="label">📡 Telescoping Poop Bag Wand</div>
+  <div class="label" data-i18n="📡 Telescoping Poop Bag Wand">📡\ Telescoping\ Poop\ Bag\ Wand</div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
     <div class="carousel">
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/poop-1.jpg" alt="Hands-Free Pooper Scooper" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/49lR3ut" target="_blank" rel="noopener" data-slot="poop-1" class="item-title">Foldable Hands-Free Pooper Scooper</a>
+          <a href="https://amzn.to/49lR3ut" target="_blank" rel="noopener" data-slot="poop-1" class="item-title" data-i18n="Foldable Hands-Free Pooper Scooper">Foldable\ Hands\-Free\ Pooper\ Scooper</a>
           <span class="rating">4.5★ (35 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/poop-2.jpg" alt="GoGo Stik XP Ergonomic Scooper" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/3Rwszsr" target="_blank" rel="noopener" data-slot="poop-2" class="item-title">GoGo Stik XP Ergonomic Scooper</a>
+          <a href="https://amzn.to/3Rwszsr" target="_blank" rel="noopener" data-slot="poop-2" class="item-title" data-i18n="GoGo Stik XP Ergonomic Scooper">GoGo\ Stik\ XP\ Ergonomic\ Scooper</a>
           <span class="rating">3.9★ (992 ratings)</span>
         </div>
       </div>
@@ -706,28 +723,28 @@
 </div>
 
 <!-- 7PM - Evening walk -->
-<h3 id="evening">🌆 7:00 PM — The evening walk</h3>
-<p>After dinner, I've had a chance to rest and Cooper is ready to go.</p>
-<p>Now it's time for the real walk — not the backyard pit stop from earlier.</p>
-<p>I clip on the <strong>hands-free leash belt</strong>, grab the <strong>telescoping poop bag wand</strong> off the hook by the door, and we head out. This time I take the longer route — through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.</p>
-<p>For 20 minutes I can:</p>
+<h3 id="evening" data-i18n="🌆 7:00 PM — The evening walk">🌆\ 7:00\ PM\ —\ The\ evening\ walk</h3>
+<p data-i18n="After dinner, I&#x27;ve had a chance to rest and Cooper is ready to go.">After\ dinner,\ I've\ had\ a\ chance\ to\ rest\ and\ Cooper\ is\ ready\ to\ go\.</p>
+<p data-i18n="Now it&#x27;s time for the real walk — not the backyard pit stop from earlier.">Now\ it's\ time\ for\ the\ real\ walk\ —\ not\ the\ backyard\ pit\ stop\ from\ earlier\.</p>
+<p>I clip on the <strong data-i18n="hands-free leash belt">hands\-free\ leash\ belt</strong>, grab the <strong data-i18n="telescoping poop bag wand">telescoping\ poop\ bag\ wand</strong> off the hook by the door, and we head out. This time I take the longer route — through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.</p>
+<p data-i18n="For 20 minutes I can:">For\ 20\ minutes\ I\ can:</p>
 <p>
   &bull; Answer texts I've been ignoring all day 📱<br>
   &bull; Call my mom on the walk 📞<br>
   &bull; Listen to the latest podcast episode 🎧<br>
   &bull; Just enjoy the quiet — which is rare these days 🌳
 </p>
-<p>This is the real walk. The one where Cooper and I actually hang out together after a long day.</p>
+<p data-i18n="This is the real walk. The one where Cooper and I actually hang out together after a long day.">This\ is\ the\ real\ walk\.\ The\ one\ where\ Cooper\ and\ I\ actually\ hang\ out\ together\ after\ a\ long\ day\.</p>
 
 <div class="carousel-section" id="carousel-leash" role="region" aria-roledescription="carousel">
-  <div class="label">🎒 Hands-Free Leash Belt</div>
+  <div class="label" data-i18n="🎒 Hands-Free Leash Belt">🎒\ Hands\-Free\ Leash\ Belt</div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
     <div class="carousel">
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/leash-1.jpg" alt="Hands Free Dog Leash" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4u2eVef" target="_blank" rel="noopener" data-slot="leash-1" class="item-title">Hands Free Dog Leash with Pouch</a>
+          <a href="https://amzn.to/4u2eVef" target="_blank" rel="noopener" data-slot="leash-1" class="item-title" data-i18n="Hands Free Dog Leash with Pouch">Hands\ Free\ Dog\ Leash\ with\ Pouch</a>
           <span class="rating">4.6★ (20,839 ratings)</span>
         </div>
       </div>
@@ -737,12 +754,12 @@
 </div>
 
 <!-- 8PM -->
-<h3 id="couch">🛋️ 8:00 PM — Couch time</h3>
-<p>Back from the walk. Cooper is satisfied. I'm relaxed.</p>
-<p>I settle into the couch. Cooper comes over. He doesn't need another walk — he just wants to do something together.</p>
-<p>I grab a <strong>puzzle toy</strong>, stuff a few treats in, and let him figure it out. He rolls it around on his bed, totally focused.</p>
-<p>I watch a show. He's at my feet, busy but close.</p>
-<p><strong>We're doing our own thing, but together. It's the best kind of quiet.</strong></p>
+<h3 id="couch" data-i18n="🛋️ 8:00 PM — Couch time">🛋️\ 8:00\ PM\ —\ Couch\ time</h3>
+<p data-i18n="Back from the walk. Cooper is satisfied. I&#x27;m relaxed.">Back\ from\ the\ walk\.\ Cooper\ is\ satisfied\.\ I'm\ relaxed\.</p>
+<p data-i18n="I settle into the couch. Cooper comes over. He doesn&#x27;t need another walk — he just wants to do something together.">I\ settle\ into\ the\ couch\.\ Cooper\ comes\ over\.\ He\ doesn't\ need\ another\ walk\ —\ he\ just\ wants\ to\ do\ something\ together\.</p>
+<p>I grab a <strong data-i18n="puzzle toy">puzzle\ toy</strong>, stuff a few treats in, and let him figure it out. He rolls it around on his bed, totally focused.</p>
+<p data-i18n="I watch a show. He&#x27;s at my feet, busy but close.">I\ watch\ a\ show\.\ He's\ at\ my\ feet,\ busy\ but\ close\.</p>
+<p><strong data-i18n="We&#x27;re doing our own thing, but together. It&#x27;s the best kind of quiet.">We're\ doing\ our\ own\ thing,\ but\ together\.\ It's\ the\ best\ kind\ of\ quiet\.</strong></p>
 
 <div class="carousel-section" id="carousel-puzzle" role="region" aria-roledescription="carousel">
   <div class="label">🧩 Puzzle Toy</div>
@@ -752,14 +769,14 @@
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/puzzle-1.jpg" alt="DR CATCH Dog Puzzle Toy" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4uDZfPi" target="_blank" rel="noopener" data-slot="puzzle-1" class="item-title">DR CATCH Dog Puzzle Toy</a>
+          <a href="https://amzn.to/4uDZfPi" target="_blank" rel="noopener" data-slot="puzzle-1" class="item-title" data-i18n="DR CATCH Dog Puzzle Toy">DR\ CATCH\ Dog\ Puzzle\ Toy</a>
           <span class="rating">4.4★ (16,162 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/puzzle-2.jpg" alt="PETSTA Dog Puzzle Toys" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4fJ2Cjh" target="_blank" rel="noopener" data-slot="puzzle-2" class="item-title">PETSTA Dog Puzzle Toys</a>
+          <a href="https://amzn.to/4fJ2Cjh" target="_blank" rel="noopener" data-slot="puzzle-2" class="item-title" data-i18n="PETSTA Dog Puzzle Toys">PETSTA\ Dog\ Puzzle\ Toys</a>
           <span class="rating">4.5★ (8,759 ratings)</span>
         </div>
       </div>
@@ -769,17 +786,17 @@
 </div>
 
 <!-- 10PM -->
-<h3 id="bedtime">🌙 10:00 PM — Last trip before bed</h3>
-<p>Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard — open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.</p>
-<p>Cooper curls up on his bed.</p>
-<p>I turn off the light and think: I spent maybe 30 minutes actively taking care of him today. <strong>But we had real moments together:</strong></p>
+<h3 id="bedtime" data-i18n="🌙 10:00 PM — Last trip before bed">🌙\ 10:00\ PM\ —\ Last\ trip\ before\ bed</h3>
+<p data-i18n="Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard — open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.">Cooper\ has\ been\ dozing\ on\ his\ bed\ for\ a\ couple\ of\ hours\.\ One\ last\ quick\ trip\ to\ the\ backyard\ —\ open\ the\ door,\ he\ runs\ out,\ does\ his\ thing,\ runs\ back\ in\.\ The\ telescoping\ wand\ handles\ the\ rest\.\ Sixty\ seconds\.</p>
+<p data-i18n="Cooper curls up on his bed.">Cooper\ curls\ up\ on\ his\ bed\.</p>
+<p>I turn off the light and think: I spent maybe 30 minutes actively taking care of him today. <strong data-i18n="But we had real moments together:">But\ we\ had\ real\ moments\ together:</strong></p>
 <p>
   ① Breakfast — we ate at the same time<br>
   ② 3:00 PM — I called his name through the camera and he wagged his tail<br>
   ③ The evening walk — just the two of us, no rush<br>
   ④ He played at my feet while I watched TV
 </p>
-<p>That's a lot more than I used to have.</p>
+<p data-i18n="That&#x27;s a lot more than I used to have.">That's\ a\ lot\ more\ than\ I\ used\ to\ have\.</p>
 
 <hr />
 
@@ -787,21 +804,21 @@
 <!-- ===================== WEEKEND ============================= -->
 <!-- ============================================================ -->
 <div class="section-divider" id="weekend">🌿 Saturday &amp; Sunday</div>
-<p>Weekdays are for getting things done. Weekends are for <strong>actually hanging out with your dog</strong> — while catching up on the stuff you can't do Monday through Friday.</p>
+<p>Weekdays are for getting things done. Weekends are for <strong data-i18n="actually hanging out with your dog">actually\ hanging\ out\ with\ your\ dog</strong> — while catching up on the stuff you can't do Monday through Friday.</p>
 
 <!-- SAT AM -->
-<h3 id="sat-morning">🛌 Saturday morning — The dog is my alarm clock</h3>
-<p><strong>Before:</strong> Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately (he's been holding it all night), then we're both too tired to do anything productive. Half the morning gone.</p>
-<p><strong>Now:</strong> The <strong>automatic feeder</strong> handles breakfast. Cooper eats. I sleep an extra 30 minutes.</p>
-<p>8:00 AM — I'm actually awake. Leash belt on. Pocket the poop wand. We head out.</p>
-<p><strong>Weekend walks are different.</strong> We take the long route to the park. I grab a coffee on the way. Cooper sniffs everything. I'm not rushing anywhere.</p>
-<p>Not just a walk. This is me and Cooper, finally hanging out.</p>
+<h3 id="sat-morning" data-i18n="🛌 Saturday morning — The dog is my alarm clock">🛌\ Saturday\ morning\ —\ The\ dog\ is\ my\ alarm\ clock</h3>
+<p><strong data-i18n="Before:">Before:</strong> Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately (he's been holding it all night), then we're both too tired to do anything productive. Half the morning gone.</p>
+<p><strong data-i18n="Now:">Now:</strong> The <strong data-i18n="automatic feeder">automatic\ feeder</strong> handles breakfast. Cooper eats. I sleep an extra 30 minutes.</p>
+<p data-i18n="8:00 AM — I&#x27;m actually awake. Leash belt on. Pocket the poop wand. We head out.">8:00\ AM\ —\ I'm\ actually\ awake\.\ Leash\ belt\ on\.\ Pocket\ the\ poop\ wand\.\ We\ head\ out\.</p>
+<p><strong data-i18n="Weekend walks are different.">Weekend\ walks\ are\ different\.</strong> We take the long route to the park. I grab a coffee on the way. Cooper sniffs everything. I'm not rushing anywhere.</p>
+<p data-i18n="Not just a walk. This is me and Cooper, finally hanging out.">Not\ just\ a\ walk\.\ This\ is\ me\ and\ Cooper,\ finally\ hanging\ out\.</p>
 
 <!-- SAT PM -->
-<h3 id="sat-afternoon">🛍️ Saturday afternoon — Out and about</h3>
-<p>A hike at the local park. Coffee on a dog-friendly patio. Maybe a quick trip to PetSmart for supplies. Errands are better when Cooper is along.</p>
-<p>Before I walk out, I tap the <strong>robot vacuum</strong> app. It starts cleaning while we're gone. No more coming home to tumbleweeds of dog hair.</p>
-<p>Cooper and I head out together. The house gets cleaned while we're gone. Win-win.</p>
+<h3 id="sat-afternoon" data-i18n="🛍️ Saturday afternoon — Out and about">🛍️\ Saturday\ afternoon\ —\ Out\ and\ about</h3>
+<p data-i18n="A hike at the local park. Coffee on a dog-friendly patio. Maybe a quick trip to PetSmart for supplies. Errands are better when Cooper is along.">A\ hike\ at\ the\ local\ park\.\ Coffee\ on\ a\ dog\-friendly\ patio\.\ Maybe\ a\ quick\ trip\ to\ PetSmart\ for\ supplies\.\ Errands\ are\ better\ when\ Cooper\ is\ along\.</p>
+<p>Before I walk out, I tap the <strong data-i18n="robot vacuum">robot\ vacuum</strong> app. It starts cleaning while we're gone. No more coming home to tumbleweeds of dog hair.</p>
+<p data-i18n="Cooper and I head out together. The house gets cleaned while we&#x27;re gone. Win-win.">Cooper\ and\ I\ head\ out\ together\.\ The\ house\ gets\ cleaned\ while\ we're\ gone\.\ Win\-win\.</p>
 
 <div class="carousel-section" id="carousel-robot" role="region" aria-roledescription="carousel">
   <div class="label">🤖 Robot Vacuum</div>
@@ -811,21 +828,21 @@
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/robot-1.jpg" alt="Shark AI Ultra Robot Vacuum" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4vd1c52" target="_blank" rel="noopener" data-slot="robot-1" class="item-title">Shark AI Ultra Robot Vacuum</a>
+          <a href="https://amzn.to/4vd1c52" target="_blank" rel="noopener" data-slot="robot-1" class="item-title" data-i18n="Shark AI Ultra Robot Vacuum">Shark\ AI\ Ultra\ Robot\ Vacuum</a>
           <span class="rating">4.3★ (3,200+ ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/robot-2.jpg" alt="eufy C10 Robot Vacuum" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4v9NJLl" target="_blank" rel="noopener" data-slot="robot-2" class="item-title">eufy C10 Robot Vacuum</a>
+          <a href="https://amzn.to/4v9NJLl" target="_blank" rel="noopener" data-slot="robot-2" class="item-title" data-i18n="eufy C10 Robot Vacuum">eufy\ C10\ Robot\ Vacuum</a>
           <span class="rating">4.4★ (6,492 ratings)</span>
         </div>
       </div>
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/robot-3.jpg" alt="eufy C28 Robot Vacuum Mop" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4fDF3bC" target="_blank" rel="noopener" data-slot="robot-3" class="item-title">eufy C28 Robot Vacuum & Mop</a>
+          <a href="https://amzn.to/4fDF3bC" target="_blank" rel="noopener" data-slot="robot-3" class="item-title" data-i18n="eufy C28 Robot Vacuum &amp; Mop">eufy\ C28\ Robot\ Vacuum\ \&\ Mop</a>
           <span class="rating">4.4★ (6,492 ratings)</span>
         </div>
       </div>
@@ -835,21 +852,21 @@
 </div>
 
 <!-- SUN AM -->
-<h3 id="sun-morning">☕ Sunday morning — Coffee + clicker training</h3>
-<p>Sunday is Cooper's favorite day.</p>
-<p>Not because we go anywhere fancy. Because we do something together.</p>
-<p>I grab a <strong>clicker training kit</strong>. Fifteen minutes in the backyard. We work on a new trick — "spin." By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.</p>
-<p><strong>This is different from walking. I'm teaching him. He's learning from me.</strong> His eyes change from "when will you notice me" to "we're a team."</p>
+<h3 id="sun-morning" data-i18n="☕ Sunday morning — Coffee + clicker training">☕\ Sunday\ morning\ —\ Coffee\ \+\ clicker\ training</h3>
+<p data-i18n="Sunday is Cooper&#x27;s favorite day.">Sunday\ is\ Cooper's\ favorite\ day\.</p>
+<p data-i18n="Not because we go anywhere fancy. Because we do something together.">Not\ because\ we\ go\ anywhere\ fancy\.\ Because\ we\ do\ something\ together\.</p>
+<p>I grab a <strong data-i18n="clicker training kit">clicker\ training\ kit</strong>. Fifteen minutes in the backyard. We work on a new trick — "spin." By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.</p>
+<p><strong data-i18n="This is different from walking. I&#x27;m teaching him. He&#x27;s learning from me.">This\ is\ different\ from\ walking\.\ I'm\ teaching\ him\.\ He's\ learning\ from\ me\.</strong> His eyes change from "when will you notice me" to "we're a team."</p>
 
 <div class="carousel-section" id="carousel-clicker" role="region" aria-roledescription="carousel">
-  <div class="label">🔔 Clicker Training</div>
+  <div class="label" data-i18n="🔔 Clicker Training">🔔\ Clicker\ Training</div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev hidden" aria-label="Previous">‹</button>
     <div class="carousel">
       <div class="carousel-item" role="listitem">
         <div class="thumb"><img src="images/clicker-1.jpg" alt="Dog Training Clicker" loading="lazy" width="200" height="200" /></div>
         <div class="item-body">
-          <a href="https://amzn.to/4vglwCM" target="_blank" rel="noopener" data-slot="clicker-1" class="item-title">Dog Training Clicker with Wrist Strap</a>
+          <a href="https://amzn.to/4vglwCM" target="_blank" rel="noopener" data-slot="clicker-1" class="item-title" data-i18n="Dog Training Clicker with Wrist Strap">Dog\ Training\ Clicker\ with\ Wrist\ Strap</a>
           <span class="rating">4.3★ (40,250 ratings)</span>
         </div>
       </div>
@@ -859,18 +876,18 @@
 </div>
 
 <!-- SUN PM -->
-<h3 id="sun-afternoon">🛋️ Sunday afternoon — The recharge</h3>
-<p>Sunday afternoon is for doing nothing.</p>
-<p>Cooper is on his bed next to the couch. I'm reading a book or watching a game. No toys. No walks. No gadgets.</p>
-<p>He just knows I'm here. And I know he's here.</p>
-<p>That's the whole point of weekends.</p>
+<h3 id="sun-afternoon" data-i18n="🛋️ Sunday afternoon — The recharge">🛋️\ Sunday\ afternoon\ —\ The\ recharge</h3>
+<p data-i18n="Sunday afternoon is for doing nothing.">Sunday\ afternoon\ is\ for\ doing\ nothing\.</p>
+<p data-i18n="Cooper is on his bed next to the couch. I&#x27;m reading a book or watching a game. No toys. No walks. No gadgets.">Cooper\ is\ on\ his\ bed\ next\ to\ the\ couch\.\ I'm\ reading\ a\ book\ or\ watching\ a\ game\.\ No\ toys\.\ No\ walks\.\ No\ gadgets\.</p>
+<p data-i18n="He just knows I&#x27;m here. And I know he&#x27;s here.">He\ just\ knows\ I'm\ here\.\ And\ I\ know\ he's\ here\.</p>
+<p data-i18n="That&#x27;s the whole point of weekends.">That's\ the\ whole\ point\ of\ weekends\.</p>
 
 <hr />
 
 <!-- ========== THE MATH ========== -->
-<h2 id="math">📊 The math: time invested vs time saved</h2>
+<h2 id="math" data-i18n="📊 The math: time invested vs time saved">📊\ The\ math:\ time\ invested\ vs\ time\ saved</h2>
 
-<h3>Weekday time savings</h3>
+<h3 data-i18n="Weekday time savings">Weekday\ time\ savings</h3>
 <div class="table-wrap">
 <table>
   <thead>
@@ -885,27 +902,27 @@
   </tbody>
 </table>
 </div>
-<p style="font-size:15px;font-weight:600;color:var(--text);margin-top:12px">~63 minutes saved per weekday × 5 days = ~5.25 hours per week</p>
+<p style="font-size:15px;font-weight:600;color:var(--text);margin-top:12px" data-i18n="~63 minutes saved per weekday × 5 days = ~5.25 hours per week">\~63\ minutes\ saved\ per\ weekday\ ×\ 5\ days\ =\ \~5\.25\ hours\ per\ week</p>
 
 <hr />
 
 <!-- ========== FULL LIST ========== -->
-<h2 id="products">📋 Full product list</h2>
+<h2 id="products" data-i18n="📋 Full product list">📋\ Full\ product\ list</h2>
 <div class="rating-notice">⭐ All ratings are pulled live from Amazon — 100% real, verified customer reviews. Prices and ratings may have shifted slightly since data collection (up to 30 days old), but these products consistently rank among the best-sellers in their categories.</div>
 <div class="table-wrap">
 <table>
   <thead><tr><th>Category</th><th>When</th><th>Saves time</th><th>Better bonding</th></tr></thead>
   <tbody>
-    <tr><td><a href="#carousel-feeder" style="color:inherit;text-decoration:none;display:block">🍼 Auto Feeder</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">saves 5 min/day</span></td><td><span class="check">✓</span></td></tr>
-    <tr><td><a href="#carousel-fountain" style="color:inherit;text-decoration:none;display:block">💧 Water Fountain</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">saves 3 min/day</span></td><td></td></tr>
-    <tr><td><a href="#carousel-bed" style="color:inherit;text-decoration:none;display:block">🛏️ Dog Bed</a></td><td>Daily</td><td><span class="check">✓</span></td><td></td></tr>
-    <tr><td><a href="#carousel-camera" style="color:inherit;text-decoration:none;display:block">📹 Pet Camera</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">peace of mind</span></td><td><span class="check">✓</span></td></tr>
-    <tr><td><a href="#carousel-kong" style="color:inherit;text-decoration:none;display:block">🧶 Stuffable Treat Toy (Kong-style)</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">buys 20 min peace</span></td><td><span class="check">✓</span></td></tr>
-    <tr><td><a href="#carousel-puzzle" style="color:inherit;text-decoration:none;display:block">🧩 Puzzle Toy</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">mental stimulation</span></td><td><span class="check">✓</span></td></tr>
-    <tr><td><a href="#carousel-leash" style="color:inherit;text-decoration:none;display:block">🎒 Hands-Free Leash</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">frees up hands</span></td><td><span class="check">✓</span></td></tr>
-    <tr><td><a href="#carousel-poop" style="color:inherit;text-decoration:none;display:block">📡 Poop Bag Wand</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">saves bending</span></td><td></td></tr>
-    <tr><td><a href="#carousel-robot" style="color:inherit;text-decoration:none;display:block">🤖 Robot Vacuum</a></td><td>Weekend</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400">saves 30 min/week</span></td><td></td></tr>
-    <tr><td><a href="#carousel-clicker" style="color:inherit;text-decoration:none;display:block">🔔 Clicker Training Kit</a></td><td>Weekend</td><td></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-feeder" style="color:inherit;text-decoration:none;display:block" data-i18n="🍼 Auto Feeder">🍼\ Auto\ Feeder</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="saves 5 min/day">saves\ 5\ min/day</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-fountain" style="color:inherit;text-decoration:none;display:block" data-i18n="💧 Water Fountain">💧\ Water\ Fountain</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="saves 3 min/day">saves\ 3\ min/day</span></td><td></td></tr>
+    <tr><td><a href="#carousel-bed" style="color:inherit;text-decoration:none;display:block" data-i18n="🛏️ Dog Bed">🛏️\ Dog\ Bed</a></td><td>Daily</td><td><span class="check">✓</span></td><td></td></tr>
+    <tr><td><a href="#carousel-camera" style="color:inherit;text-decoration:none;display:block" data-i18n="📹 Pet Camera">📹\ Pet\ Camera</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="peace of mind">peace\ of\ mind</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-kong" style="color:inherit;text-decoration:none;display:block" data-i18n="🧶 Stuffable Treat Toy (Kong-style)">🧶\ Stuffable\ Treat\ Toy\ \(Kong\-style\)</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="buys 20 min peace">buys\ 20\ min\ peace</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-puzzle" style="color:inherit;text-decoration:none;display:block" data-i18n="🧩 Puzzle Toy">🧩\ Puzzle\ Toy</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="mental stimulation">mental\ stimulation</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-leash" style="color:inherit;text-decoration:none;display:block" data-i18n="🎒 Hands-Free Leash">🎒\ Hands\-Free\ Leash</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="frees up hands">frees\ up\ hands</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td><a href="#carousel-poop" style="color:inherit;text-decoration:none;display:block" data-i18n="📡 Poop Bag Wand">📡\ Poop\ Bag\ Wand</a></td><td>Daily</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="saves bending">saves\ bending</span></td><td></td></tr>
+    <tr><td><a href="#carousel-robot" style="color:inherit;text-decoration:none;display:block" data-i18n="🤖 Robot Vacuum">🤖\ Robot\ Vacuum</a></td><td>Weekend</td><td><span class="check">✓</span><span style="display:block;font-size:11px;color:var(--text-muted);font-weight:400" data-i18n="saves 30 min/week">saves\ 30\ min/week</span></td><td></td></tr>
+    <tr><td><a href="#carousel-clicker" style="color:inherit;text-decoration:none;display:block" data-i18n="🔔 Clicker Training Kit">🔔\ Clicker\ Training\ Kit</a></td><td>Weekend</td><td></td><td><span class="check">✓</span></td></tr>
   </tbody>
 </table>
 </div>
@@ -914,7 +931,7 @@
 
 
 <div class="share-bar" style="margin-top:48px">
-  <p style="width:100%;text-align:center;font-size:13px;font-weight:600;color:var(--text-muted);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Share this article</p>
+  <p style="width:100%;text-align:center;font-size:13px;font-weight:600;color:var(--text-muted);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px" data-i18n="Share this article">Share\ this\ article</p>
   <button class="share-btn" onclick="shareNative()" id="shareNativeBtn2" style="display:none" aria-label="Share via system share"><span class="icon">📤</span> Share</button>
   <a class="share-btn" href="#" onclick="return shareTwitter()" target="_blank" aria-label="Share on Twitter"><span class="icon" role="img" aria-hidden="true">𝕏</span> Twitter</a>
   <a class="share-btn" href="#" onclick="return shareFacebook()" target="_blank" aria-label="Share on Facebook"><span class="icon" role="img" aria-hidden="true" style="font-weight:700">f</span> Facebook</a>
@@ -924,21 +941,21 @@
 </div>
 
 <!-- ========== CONCLUSION ========== -->
-<h2 id="conclusion">One last thing</h2>
-<p>Your dog doesn't understand why you leave every day. They don't know what "work" means.</p>
-<p>But they understand:</p>
+<h2 id="conclusion" data-i18n="One last thing">One\ last\ thing</h2>
+<p data-i18n="Your dog doesn&#x27;t understand why you leave every day. They don&#x27;t know what &quot;work&quot; means.">Your\ dog\ doesn't\ understand\ why\ you\ leave\ every\ day\.\ They\ don't\ know\ what\ "work"\ means\.</p>
+<p data-i18n="But they understand:">But\ they\ understand:</p>
 <p>&bull; The feeder beeps — food is here<br>
 &bull; Your voice comes through the speaker — you're thinking of me<br>
 &bull; The door opens — you're back<br>
 &bull; On weekends, all your time is my time</p>
-<p><strong>Having a dog isn't about how much time you spend on chores. It's about the time you actually spend together.</strong></p>
-<p>Get the tools that shrink the boring stuff. Spend the extra time on what matters.</p>
-<p>Not sure where to start? <strong>The auto feeder is the single biggest time-saver.</strong> Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.</p>
-<p>Pick the one thing that bugs you the most right now. Start there.</p>
-<p>That's the whole deal.</p>
+<p><strong data-i18n="Having a dog isn&#x27;t about how much time you spend on chores. It&#x27;s about the time you actually spend together.">Having\ a\ dog\ isn't\ about\ how\ much\ time\ you\ spend\ on\ chores\.\ It's\ about\ the\ time\ you\ actually\ spend\ together\.</strong></p>
+<p data-i18n="Get the tools that shrink the boring stuff. Spend the extra time on what matters.">Get\ the\ tools\ that\ shrink\ the\ boring\ stuff\.\ Spend\ the\ extra\ time\ on\ what\ matters\.</p>
+<p>Not sure where to start? <strong data-i18n="The auto feeder is the single biggest time-saver.">The\ auto\ feeder\ is\ the\ single\ biggest\ time\-saver\.</strong> Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.</p>
+<p data-i18n="Pick the one thing that bugs you the most right now. Start there.">Pick\ the\ one\ thing\ that\ bugs\ you\ the\ most\ right\ now\.\ Start\ there\.</p>
+<p data-i18n="That&#x27;s the whole deal.">That's\ the\ whole\ deal\.</p>
 <p style="font-size:13px;color:var(--text-muted);margin-top:24px"><em>This article contains affiliate links. As an Amazon Associate I earn from qualifying purchases.</em></p>
 
-<p style="text-align:center;margin-top:48px"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" class="back-top-link">↑ Back to top</a></p>
+<p style="text-align:center;margin-top:48px"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" class="back-top-link" data-i18n="↑ Back to top">↑\ Back\ to\ top</a></p>
 </div><!-- /article -->
 </main>
 </div><!-- /article-layout -->
@@ -971,7 +988,7 @@
 
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
-  <p>Written for busy dog parents &bull; Made with 🐕 and coffee &bull; <a href="#">Back to top</a></p>
+  <p>Written for busy dog parents &bull; Made with 🐕 and coffee &bull; <a href="#" data-i18n="Back to top">Back\ to\ top</a></p>
 </footer>
 
 <script>
@@ -1280,6 +1297,29 @@ function copyLinkFromBtn(btn) {
     }
   });
 })();
+
+
+
+var LANG_DATA = {"zh": {"9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day": "朝九晚五养狗指南：这些装备每天帮你省出一小时", "A week in the life with Cooper. Discover the best dog gear for busy owners — auto feeders, pet cameras, puzzle toys, and more. Real Amazon ratings included.": "Cooper的一周生活。为忙碌的上班族推荐最好的宠物装备——自动喂食器、宠物摄像头、益智玩具等。评分都来自真实的Amazon买家。", "A week in the life with Cooper. How the right gear cuts weekday dog chores in half and doubles the quality of your weekend time together.": "Cooper的一周生活。合适的装备能把工作日照顾狗的杂事减半，让你们周末在一起的时光质量翻倍。", "On this page": "本页目录", "Share this article": "分享这篇文章", "Back to top": "回到顶部", "Ratings from Amazon": "评分来自Amazon", "↑ Back to top": "↑ 回到顶部", "Reading time: 8 minutes • Products available on Amazon • Created for the US market": "阅读时间：8分钟 • 产品可在Amazon购买 • 面向美国市场", "For every busy professional who loves their dog but just doesn't have the time. A week in the life with Cooper.": "献给每个爱自己的狗却没时间的上班族。来看看Cooper的一周生活。", "Written for busy dog parents • Made with 🐕 and coffee • Back to top": "写给忙碌的狗爸妈 • 用🐕和咖啡制作 • 回到顶部", "Disclosure": "声明", "Affiliate Disclosure:": "广告声明：", "This article contains affiliate links. As an Amazon Associate I earn from qualifying purchases.": "这篇文章包含联盟营销链接。作为Amazon的合作伙伴，我能从符合条件的购买中获得佣金。", "I have a dog named Cooper. He doesn't know what a meeting is, what a deadline is, or why I can't just play with him whenever I want.": "我有一只狗叫Cooper。他不明白什么是会议、什么是截止日期，也不懂为什么我不能随时陪他玩。", "I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?": "以前每次关上门听到他呜呜叫，我都会觉得很愧疚。朝九晚五的工作真的能养好狗吗？", "Turns out, the question isn't whether it works. The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.": "事实证明，问题不是能不能行，而是你怎么安排。好装备能把工作日里照顾狗的杂事减半，让周末在一起的时光质量翻倍。", "Here's what a real week looks like.": "来看看真实的一周是什么样的。", "One rule for the workweek: if a machine can do it, let it.": "工作日的原则是：能交给机器做的，就别自己动手。", "The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.": "关键是你怎么安排。好装备能把工作日照顾狗的杂事减半，让你们的周末时光质量翻倍。", "☕ Mon — Fri": "☕ 周一 — 周五", "☕ Monday — Friday": "☕ 周一 — 周五", "🌿 Weekend": "🌿 周末", "📊 The Math": "📊 算笔账", "📋 Full Product List": "📋 全部产品列表", "💬 One Last Thing": "💬 最后说一句", "Sat morning": "周六早上", "Sun morning": "周日早上", "Better bonding": "增进感情", "Saves time": "节省时间", "Category": "类别", "When": "使用时间", "Full product list": "全部产品列表", "One last thing": "最后说一句", "Dog Parenting Guide": "养狗装备指南", "Cooper's Parent": "Cooper的主人", "index, follow": "index, follow", "PETLIBRO 5G WiFi Auto Feeder - smart pet feeder for busy dog owners": "PETLIBRO 5G WiFi自动喂食器——适合忙碌上班族的智能宠物喂食器", "📊 The math: time invested vs time saved": "📊 算笔账：花了多少时间 vs 省了多少时间", "📋 Full product list": "📋 全部产品列表", "🌅 7:00 AM — The alarm goes off. So does the dog.": "🌅 早上7点——闹钟响了。狗也醒了。", "🍳 7:30 AM — Breakfast for two": "🍳 早上7点半——两个人的早餐", "💼 9:00 AM — 12:00 PM — While I'm at work": "💼 早上9点到中午12点——我在上班的时候", "🍱 12:00 PM — Didn't even think about it": "🍱 中午12点——完全不用操心", "☕ 3:00 PM — Coffee break + a peek at home": "☕ 下午3点——喝杯咖啡，看看家里", "💩 The unsung hero of every walk": "💩 每次遛狗的无名英雄", "🌆 7:00 PM — The evening walk": "🌆 晚上7点——傍晚遛狗", "🛋️ 8:00 PM — Couch time": "🛋️ 晚上8点——沙发时间", "🌙 10:00 PM — Last trip before bed": "🌙 晚上10点——睡前最后一趟", "🛌 Saturday morning — The dog is my alarm clock": "🛌 周六早上——狗就是我的闹钟", "🛍️ Saturday afternoon — Out and about": "🛍️ 周六下午——出去转转", "☕ Sunday morning — Coffee + clicker training": "☕ 周日早上——咖啡 + 响片训练", "🛋️ Sunday afternoon — The recharge": "🛋️ 周日下午——充电时间", "Weekday time savings": "工作日节省的时间", "🌿 Saturday & Sunday": "🌿 周六和周日", "🍼 Auto Feeder": "🍼 自动喂食器", "💧 Water Fountain": "💧 饮水机", "🛏️ Dog Bed": "🛏️ 狗床", "📹 Pet Camera": "📹 宠物摄像头", "🧶 Stuffable Treat Toy (Kong-style)": "🧶 可塞零食玩具（Kong款）", "🧩 Puzzle Toy": "🧩 益智玩具", "🎒 Hands-Free Leash": "🎒 免手提狗绳", "📡 Poop Bag Wand": "📡 捡屎棒", "🤖 Robot Vacuum": "🤖 扫地机器人", "🔔 Clicker Training Kit": "🔔 响片训练套装", "🔔 Clicker Training": "🔔 响片训练", "🍼 Automatic Pet Feeder": "🍼 自动宠物喂食器", "💧 Pet Water Fountain": "💧 宠物饮水机", "🧸 Kong Toy": "🧸 Kong玩具", "🎒 Hands-Free Leash Belt": "🎒 免手提狗绳腰带", "📡 Telescoping Poop Bag Wand": "📡 伸缩捡屎棒", "if a machine can do it, let it.": "能交给机器做的，就别自己动手。", "automatic feeder": "自动喂食器", "automatic pet feeder": "自动宠物喂食器", "water fountain": "饮水机", "dog bed": "狗床", "pet camera": "宠物摄像头", "Kong toy": "Kong玩具", "puzzle toy": "益智玩具", "hands-free leash belt": "免手提狗绳腰带", "telescoping poop bag wand": "伸缩捡屎棒", "robot vacuum": "扫地机器人", "clicker training kit": "响片训练套装", "actually hanging out with your dog": "真正陪你的狗待在一起", "The auto feeder is the single biggest time-saver.": "自动喂食器是省时效果最明显的单品。", "Weekend walks are different.": "周末遛狗不一样。", "This is different from walking. I'm teaching him. He's learning from me.": "这和遛狗不一样。我在教他，他在跟我学。", "saves 5 min/day": "每天省5分钟", "saves 3 min/day": "每天省3分钟", "saves bending": "不用弯腰", "buys 20 min peace": "换来20分钟安宁", "peace of mind": "安心", "frees up hands": "解放双手", "mental stimulation": "脑力锻炼", "saves 30 min/week": "每周省30分钟", "Before:": "以前：", "Now:": "现在：", "Cooper is already standing by my bed, staring at me like, \"You're awake. Finally. I've been waiting all night.\"": "Cooper已经站在我床边，盯着我看，好像在说：\"你醒了。终于醒了。我等了一整晚了。\"", "Now: I pet him on the head and head for the sink to brush my teeth. Why?": "现在：我拍拍他的头，然后去洗手间刷牙。为什么？", "Before: Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.": "以前：跌跌撞撞下楼，舀狗粮，加水，然后刷牙。Cooper一直在脚边转悠。咖啡还没喝就开始心累。", "Because I have an automatic pet feeder. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.": "因为我有一个自动喂食器。设置一次就好——能装大概5升狗粮，够吃好几天。我设了早上7:05出早餐、中午12点午餐、下午6点晚餐。等我下楼的时候，Cooper已经吃完早餐了。我泡杯咖啡，我们待一会儿——不用赶。", "I'm eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: \"Are you done? Can we play?\"": "我在吃吐司和鸡蛋。Cooper已经吃完他的早餐，正坐在地上盯着我看。翻译一下：\"你吃完了吗？能玩了吗？\"", "Before: Scarf down my food, play for 5 minutes, rush out the door feeling guilty.": "以前：快速扒几口饭，陪他玩5分钟，然后急匆匆出门，心里充满愧疚。", "Now: I grab a Kong toy I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.": "现在：我拿出昨晚塞好花生酱、冻好的Kong玩具。Cooper抱着它舔啊、滚啊、想尽办法把最后一点抠出来，足足玩20分钟。我安安静静吃完吐司。", "\"I used to feel guilty every morning. Now we both win.\"": "\"以前我每天早上都觉得对不起他。现在我们俩都赢了。\"", "While I'm in meetings, Cooper is most likely napping on his dog bed, or chewing on the Kong I left him.": "我在开会的时候，Cooper多半在狗床上打盹，或者啃我留给他的Kong玩具。", "Before: I'd sit at my desk and just miss the little guy. That first week back after a long weekend was the worst — I kept thinking about him at home, wondering what he was up to. No way to just reach over and pet him. It sucks being away from your best friend for nine hours.": "以前：我坐在办公桌前，就是想那个小家伙。长假后的第一周最难受——我老在想他在家干嘛呢。没办法伸手摸摸他。跟最好的朋友分开九个小时，太难受了。", "Now: I open the pet camera app on my phone for 3 seconds. There he is, curled up on his bed, snoozing away. Just seeing his face makes the rest of the afternoon go by easier.": "现在：我打开手机上的宠物摄像头App，3秒钟。他在那儿，蜷在狗床上睡得正香。只要看到他的脸，下午的时间就好过多了。", "Best part of my afternoon. I open the pet camera app. Cooper hears my voice through the speaker — ears perk up, tail wags.": "我下午最开心的时刻。打开宠物摄像头App。Cooper从扬声器里听到我的声音——耳朵竖起来，尾巴开始摇。", "At noon, the feeder does its thing. Cooper eats lunch. I'm in a meeting. Nobody had to go home.": "中午12点，喂食器自动出粮。Cooper吃午饭。我在开会。谁都不用赶回家。", "I tap \"treat.\" A piece flies across the room. Cooper loses his mind.": "我点一下\"投食\"。一颗零食飞过房间。Cooper疯了。", "Three minutes of this and I'm in a better mood. Way better than scrolling Instagram.": "这样三分钟，我心情就好多了。比刷Instagram有用多了。", "And his water fountain keeps fresh water running all day. I clean it once a week instead of scrubbing a slimy bowl every morning. That alone is worth it.": "他的饮水机一整天都有新鲜流动的水。我现在一周洗一次就行，不用每天早上刷黏糊糊的水碗。光这一点就值了。", "Here's the thing that changed everything: a telescoping poop bag wand.": "真正改变一切的是这个：伸缩捡屎棒。", "It's a slender plastic rod that collapses down to about the length of a TV remote. Lives clipped to my leash. When I need it, I pull it out — section by section — to about 24 inches.": "一根细长的塑料棒，收起来大概电视遥控器那么长。夹在狗绳上。要用的时候一节一节拉开到大概60厘米。", "Clip a bag onto the ring at the end. Reach out. Scoop. Flip the bag. Tie it. Collapse the wand. Back in my pocket.": "把袋子扣在末端的圈上。伸出去。铲。翻袋子。扎口。收回棒子。放回口袋。", "Your back stays straight. Your hands touch nothing.": "腰不用弯。手什么都不用碰。", "Fifteen bucks fixed all of it.": "十五块钱，全解决了。", "Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella in one hand and a leash in the other. Summer heat — you know that smell.": "有它之前：冻死人的早晨，弯腰，手指太冷打不开袋子。下雨天一手打伞一手牵狗。夏天大太阳——你懂的，那个味道。", "Because I have an automatic pet feeder. I set it up once it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit no rush.": "因为我有一个自动喂食器。设置一次就好——能装大概5升狗粮，够吃好几天。我设了早上7:05出早餐、中午12点午餐、下午6点晚餐。等我下楼的时候，Cooper已经吃完早餐了。我泡杯咖啡，我们待一会儿——不用赶。", "After dinner, I've had a chance to rest and Cooper is ready to go.": "晚饭后，我休息好了，Cooper也准备好出发了。", "I clip on the hands-free leash belt, grab the telescoping poop bag wand off the hook by the door, and we head out. This time I take the longer route through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.": "我系上免手提狗绳腰带，从门边挂钩上拿下伸缩捡屎棒，我们出发了。这次我走了更远的路——穿过小区，经过公园。手里端着咖啡，戴着AirPods。", "This is the real walk. The one where Cooper and I actually hang out together after a long day.": "这才是真正的遛狗。漫长的一天之后，我和Cooper真正待在一起的时间。", "Not just a walk. This is me and Cooper, finally hanging out.": "不只是遛狗。这是我和Cooper终于能待在一起了。", "Back from the walk. Cooper is satisfied. I'm relaxed.": "遛完回来了。Cooper很满足。我也放松了。", "Cooper is on his bed next to the couch. I'm reading a book or watching a game. No toys. No walks. No gadgets.": "Cooper趴在沙发旁边的狗床上。我在看书或者看比赛。没有玩具，不用遛狗，不用那些小工具。", "I settle into the couch. Cooper comes over. He doesn't need another walk he just wants to do something together.": "我坐到沙发上。Cooper过来了。他不需要再出去遛了——他只是想跟我一起做点什么。", "I grab a puzzle toy, stuff a few treats in, and let him figure it out. He rolls it around on his bed, totally focused.": "我拿出益智玩具，塞几颗零食进去，让他自己琢磨。他在狗床上滚来滚去地玩，特别专注。", "We're doing our own thing, but together. It's the best kind of quiet.": "我们各做各的，但是在一起。这是最舒服的那种安静。", "I watch a show. He's at my feet, busy but close.": "我看电视。他在我脚边，忙着但离我很近。", "Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.": "Cooper在狗床上打盹好几个小时了。最后一次去后院——开门，他跑出去，解决完，跑回来。伸缩棒搞定剩下的。六十秒。", "I turn off the light and think: I spent maybe 30 minutes actively taking care of him today. But we had real moments together:": "我关灯的时候想：今天我真正花在照顾他上的时间大概30分钟。但我们确实有在一起的好时光：", "He just knows I'm here. And I know he's here.": "他知道我在这儿。我也知道他在这儿。", "That's a lot more than I used to have.": "这比以前多太多了。", "That's the whole deal.": "这就是全部了。", "Cooper knows three things: you left, you came back, and is it Sunday yet? Can we go to the big park?": "Cooper只知道三件事：你走了，你回来了，还有——今天周日了吗？能去大公园了吗？", "Weekend walks are different. We take the long route to the park. I grab a coffee on the way. Cooper sniffs everything. I'm not rushing anywhere.": "周末遛狗不一样。我们走远路去公园。路上买杯咖啡。Cooper到处闻。我哪儿也不赶。", "A hike at the local park. Coffee on a dog-friendly patio. Maybe a quick trip to PetSmart for supplies. Errands are better when Cooper is along.": "去附近的公园徒步。带狗的咖啡厅坐坐。或者去趟PetSmart买点东西。有Cooper跟着，跑腿都有意思多了。", "Not because we go anywhere fancy. Because we do something together.": "不是因为我们去了什么特别的地方。而是因为我们一起做了点什么。", "That's the whole point of weekends.": "这才是周末的意义。", "Sunday is Cooper's favorite day.": "周日是Cooper最喜欢的一天。", "Sunday afternoon is for doing nothing.": "周日下午就是用来啥也不干的。", "Before I walk out, I tap the robot vacuum app. It starts cleaning while we're gone. No more coming home to tumbleweeds of dog hair.": "出门前，我点开扫地机器人App。我们不在家的时候它就开始打扫了。再也不用回家看到满地狗毛团了。", "Cooper and I head out together. The house gets cleaned while we're gone. Win-win.": "我和Cooper一起出门。家里在我们不在的时候被打扫干净。双赢。", "I grab a clicker training kit. Fifteen minutes in the backyard. We work on a new trick spin. By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.": "我拿出响片训练套装。在后院练15分钟。我们学一个新把戏——\"转圈\"。试到第三次，Cooper就会了，跑着到处炫耀。说实话，我挺得意的。", "This is different from walking. I'm teaching him. He's learning from me. His eyes change from when will you notice me to we're a team.": "这和遛狗不一样。我在教他，他在跟我学。他的眼神从\"你什么时候才会注意到我\"变成了\"我们是一个团队\"。", "Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella and a leash. Summer heat you know that smell.": "有它之前：冻死人的早晨，弯腰，手指太冷打不开袋子。下雨天一手打伞一手牵狗。夏天大太阳——你懂的，那个味道。", "Before: Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately, then we're both too tired to do anything productive. Half the morning gone.": "以前：Cooper早上7点舔我脸叫醒我。跌跌撞撞爬起来，马上遛他，然后我俩都累得什么也干不了。半个早上没了。", "Now: The automatic feeder handles breakfast. Cooper eats. I sleep an extra 30 minutes.": "现在：自动喂食器搞定早餐。Cooper吃饭。我多睡30分钟。", "8:00 AM I'm actually awake. Leash belt on. Pocket the poop wand. We head out.": "早上8点——我真的醒了。系上狗绳腰带。口袋里揣着捡屎棒。出发。", "Cooper curls up on his bed.": "Cooper蜷在他的床上。", "Before: I'd sit at my desk and miss the little guy. That first week back after a long weekend was the worst.": "以前：我坐在办公桌前，就是想那个小家伙。长假后的第一周最难受。", "Now: I open the pet camera app. There he is, snoozing away. Seeing his face makes the afternoon go by easier.": "现在：打开宠物摄像头App。他在那儿睡得正香。看到他的脸，下午就好过多了。", "I used to feel guilty every time I closed the door. Can a 9-to-5 job work with a dog?": "以前每次关上门我都觉得很愧疚。朝九晚五真的能养好狗吗？", "Your dog doesn't understand why you leave every day. They don't know what work means.": "你的狗不懂你每天为什么要离开。他们不知道\"上班\"是什么意思。", "But they understand:": "但他们明白：", "Get the tools that shrink the boring stuff. Spend the extra time on what matters.": "买那些能减少无聊杂事的工具。把多出来的时间花在真正重要的事上。", "Having a dog isn't about how much time you spend on chores. It's about the time you actually spend together.": "养狗不在于你做杂事花了多少时间，而在于你们真正在一起的时间有多少。", "Not sure where to start? The auto feeder is the single biggest time-saver. Set it up once and watch Cooper wait by it at 6 PM sharp it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.": "不知道从哪里开始？自动喂食器是省时效果最明显的。设置好一次，看着Cooper下午6点准时在旁边等着——还挺有成就感的。或者如果遛狗是你的痛点，买把捡屎棒。十五块钱，你的腰第二天就会感谢你。", "Weekdays are for getting things done. Weekends are for actually hanging out with your dog while catching up on the stuff you can't do Monday through Friday.": "工作日是用来搞定事情的。周末才是真正陪你的狗待在一起——顺便补上周一到周五没时间做的事。", "Pick the one thing that bugs you the most right now. Start there.": "挑一件现在最让你烦心的事。从那里开始。", "The feeder beeps food is here": "喂食器响了——饭来了", "Your voice comes through the speaker you're thinking of me": "你的声音从喇叭里传出来——你在想我", "The door opens you're back": "门开了——你回来了", "On weekends, all your time is my time": "周末的时候，你的全部时间都是我的", "PETLIBRO 5G WiFi Auto Feeder 5L": "PETLIBRO 5G WiFi自动喂食器5L", "4L Cat/Dog Feeder with Voice Recorder": "4L猫狗喂食器（带录音功能）", "FEELNEEDY Wireless Stainless Steel Fountain": "FEELNEEDY无线不锈钢饮水机", "Veken 95oz Pet Fountain with Replacement Filters": "Veken 95oz宠物饮水机（带替换滤芯）", "KONG Classic Large Dog Toy": "KONG经典大号狗玩具", "Furbo 360 Dog Camera": "Furbo 360度狗摄像头", "eufy Security 4K Indoor Cam E30": "eufy安防4K室内摄像头E30", "EHEYCIGA Orthopedic Dog Bed 44x32": "EHEYCIGA矫形狗床44x32", "Bedsure Orthopedic Large Dog Bed": "Bedsure矫形大号狗床", "XL Washable Orthopedic Dog Sofa": "XL可洗矫形狗沙发", "Foldable Hands-Free Pooper Scooper": "可折叠免手提捡屎器", "GoGo Stik XP Ergonomic Scooper": "GoGo Stik XP人体工学捡屎器", "Hands Free Dog Leash with Pouch": "免手提狗绳（带收纳袋）", "DR CATCH Dog Puzzle Toy": "DR CATCH狗狗益智玩具", "PETSTA Dog Puzzle Toys": "PETSTA狗狗益智玩具", "Shark AI Ultra Robot Vacuum": "Shark AI Ultra扫地机器人", "eufy C10 Robot Vacuum": "eufy C10扫地机器人", "eufy C28 Robot Vacuum & Mop": "eufy C28扫拖一体机器人", "Dog Training Clicker with Wrist Strap": "狗狗训练响片（带腕带）", "I used to feel guilty every time I closed the door and heard him whimper.": "以前每次关上门听到他呜咽，我都会觉得愧疚。", "Best part of my afternoon.": "我下午最开心的时刻。", "Back from the walk.": "遛完回来了。", "He just knows I here.": "他知道我在这儿。", "10:00 PM": "10:00 PM", "12:00 PM": "12:00 PM", "3:00 PM": "3:00 PM", "7:00 AM": "7:00 AM", "7:00 PM": "7:00 PM", "7:30 AM": "7:30 AM", "8:00 PM": "8:00 PM", "9:00 AM": "9:00 AM", "8:00 AM — I'm actually awake. Leash belt on. Pocket the poop wand. We head out.": "早上8点——我真的醒了。系上狗绳腰带。口袋里揣着捡屎棒。出发。", "But we had real moments together:": "但我们确实有在一起的好时光：", "For 20 minutes I can:": "这20分钟里我可以：", "Now it's time for the real walk — not the backyard pit stop from earlier.": "现在是真正的遛狗时间了——不是之前那种后院快速解决。", "~63 minutes saved per weekday × 5 days = ~5.25 hours per week": "工作日每天省约63分钟 × 5天 = 每周约5.25小时", "Your dog doesn't understand why you leave every day. They don't know what \"work\" means.": "你的狗不懂你每天为什么要离开。他们不知道\"上班\"是什么意思。", "Weekdays are for getting things done. Weekends are for actually hanging out with your dog — while catching up on the stuff you can't do Monday through Friday.": "工作日是用来搞定事情的。周末才是真正陪你的狗待在一起——顺便补上周一到周五没时间做的事。", "Not sure where to start? The auto feeder is the single biggest time-saver. Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.": "不知道从哪里开始？自动喂食器是最省时的。设置好一次，看着Cooper下午6点准时在旁边等着——还挺有成就感的。或者如果遛狗是痛点，买把捡屎棒。十五块钱，你的腰第二天就会感谢你。", "I grab a clicker training kit. Fifteen minutes in the backyard. We work on a new trick — \"spin.\" By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.": "我拿出响片训练套装。在后院练15分钟。我们学一个新把戏——\"转圈\"。试到第三次，Cooper就会了，跑着到处炫耀。说实话，我挺得意的。", "This is different from walking. I'm teaching him. He's learning from me. His eyes change from \"when will you notice me\" to \"we're a team.\"": "这和遛狗不一样。我在教他，他在跟我学。他的眼神从\"你什么时候才注意到我\"变成了\"我们是一个团队\"。", "Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard — open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.": "Cooper在狗床上打盹好几个小时了。最后一次去后院——开门，他跑出去，解决完，跑回来。伸缩棒搞定剩下的。六十秒。", "I settle into the couch. Cooper comes over. He doesn't need another walk — he just wants to do something together.": "我坐到沙发上。Cooper过来了。他不需要再出去遛——他只是想跟我一起做点什么。", "I clip on the hands-free leash belt, grab the telescoping poop bag wand off the hook by the door, and we head out. This time I take the longer route — through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.": "我系上免手提狗绳腰带，从门边挂钩上拿下伸缩捡屎棒，出发了。这次我走了更远的路——穿过小区，经过公园。手里端着咖啡，戴着AirPods。", "Cooper knows three things: you left, you came back, and — is it Sunday yet? Can we go to the big park?": "Cooper只知道三件事：你走了，你回来了，还有——今天周日了吗？能去大公园了吗？", "Active": "活跃"}, "es": {"9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day": "Crianza de perros de 9 a 5: Cómo el equipo adecuado te ahorra una hora al día", "A week in the life with Cooper. Discover the best dog gear for busy owners — auto feeders, pet cameras, puzzle toys, and more. Real Amazon ratings included.": "Una semana en la vida de Cooper. Descubre los mejores accesorios para dueños ocupados — comederos automáticos, cámaras, juguetes y más. Calificaciones reales de Amazon.", "A week in the life with Cooper. How the right gear cuts weekday dog chores in half and doubles the quality of your weekend time together.": "Una semana en la vida de Cooper. El equipo adecuado reduce a la mitad las tareas de la semana y duplica la calidad del tiempo juntos el fin de semana.", "On this page": "En esta página", "Share this article": "Compartir este artículo", "Back to top": "Volver arriba", "Ratings from Amazon": "Calificaciones de Amazon", "↑ Back to top": "↑ Volver arriba", "Reading time: 8 minutes • Products available on Amazon • Created for the US market": "Lectura: 8 min • Productos en Amazon • Para el mercado de EE.UU.", "For every busy professional who loves their dog but just doesn't have the time. A week in the life with Cooper.": "Para cada profesional ocupado que ama a su perro pero no tiene tiempo. Una semana en la vida de Cooper.", "Written for busy dog parents • Made with 🐕 and coffee • Back to top": "Escrito para dueños ocupados • Hecho con 🐕 y café • Volver arriba", "Disclosure": "Divulgación", "Affiliate Disclosure:": "Divulgación de afiliados:", "This article contains affiliate links. As an Amazon Associate I earn from qualifying purchases.": "Este artículo contiene enlaces de afiliados. Como asociado de Amazon, gano por compras calificadas.", "I have a dog named Cooper. He doesn't know what a meeting is, what a deadline is, or why I can't just play with him whenever I want.": "Tengo un perro llamado Cooper. No sabe qué es una reunión, un plazo, ni por qué no puedo jugar con él cuando quiero.", "I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?": "Antes me sentía culpable cada vez que cerraba la puerta y lo oía gemir. ¿De verdad funciona un trabajo de 9 a 5 con un perro?", "Turns out, the question isn't whether it works. The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.": "Resulta que la pregunta no es si funciona, sino cómo lo organizas. El buen equipo reduce las tareas entre semana a la mitad y duplica el tiempo de calidad del fin de semana.", "Here's what a real week looks like.": "Así es una semana real.", "One rule for the workweek: if a machine can do it, let it.": "Una regla para los días laborales: si una máquina puede hacerlo, déjala.", "The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.": "La clave es cómo lo organizas. El buen equipo reduce las tareas entre semana a la mitad y duplica el tiempo de calidad del fin de semana.", "☕ Mon — Fri": "☕ Lun — Vie", "☕ Monday — Friday": "☕ Lunes — Viernes", "🌿 Weekend": "🌿 Fin de semana", "📊 The Math": "📊 Los números", "📋 Full Product List": "📋 Lista completa", "💬 One Last Thing": "💬 Una última cosa", "Sat morning": "Sáb mañana", "Sun morning": "Dom mañana", "Better bonding": "Más conexión", "Saves time": "Ahorra tiempo", "Category": "Categoría", "When": "Cuándo", "Full product list": "Lista completa de productos", "Dog Parenting Guide": "Guía de Equipo para Perros", "Cooper's Parent": "El dueño de Cooper", "PETLIBRO 5G WiFi Auto Feeder - smart pet feeder for busy dog owners": "PETLIBRO 5G WiFi Auto Feeder - comedero inteligente para dueños ocupados", "📊 The math: time invested vs time saved": "📊 Los números: tiempo invertido vs tiempo ahorrado", "🌅 7:00 AM — The alarm goes off. So does the dog.": "🌅 7:00 AM — Suena la alarma. Y el perro también.", "🍳 7:30 AM — Breakfast for two": "🍳 7:30 AM — Desayuno para dos", "💼 9:00 AM — 12:00 PM — While I'm at work": "💼 9:00 AM — 12:00 PM — Mientras trabajo", "🍱 12:00 PM — Didn't even think about it": "🍱 12:00 PM — Ni lo pensé", "☕ 3:00 PM — Coffee break + a peek at home": "☕ 3:00 PM — Café + un vistazo a casa", "💩 The unsung hero of every walk": "💩 El héroe olvidado de cada paseo", "🌆 7:00 PM — The evening walk": "🌆 7:00 PM — El paseo de la tarde", "🛋️ 8:00 PM — Couch time": "🛋️ 8:00 PM — Tiempo en el sofá", "🌙 10:00 PM — Last trip before bed": "🌙 10:00 PM — Última salida antes de dormir", "🛌 Saturday morning — The dog is my alarm clock": "🛌 Sábado mañana — El perro es mi despertador", "🛍️ Saturday afternoon — Out and about": "🛍️ Sábado tarde — De paseo", "☕ Sunday morning — Coffee + clicker training": "☕ Domingo mañana — Café + entrenamiento", "🛋️ Sunday afternoon — The recharge": "🛋️ Domingo tarde — La recarga", "Weekday time savings": "Ahorro de tiempo entre semana", "🌿 Saturday & Sunday": "🌿 Sábado y Domingo", "🍼 Auto Feeder": "🍼 Comedero automático", "💧 Water Fountain": "💧 Fuente de agua", "🛏️ Dog Bed": "🛏️ Cama para perro", "📹 Pet Camera": "📹 Cámara para mascotas", "🧶 Stuffable Treat Toy (Kong-style)": "🧶 Juguete rellenable (estilo Kong)", "🧩 Puzzle Toy": "🧩 Juguete rompecabezas", "🎒 Hands-Free Leash": "🎒 Correa manos libres", "📡 Poop Bag Wand": "📡 Recogedor de desechos", "🤖 Robot Vacuum": "🤖 Aspiradora robot", "🔔 Clicker Training Kit": "🔔 Kit de entrenamiento con clicker", "🔔 Clicker Training": "🔔 Entrenamiento con clicker", "🍼 Automatic Pet Feeder": "🍼 Comedero automático", "💧 Pet Water Fountain": "💧 Fuente para mascotas", "🧸 Kong Toy": "🧸 Juguete Kong", "🎒 Hands-Free Leash Belt": "🎒 Correa manos libres", "📡 Telescoping Poop Bag Wand": "📡 Recogedor telescópico", "if a machine can do it, let it.": "si una máquina puede hacerlo, déjala.", "automatic feeder": "comedero automático", "automatic pet feeder": "comedero automático para mascotas", "water fountain": "fuente de agua", "dog bed": "cama para perro", "pet camera": "cámara para mascotas", "Kong toy": "juguete Kong", "puzzle toy": "juguete rompecabezas", "hands-free leash belt": "correa manos libres", "telescoping poop bag wand": "recogedor telescópico", "robot vacuum": "aspiradora robot", "clicker training kit": "kit de entrenamiento con clicker", "actually hanging out with your dog": "pasar tiempo de verdad con tu perro", "The auto feeder is the single biggest time-saver.": "El comedero automático es el que más tiempo ahorra.", "Weekend walks are different.": "Los paseos de fin de semana son diferentes.", "This is different from walking. I'm teaching him. He's learning from me.": "Esto es diferente a pasear. Le estoy enseñando. Él está aprendiendo de mí.", "saves 5 min/day": "ahorra 5 min/día", "saves 3 min/day": "ahorra 3 min/día", "saves bending": "sin agacharse", "buys 20 min peace": "20 min de paz", "peace of mind": "tranquilidad", "frees up hands": "manos libres", "mental stimulation": "estimulación mental", "saves 30 min/week": "ahorra 30 min/semana", "Before:": "Antes:", "Now:": "Ahora:", "Cooper is already standing by my bed, staring at me like, \"You're awake. Finally. I've been waiting all night.\"": "Cooper ya está junto a mi cama, mirándome como diciendo: \"¡Despertaste! Por fin. Te esperé toda la noche.\"", "Now: I pet him on the head and head for the sink to brush my teeth. Why?": "Ahora: le acaricio la cabeza y voy al baño a cepillarme los dientes. ¿Por qué?", "Before: Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.": "Antes: bajar a tropezones, servir comida, llenar agua, cepillarme. Cooper siempre debajo de los pies. Estrés antes del café.", "Because I have an automatic pet feeder. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.": "Porque tengo un comedero automático. Lo configuro una vez — cabe unos 5 litros de comida, suficiente para días. Programé desayuno a las 7:05 AM, almuerzo al mediodía y cena a las 6:00 PM. Cuando bajo, Cooper ya desayunó. Me preparo café. Pasamos tiempo juntos — sin prisas.", "I'm eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: \"Are you done? Can we play?\"": "Estoy comiendo tostadas y huevos. Cooper ya desayunó y me mira desde el suelo. Traducción: \"¿Terminaste? ¿Podemos jugar?\"", "Before: Scarf down my food, play for 5 minutes, rush out the door feeling guilty.": "Antes: engullir la comida, jugar 5 minutos, salir corriendo sintiéndome culpable.", "Now: I grab a Kong toy I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.": "Ahora: tomo un Kong que rellené con mantequilla de maní y congelé anoche. Cooper lo lame, lo rueda y tarda 20 minutos en sacar hasta lo último. Termino mi tostada en paz.", "\"I used to feel guilty every morning. Now we both win.\"": "\"Antes me sentía culpable cada mañana. Ahora: los dos ganamos.\"", "After dinner, I've had a chance to rest and Cooper is ready to go.": "Después de cenar, he descansado y Cooper está listo para salir.", "I clip on the hands-free leash belt, grab the telescoping poop bag wand off the hook by the door, and we head out.": "Me pongo el cinturón manos libres, agarro el recogedor del gancho, y salimos.", "This is the real walk. The one where Cooper and I actually hang out together after a long day.": "Este es el paseo de verdad. Donde Cooper y yo pasamos tiempo juntos después de un largo día.", "Not just a walk. This is me and Cooper, finally hanging out.": "No solo un paseo. Cooper y yo, finalmente juntos.", "Back from the walk. Cooper is satisfied. I'm relaxed.": "De vuelta del paseo. Cooper está satisfecho. Yo estoy relajado.", "Cooper is on his bed next to the couch.": "Cooper está en su cama junto al sofá.", "I settle into the couch. Cooper comes over.": "Me siento en el sofá. Cooper viene.", "We're doing our own thing, but together. It's the best kind of quiet.": "Cada uno hace lo suyo, pero juntos. Es el mejor tipo de silencio.", "Cooper has been dozing on his bed for a couple of hours.": "Cooper ha estado dormitando en su cama un par de horas.", "I turn off the light and think: I spent maybe 30 minutes actively taking care of him today.": "Apago la luz y pienso: hoy pasé solo 30 minutos cuidándolo activamente.", "He just knows I'm here. And I know he's here.": "Él sabe que estoy aquí. Y yo sé que él está aquí.", "That's a lot more than I used to have.": "Eso es mucho más de lo que solía tener.", "That's the whole deal.": "Eso es todo.", "Sunday is Cooper's favorite day.": "El domingo es el día favorito de Cooper.", "Sunday afternoon is for doing nothing.": "El domingo por la tarde es para no hacer nada.", "Your dog doesn't understand why you leave every day.": "Tu perro no entiende por qué te vas cada día.", "But they understand:": "Pero entienden:", "Get the tools that shrink the boring stuff.": "Consigue las herramientas que reducen lo aburrido.", "Having a dog isn't about how much time you spend on chores.": "Tener un perro no se trata de cuánto tiempo pasas en tareas.", "PETLIBRO 5G WiFi Auto Feeder 5L": "PETLIBRO 5G WiFi Comedero Automático 5L", "4L Cat/Dog Feeder with Voice Recorder": "Comedero 4L para Gato/Perro con Grabador de Voz", "FEELNEEDY Wireless Stainless Steel Fountain": "Fuente Inalámbrica de Acero Inoxidable FEELNEEDY", "Veken 95oz Pet Fountain with Replacement Filters": "Fuente para Mascotas Veken 95oz con Filtros", "KONG Classic Large Dog Toy": "Juguete Clásico Grande KONG para Perro", "Furbo 360 Dog Camera": "Cámara Furbo 360 para Perros", "eufy Security 4K Indoor Cam E30": "Cámara Interior 4K eufy E30", "EHEYCIGA Orthopedic Dog Bed 44x32": "Cama Ortopédica EHEYCIGA 44x32", "Bedsure Orthopedic Large Dog Bed": "Cama Ortopédica Grande Bedsure", "XL Washable Orthopedic Dog Sofa": "Sofá Ortopédico Lavable XL para Perro", "Foldable Hands-Free Pooper Scooper": "Recogedor Plegable Manos Libres", "GoGo Stik XP Ergonomic Scooper": "Recogedor Ergonómico GoGo Stik XP", "Hands Free Dog Leash with Pouch": "Correa Manos Libres con Bolsa", "DR CATCH Dog Puzzle Toy": "Juguete Rompecabezas DR CATCH", "PETSTA Dog Puzzle Toys": "Juguetes Rompecabezas PETSTA", "Shark AI Ultra Robot Vacuum": "Aspiradora Robot Shark AI Ultra", "eufy C10 Robot Vacuum": "Aspiradora Robot eufy C10", "eufy C28 Robot Vacuum & Mop": "Aspiradora y Trapeador Robot eufy C28", "Dog Training Clicker with Wrist Strap": "Clicker de Entrenamiento con Correa para Muñeca", "10:00 PM": "10:00 PM", "12:00 PM": "12:00 PM", "3:00 PM": "3:00 PM", "7:00 AM": "7:00 AM", "7:00 PM": "7:00 PM", "7:30 AM": "7:30 AM", "8:00 PM": "8:00 PM", "9:00 AM": "9:00 AM", "8:00 AM — I'm actually awake. Leash belt on. Pocket the poop wand. We head out.": "8:00 AM — Estoy despierto. Cinturón puesto. Recogedor en el bolsillo. Salimos.", "Before: Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately, then we're both too tired to do anything productive. Half the morning gone.": "Antes: Cooper me despierta a las 7 AM lamiéndome la cara. Salgo, lo paseo, y los dos estamos demasiado cansados. Media mañana perdida.", "But we had real moments together:": "Pero tuvimos momentos reales juntos:", "For 20 minutes I can:": "Por 20 minutos puedo:", "Now it's time for the real walk — not the backyard pit stop from earlier.": "Ahora es el paseo de verdad — no la parada rápida al patio de antes.", "~63 minutes saved per weekday × 5 days = ~5.25 hours per week": "~63 min ahorrados por día × 5 días = ~5.25 horas por semana", "Your dog doesn't understand why you leave every day. They don't know what \"work\" means.": "Tu perro no entiende por qué te vas cada día. No saben qué significa \"trabajo\".", "Weekdays are for getting things done. Weekends are for actually hanging out with your dog — while catching up on the stuff you can't do Monday through Friday.": "Los días de semana son para hacer cosas. Los fines de semana para pasar tiempo con tu perro — y hacer lo que no puedes de lunes a viernes.", "Not sure where to start? The auto feeder is the single biggest time-saver. Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.": "¿No sabes por dónde empezar? El comedero automático ahorra más tiempo. Configúralo una vez y mira a Cooper esperar a las 6 PM. O si los paseos son tu problema, compra el recogedor. Quince dólares y tu espalda te lo agradecerá.", "Active": "Activo"}, "en": {"\"I used to feel guilty every morning. Now we both win.\"": "\"I used to feel guilty every morning. Now we both win.\"", "+10 min": "+10 min", "+13 min": "+13 min", "+2 min": "+2 min", "+30 min": "+30 min", "+8 min": "+8 min", "10:00 PM": "10:00 PM", "12:00 PM": "12:00 PM", "3.9★ (685 ratings)": "3.9★ (685 ratings)", "3.9★ (992 ratings)": "3.9★ (992 ratings)", "3:00 PM": "3:00 PM", "4.0★ (6,315 ratings)": "4.0★ (6,315 ratings)", "4.1★ (4,298 ratings)": "4.1★ (4,298 ratings)", "4.3★ (3,200+ ratings)": "4.3★ (3,200+ ratings)", "4.3★ (40,250 ratings)": "4.3★ (40,250 ratings)", "4.4★ (16,162 ratings)": "4.4★ (16,162 ratings)", "4.4★ (16,699 ratings)": "4.4★ (16,699 ratings)", "4.4★ (6,492 ratings)": "4.4★ (6,492 ratings)", "4.5★ (2,413 ratings)": "4.5★ (2,413 ratings)", "4.5★ (2,420 ratings)": "4.5★ (2,420 ratings)", "4.5★ (2,539 ratings)": "4.5★ (2,539 ratings)", "4.5★ (20,705 ratings)": "4.5★ (20,705 ratings)", "4.5★ (35 ratings)": "4.5★ (35 ratings)", "4.5★ (51,194 ratings)": "4.5★ (51,194 ratings)", "4.5★ (8,759 ratings)": "4.5★ (8,759 ratings)", "4.6★ (20,839 ratings)": "4.6★ (20,839 ratings)", "4.6★ (91,934 ratings)": "4.6★ (91,934 ratings)", "4L Cat/Dog Feeder with Voice Recorder": "4L Cat/Dog Feeder with Voice Recorder", "7:00 AM": "7:00 AM", "7:00 PM": "7:00 PM", "7:30 AM": "7:30 AM", "8:00 AM — I'm actually awake. Leash belt on. Pocket the poop wand. We head out.": "8:00 AM — I'm actually awake. Leash belt on. Pocket the poop wand. We head out.", "8:00 PM": "8:00 PM", "9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day": "9-to-5 Dog Parenting: How the Right Gear Saves You an Hour a Day", "9:00 AM": "9:00 AM", "A hike at the local park. Coffee on a dog-friendly patio. Maybe a quick trip to PetSmart for supplies. Errands are better when Cooper is along.": "A hike at the local park. Coffee on a dog-friendly patio. Maybe a quick trip to PetSmart for supplies. Errands are better when Cooper is along.", "A week in the life with Cooper. Discover the best dog gear for busy owners — auto feeders, pet cameras, puzzle toys, and more. Real Amazon ratings included.": "A week in the life with Cooper. Discover the best dog gear for busy owners — auto feeders, pet cameras, puzzle toys, and more. Real Amazon ratings included.", "A week in the life with Cooper. How the right gear cuts weekday dog chores in half and doubles the quality of your weekend time together.": "A week in the life with Cooper. How the right gear cuts weekday dog chores in half and doubles the quality of your weekend time together.", "Affiliate Disclosure:": "Affiliate Disclosure:", "After dinner, I've had a chance to rest and Cooper is ready to go.": "After dinner, I've had a chance to rest and Cooper is ready to go.", "And his water fountain keeps fresh water running all day. I clean it once a week instead of scrubbing a slimy bowl every morning. That alone is worth it.": "And his water fountain keeps fresh water running all day. I clean it once a week instead of scrubbing a slimy bowl every morning. That alone is worth it.", "At noon, the feeder does its thing. Cooper eats lunch. I'm in a meeting. Nobody had to go home.": "At noon, the feeder does its thing. Cooper eats lunch. I'm in a meeting. Nobody had to go home.", "Back from the walk. Cooper is satisfied. I'm relaxed.": "Back from the walk. Cooper is satisfied. I'm relaxed.", "Back to top": "Back to top", "Because I have an automatic pet feeder. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.": "Because I have an automatic pet feeder. I set it up once — it holds about 5 liters of dog food, enough to last days. It's programmed to dispense breakfast at 7:05 AM, lunch at noon, and dinner at 6:00 PM. By the time I come downstairs, Cooper has already eaten breakfast. I make my coffee. We hang out for a bit — no rush.", "Bedsure Orthopedic Large Dog Bed": "Bedsure Orthopedic Large Dog Bed", "Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella in one hand and a leash in the other. Summer heat — you know that smell.": "Before I had this: freezing mornings, bending over, fingers too cold to open a bag. Rainy days with an umbrella in one hand and a leash in the other. Summer heat — you know that smell.", "Before I walk out, I tap the robot vacuum app. It starts cleaning while we're gone. No more coming home to tumbleweeds of dog hair.": "Before I walk out, I tap the robot vacuum app. It starts cleaning while we're gone. No more coming home to tumbleweeds of dog hair.", "Before:": "Before:", "Before: Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately (he's been holding it all night), then we're both too tired to do anything productive. Half the morning gone.": "Before: Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately (he's been holding it all night), then we're both too tired to do anything productive. Half the morning gone.", "Before: I'd sit at my desk and just miss the little guy. That first week back after a long weekend was the worst — I kept thinking about him at home, wondering what he was up to. No way to just reach over and pet him. It sucks being away from your best friend for nine hours.": "Before: I'd sit at my desk and just miss the little guy. That first week back after a long weekend was the worst — I kept thinking about him at home, wondering what he was up to. No way to just reach over and pet him. It sucks being away from your best friend for nine hours.", "Before: Scarf down my food, play for 5 minutes, rush out the door feeling guilty.": "Before: Scarf down my food, play for 5 minutes, rush out the door feeling guilty.", "Before: Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.": "Before: Stumble downstairs, scoop dog food, refill water bowl, then brush my teeth. Cooper underfoot the whole time. Stress before coffee.", "Best part of my afternoon. I open the pet camera app. Cooper hears my voice through the speaker — ears perk up, tail wags.": "Best part of my afternoon. I open the pet camera app. Cooper hears my voice through the speaker — ears perk up, tail wags.", "But they understand:": "But they understand:", "But we had real moments together:": "But we had real moments together:", "Clip a bag onto the ring at the end. Reach out. Scoop. Flip the bag. Tie it. Collapse the wand. Back in my pocket.": "Clip a bag onto the ring at the end. Reach out. Scoop. Flip the bag. Tie it. Collapse the wand. Back in my pocket.", "Cooper and I head out together. The house gets cleaned while we're gone. Win-win.": "Cooper and I head out together. The house gets cleaned while we're gone. Win-win.", "Cooper curls up on his bed.": "Cooper curls up on his bed.", "Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard — open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.": "Cooper has been dozing on his bed for a couple of hours. One last quick trip to the backyard — open the door, he runs out, does his thing, runs back in. The telescoping wand handles the rest. Sixty seconds.", "Cooper is already standing by my bed, staring at me like, \"You're awake. Finally. I've been waiting all night.\"": "Cooper is already standing by my bed, staring at me like, \"You're awake. Finally. I've been waiting all night.\"", "Cooper is on his bed next to the couch. I'm reading a book or watching a game. No toys. No walks. No gadgets.": "Cooper is on his bed next to the couch. I'm reading a book or watching a game. No toys. No walks. No gadgets.", "Cooper knows three things: you left, you came back, and — is it Sunday yet? Can we go to the big park?": "Cooper knows three things: you left, you came back, and — is it Sunday yet? Can we go to the big park?", "Cooper's Parent": "Cooper's Parent", "DR CATCH Dog Puzzle Toy": "DR CATCH Dog Puzzle Toy", "Dog Parenting Guide": "Dog Parenting Guide", "Dog Training Clicker with Wrist Strap": "Dog Training Clicker with Wrist Strap", "EHEYCIGA Orthopedic Dog Bed 44x32": "EHEYCIGA Orthopedic Dog Bed 44x32", "FEELNEEDY Wireless Stainless Steel Fountain": "FEELNEEDY Wireless Stainless Steel Fountain", "Fifteen bucks fixed all of it.": "Fifteen bucks fixed all of it.", "Foldable Hands-Free Pooper Scooper": "Foldable Hands-Free Pooper Scooper", "For 20 minutes I can:": "For 20 minutes I can:", "For every busy professional who loves their dog but just doesn't have the time. A week in the life with Cooper.": "For every busy professional who loves their dog but just doesn't have the time. A week in the life with Cooper.", "Furbo 360 Dog Camera": "Furbo 360 Dog Camera", "Get the tools that shrink the boring stuff. Spend the extra time on what matters.": "Get the tools that shrink the boring stuff. Spend the extra time on what matters.", "GoGo Stik XP Ergonomic Scooper": "GoGo Stik XP Ergonomic Scooper", "Hands Free Dog Leash with Pouch": "Hands Free Dog Leash with Pouch", "Having a dog isn't about how much time you spend on chores. It's about the time you actually spend together.": "Having a dog isn't about how much time you spend on chores. It's about the time you actually spend together.", "He just knows I'm here. And I know he's here.": "He just knows I'm here. And I know he's here.", "Here's the thing that changed everything: a telescoping poop bag wand.": "Here's the thing that changed everything: a telescoping poop bag wand.", "Here's what a real week looks like.": "Here's what a real week looks like.", "I clip on the hands-free leash belt, grab the telescoping poop bag wand off the hook by the door, and we head out. This time I take the longer route — through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.": "I clip on the hands-free leash belt, grab the telescoping poop bag wand off the hook by the door, and we head out. This time I take the longer route — through the neighborhood, past the park. Coffee tumbler in hand. AirPods in.", "I grab a clicker training kit. Fifteen minutes in the backyard. We work on a new trick — \"spin.\" By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.": "I grab a clicker training kit. Fifteen minutes in the backyard. We work on a new trick — \"spin.\" By the third try, Cooper gets it and runs around showing off. I'm not gonna lie, I feel pretty proud.", "I grab a puzzle toy, stuff a few treats in, and let him figure it out. He rolls it around on his bed, totally focused.": "I grab a puzzle toy, stuff a few treats in, and let him figure it out. He rolls it around on his bed, totally focused.", "I have a dog named Cooper. He doesn't know what a meeting is, what a deadline is, or why I can't just play with him whenever I want.": "I have a dog named Cooper. He doesn't know what a meeting is, what a deadline is, or why I can't just play with him whenever I want.", "I settle into the couch. Cooper comes over. He doesn't need another walk — he just wants to do something together.": "I settle into the couch. Cooper comes over. He doesn't need another walk — he just wants to do something together.", "I tap \"treat.\" A piece flies across the room. Cooper loses his mind.": "I tap \"treat.\" A piece flies across the room. Cooper loses his mind.", "I turn off the light and think: I spent maybe 30 minutes actively taking care of him today. But we had real moments together:": "I turn off the light and think: I spent maybe 30 minutes actively taking care of him today. But we had real moments together:", "I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?": "I used to feel guilty every time I closed the door and heard him whimper. Can a 9-to-5 job really work with a dog?", "I watch a show. He's at my feet, busy but close.": "I watch a show. He's at my feet, busy but close.", "I'm eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: \"Are you done? Can we play?\"": "I'm eating toast and eggs. Cooper has finished his breakfast and is now staring at me from the floor. Translation: \"Are you done? Can we play?\"", "It's a slender plastic rod that collapses down to about the length of a TV remote. Lives clipped to my leash. When I need it, I pull it out — section by section — to about 24 inches.": "It's a slender plastic rod that collapses down to about the length of a TV remote. Lives clipped to my leash. When I need it, I pull it out — section by section — to about 24 inches.", "KONG Classic Large Dog Toy": "KONG Classic Large Dog Toy", "Kong toy": "Kong toy", "Not because we go anywhere fancy. Because we do something together.": "Not because we go anywhere fancy. Because we do something together.", "Not just a walk. This is me and Cooper, finally hanging out.": "Not just a walk. This is me and Cooper, finally hanging out.", "Not sure where to start? The auto feeder is the single biggest time-saver. Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.": "Not sure where to start? The auto feeder is the single biggest time-saver. Set it up once and watch Cooper wait by it at 6 PM sharp — it's oddly satisfying. Or if walks are your pain point, grab the poop wand. Fifteen bucks and your back will thank you by day two.", "Now it's time for the real walk — not the backyard pit stop from earlier.": "Now it's time for the real walk — not the backyard pit stop from earlier.", "Now:": "Now:", "Now: I grab a Kong toy I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.": "Now: I grab a Kong toy I stuffed with peanut butter and froze the night before. Cooper takes it and spends 20 minutes licking, rolling, and figuring out how to get every last bit out. I finish my toast in peace.", "Now: I open the pet camera app on my phone for 3 seconds. There he is, curled up on his bed, snoozing away. Just seeing his face makes the rest of the afternoon go by easier.": "Now: I open the pet camera app on my phone for 3 seconds. There he is, curled up on his bed, snoozing away. Just seeing his face makes the rest of the afternoon go by easier.", "Now: I pet him on the head and head for the sink to brush my teeth. Why?": "Now: I pet him on the head and head for the sink to brush my teeth. Why?", "Now: The automatic feeder handles breakfast. Cooper eats. I sleep an extra 30 minutes.": "Now: The automatic feeder handles breakfast. Cooper eats. I sleep an extra 30 minutes.", "On this page": "On this page", "One last thing": "One last thing", "One rule for the workweek: if a machine can do it, let it.": "One rule for the workweek: if a machine can do it, let it.", "PETLIBRO 5G WiFi Auto Feeder - smart pet feeder for busy dog owners": "PETLIBRO 5G WiFi Auto Feeder - smart pet feeder for busy dog owners", "PETLIBRO 5G WiFi Auto Feeder 5L": "PETLIBRO 5G WiFi Auto Feeder 5L", "PETSTA Dog Puzzle Toys": "PETSTA Dog Puzzle Toys", "Pick the one thing that bugs you the most right now. Start there.": "Pick the one thing that bugs you the most right now. Start there.", "Reading time: 8 minutes &bull; Products available on Amazon &bull; Created for the US market": "Reading time: 8 minutes &bull; Products available on Amazon &bull; Created for the US market", "Sat morning": "Sat morning", "Share this article": "Share this article", "Shark AI Ultra Robot Vacuum": "Shark AI Ultra Robot Vacuum", "Sun morning": "Sun morning", "Sunday afternoon is for doing nothing.": "Sunday afternoon is for doing nothing.", "Sunday is Cooper's favorite day.": "Sunday is Cooper's favorite day.", "That's a lot more than I used to have.": "That's a lot more than I used to have.", "That's the whole deal.": "That's the whole deal.", "That's the whole point of weekends.": "That's the whole point of weekends.", "The auto feeder is the single biggest time-saver.": "The auto feeder is the single biggest time-saver.", "The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.": "The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.", "This article contains affiliate links. As an Amazon Associate I earn from qualifying purchases.": "This article contains affiliate links. As an Amazon Associate I earn from qualifying purchases.", "This is different from walking. I'm teaching him. He's learning from me.": "This is different from walking. I'm teaching him. He's learning from me.", "This is different from walking. I'm teaching him. He's learning from me. His eyes change from \"when will you notice me\" to \"we're a team.\"": "This is different from walking. I'm teaching him. He's learning from me. His eyes change from \"when will you notice me\" to \"we're a team.\"", "This is the real walk. The one where Cooper and I actually hang out together after a long day.": "This is the real walk. The one where Cooper and I actually hang out together after a long day.", "Three minutes of this and I'm in a better mood. Way better than scrolling Instagram.": "Three minutes of this and I'm in a better mood. Way better than scrolling Instagram.", "Turns out, the question isn't whether it works. The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.": "Turns out, the question isn't whether it works. The question is how you set it up. Good gear cuts weekday chores in half and doubles the quality of your weekend time together.", "Veken 95oz Pet Fountain with Replacement Filters": "Veken 95oz Pet Fountain with Replacement Filters", "We're doing our own thing, but together. It's the best kind of quiet.": "We're doing our own thing, but together. It's the best kind of quiet.", "Weekday time savings": "Weekday time savings", "Weekdays are for getting things done. Weekends are for actually hanging out with your dog — while catching up on the stuff you can't do Monday through Friday.": "Weekdays are for getting things done. Weekends are for actually hanging out with your dog — while catching up on the stuff you can't do Monday through Friday.", "Weekend walks are different.": "Weekend walks are different.", "Weekend walks are different. We take the long route to the park. I grab a coffee on the way. Cooper sniffs everything. I'm not rushing anywhere.": "Weekend walks are different. We take the long route to the park. I grab a coffee on the way. Cooper sniffs everything. I'm not rushing anywhere.", "While I'm in meetings, Cooper is most likely napping on his dog bed, or chewing on the Kong I left him.": "While I'm in meetings, Cooper is most likely napping on his dog bed, or chewing on the Kong I left him.", "Written for busy dog parents &bull; Made with 🐕 and coffee &bull; Back to top": "Written for busy dog parents &bull; Made with 🐕 and coffee &bull; Back to top", "XL Washable Orthopedic Dog Sofa": "XL Washable Orthopedic Dog Sofa", "Your back stays straight. Your hands touch nothing.": "Your back stays straight. Your hands touch nothing.", "Your dog doesn't understand why you leave every day. They don't know what \"work\" means.": "Your dog doesn't understand why you leave every day. They don't know what \"work\" means.", "actually hanging out with your dog": "actually hanging out with your dog", "automatic feeder": "automatic feeder", "automatic pet feeder": "automatic pet feeder", "buys 20 min peace": "buys 20 min peace", "clicker training kit": "clicker training kit", "dog bed": "dog bed", "eufy C10 Robot Vacuum": "eufy C10 Robot Vacuum", "eufy C28 Robot Vacuum & Mop": "eufy C28 Robot Vacuum & Mop", "eufy Security 4K Indoor Cam E30": "eufy Security 4K Indoor Cam E30", "frees up hands": "frees up hands", "hands-free leash belt": "hands-free leash belt", "if a machine can do it, let it.": "if a machine can do it, let it.", "index, follow": "index, follow", "mental stimulation": "mental stimulation", "peace of mind": "peace of mind", "pet camera": "pet camera", "puzzle toy": "puzzle toy", "robot vacuum": "robot vacuum", "saves 3 min/day": "saves 3 min/day", "saves 30 min/week": "saves 30 min/week", "saves 5 min/day": "saves 5 min/day", "saves bending": "saves bending", "telescoping poop bag wand": "telescoping poop bag wand", "water fountain": "water fountain", "~63 minutes saved per weekday × 5 days = ~5.25 hours per week": "~63 minutes saved per weekday × 5 days = ~5.25 hours per week", "↑ Back to top": "↑ Back to top", "☕ 3:00 PM — Coffee break + a peek at home": "☕ 3:00 PM — Coffee break + a peek at home", "☕ Mon — Fri": "☕ Mon — Fri", "☕ Monday — Friday": "☕ Monday — Friday", "☕ Sunday morning — Coffee + clicker training": "☕ Sunday morning — Coffee + clicker training", "🌅 7:00 AM — The alarm goes off. So does the dog.": "🌅 7:00 AM — The alarm goes off. So does the dog.", "🌆 7:00 PM — The evening walk": "🌆 7:00 PM — The evening walk", "🌙 10:00 PM — Last trip before bed": "🌙 10:00 PM — Last trip before bed", "🌿 Saturday &amp; Sunday": "🌿 Saturday &amp; Sunday", "🌿 Weekend": "🌿 Weekend", "🍱 12:00 PM — Didn't even think about it": "🍱 12:00 PM — Didn't even think about it", "🍳 7:30 AM — Breakfast for two": "🍳 7:30 AM — Breakfast for two", "🍼 Auto Feeder": "🍼 Auto Feeder", "🍼 Automatic Pet Feeder": "🍼 Automatic Pet Feeder", "🎒 Hands-Free Leash": "🎒 Hands-Free Leash", "🎒 Hands-Free Leash Belt": "🎒 Hands-Free Leash Belt", "💧 Pet Water Fountain": "💧 Pet Water Fountain", "💧 Water Fountain": "💧 Water Fountain", "💩 The unsung hero of every walk": "💩 The unsung hero of every walk", "💬 One Last Thing": "💬 One Last Thing", "💼 9:00 AM — 12:00 PM — While I'm at work": "💼 9:00 AM — 12:00 PM — While I'm at work", "📊 The Math": "📊 The Math", "📊 The math: time invested vs time saved": "📊 The math: time invested vs time saved", "📋 Full Product List": "📋 Full Product List", "📋 Full product list": "📋 Full product list", "📡 Poop Bag Wand": "📡 Poop Bag Wand", "📡 Telescoping Poop Bag Wand": "📡 Telescoping Poop Bag Wand", "📹 Pet Camera": "📹 Pet Camera", "🔔 Clicker Training": "🔔 Clicker Training", "🔔 Clicker Training Kit": "🔔 Clicker Training Kit", "🛋️ 8:00 PM — Couch time": "🛋️ 8:00 PM — Couch time", "🛋️ Sunday afternoon — The recharge": "🛋️ Sunday afternoon — The recharge", "🛌 Saturday morning — The dog is my alarm clock": "🛌 Saturday morning — The dog is my alarm clock", "🛍️ Saturday afternoon — Out and about": "🛍️ Saturday afternoon — Out and about", "🛏️ Dog Bed": "🛏️ Dog Bed", "🤖 Robot Vacuum": "🤖 Robot Vacuum", "🧩 Puzzle Toy": "🧩 Puzzle Toy", "🧶 Stuffable Treat Toy (Kong-style)": "🧶 Stuffable Treat Toy (Kong-style)", "🧸 Kong Toy": "🧸 Kong Toy", "Before: Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately, then we're both too tired to do anything productive. Half the morning gone.": "Before: Cooper wakes me at 7 AM by licking my face. Stumble out, walk him immediately, then we're both too tired to do anything productive. Half the morning gone.", "🌿 Saturday & Sunday": "🌿 Saturday & Sunday", "Active": "Active", "Disclosure": "Disclosure"}};
+
+function switchLanguage(lang) {
+  document.querySelectorAll('#langBar .lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  if (lang === 'en') {
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      el.textContent = el.getAttribute('data-i18n');
+    });
+    return;
+  }
+  var dict = LANG_DATA[lang];
+  if (!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    var trans = dict[key];
+    if (trans) el.textContent = trans;
+  });
+}
 
 // ---- NEW FEATURES ----
 
