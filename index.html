@@ -66,6 +66,30 @@
     }
     .disclosure strong{color:var(--accent);font-weight:600}
 
+    /* Sticky Navigation */
+    .nav-bar{
+      position:sticky;top:0;z-index:150;
+      background:#1a1a2e;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      max-width:860px;margin:0 auto;padding:0 20px;
+      display:flex;align-items:center;justify-content:center;
+      gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    }
+    .nav-link{
+      display:inline-block;padding:10px 20px;
+      font-size:14px;font-weight:500;color:#ccc;
+      text-decoration:none;border-radius:24px;
+      transition:all .15s;white-space:nowrap;
+    }
+    .nav-link:hover{color:#fff;background:rgba(255,255,255,.1)}
+    .nav-link.active{color:#fff;background:var(--accent);font-weight:600}
+    @media(max-width:580px){
+      .nav-inner{justify-content:flex-start;padding:0 12px;gap:2px}
+      .nav-link{font-size:13px;padding:8px 14px}
+    }
+
     .hero{
       padding:60px 20px 40px;
       text-align:center;
@@ -465,6 +489,17 @@
 <div class="disclosure">
   <strong>Affiliate Disclosure:</strong> This post contains affiliate links. If you buy something through these links, I may earn a small commission at no extra cost to you. I only recommend products I personally use and believe in.
 </div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav-bar" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="dog-food.html" class="nav-link">Dog Food</a>
+    <a href="treats.html" class="nav-link">Treats</a>
+    <a href="health.html" class="nav-link">Health</a>
+    <a href="cleaning.html" class="nav-link">Cleaning</a>
+  </div>
+</nav>
 
 <!-- ==================== HERO ==================== -->
 <header class="hero">
