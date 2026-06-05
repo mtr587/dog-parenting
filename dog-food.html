@@ -501,12 +501,9 @@
     }
     .calc-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin-bottom: 16px;
-    }
-    @media (max-width: 640px) {
-      .calc-row { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 400px) {
       .calc-row { grid-template-columns: 1fr; }
@@ -825,14 +822,6 @@
         <input type="number" id="dogWeight" value="50" min="1" max="250" oninput="updateCalc()">
       </div>
       <div class="field">
-        <label>Meals Per Day</label>
-        <select id="mealsPerDay" onchange="updateCalc()">
-          <option value="1">1 meal</option>
-          <option value="2" selected>2 meals</option>
-          <option value="3">3 meals</option>
-        </select>
-      </div>
-      <div class="field">
         <label>Food A — Price ($/lb)</label>
         <input type="number" id="priceA" value="11.55" min="0.01" step="0.01" oninput="updateCalc()">
       </div>
@@ -1121,9 +1110,8 @@
 <script>
 function updateCalc() {
   var w = parseFloat(document.getElementById('dogWeight').value) || 0;
-  var meals = parseInt(document.getElementById('mealsPerDay').value) || 2;
   var daily = (w * 0.02);
-  var perMealOz = (daily / meals) * 16;
+  var perMealOz = (daily / 2) * 16;
   var monthly = daily * 30;
   var pa = parseFloat(document.getElementById('priceA').value) || 0;
   
