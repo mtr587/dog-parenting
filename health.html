@@ -504,6 +504,20 @@
       opacity: .6;
       margin-top: 4px;
     }
+    .stat-src a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .stat-src a:hover { color: var(--accent); }
+
+    .source-link {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .source-link:hover { text-decoration: underline; }
 
     .health-section {
       background: var(--card);
@@ -674,22 +688,22 @@
     <div class="stat-card">
       <span class="stat-num">80<span class="stat-unit">%+</span></span>
       <span class="stat-desc">of dogs over age 3 have some form of dental disease</span>
-      <span class="stat-src">Source: AVMA</span>
+      <span class="stat-src">Source: <a href="https://www.avma.org/resources-tools/pet-owners/petcare/pet-dental-care" target="_blank" rel="noopener">AVMA</a></span>
     </div>
     <div class="stat-card">
       <span class="stat-num">56<span class="stat-unit">%</span></span>
       <span class="stat-desc">of dogs in the U.S. are overweight or obese — linked to joint disease, diabetes, and shortened lifespan</span>
-      <span class="stat-src">Source: APOP / Banfield</span>
+      <span class="stat-src">Source: <a href="https://petobesityprevention.org/" target="_blank" rel="noopener">APOP</a> / <a href="https://www.banfield.com/pet-health/state-of-pet-health" target="_blank" rel="noopener">Banfield</a></span>
     </div>
     <div class="stat-card">
       <span class="stat-num">1 in 4</span>
       <span class="stat-desc">dogs will develop cancer in their lifetime; early detection dramatically improves outcomes</span>
-      <span class="stat-src">Source: AKC / Veterinary Cancer Society</span>
+      <span class="stat-src">Source: <a href="https://www.akc.org/expert-advice/health/cancer-in-dogs/" target="_blank" rel="noopener">AKC</a> / <a href="https://vetcancersociety.org/" target="_blank" rel="noopener">Veterinary Cancer Society</a></span>
     </div>
     <div class="stat-card">
       <span class="stat-num">2-3 <span class="stat-unit">years</span></span>
       <span class="stat-desc">preventive care can extend a dog's life, according to AAHA guidelines</span>
-      <span class="stat-src">Source: AAHA</span>
+      <span class="stat-src">Source: <a href="https://www.aaha.org/guidelines" target="_blank" rel="noopener">AAHA</a></span>
     </div>
   </div>
 
@@ -705,9 +719,9 @@
       </div>
     </div>
     <div class="hs-body">
-      <p>Parasites are more than a nuisance — they can cause anemia, malnutrition, organ damage, and in the case of heartworm, death. The Companion Animal Parasite Council (CAPC) estimates that 1 in 100 dogs in high-risk regions tests positive for heartworm annually. Intestinal parasites like roundworms, hookworms, and whipworms are even more common, often showing no symptoms until the infestation is severe.</p>
+      <p>Parasites are more than a nuisance — they can cause anemia, malnutrition, organ damage, and in the case of heartworm, death. The <a href="https://capcvet.org/" target="_blank" rel="noopener" class="source-link">Companion Animal Parasite Council (CAPC)</a> estimates that 1 in 100 dogs in high-risk regions tests positive for heartworm annually. Intestinal parasites like roundworms, hookworms, and whipworms are even more common, often showing no symptoms until the infestation is severe.</p>
       <ul>
-        <li><strong>Heartworm prevention</strong> — monthly oral or 6-12 month injectable; year-round recommended by AHS</li>
+        <li><strong>Heartworm prevention</strong> — monthly oral or 6-12 month injectable; year-round recommended by <a href="https://www.heartwormsociety.org/" target="_blank" rel="noopener" class="source-link">AHS</a></li>
         <li><strong>Broad-spectrum dewormers</strong> — covers roundworms, hookworms, whipworms, and tapeworms</li>
         <li><strong>Flea &amp; tick control</strong> — topical, oral, or collar; critical for Lyme disease and tapeworm prevention</li>
         <li><strong>Fecal testing</strong> — at least annually, more often for puppies or high-risk dogs</li>
@@ -732,12 +746,12 @@
       </div>
     </div>
     <div class="hs-body">
-      <p>Periodontal disease is the most common clinical condition in adult dogs, affecting over 80% of dogs by age 3 (AVMA). The bacteria from dental disease don't stay in the mouth — they enter the bloodstream and can damage the heart, liver, and kidneys. The good news: daily brushing and annual dental checkups can nearly eliminate this risk.</p>
+      <p>Periodontal disease is the most common clinical condition in adult dogs, affecting over 80% of dogs by age 3 (<a href="https://www.avma.org/resources-tools/pet-owners/petcare/pet-dental-care" target="_blank" rel="noopener" class="source-link">AVMA</a>). The bacteria from dental disease don't stay in the mouth — they enter the bloodstream and can damage the heart, liver, and kidneys. The good news: daily brushing and annual dental checkups can nearly eliminate this risk.</p>
       <ul>
         <li><strong>Enzymatic toothpaste</strong> — dog-specific (never human toothpaste — xylitol is toxic)</li>
         <li><strong>Dental chews &amp; treats</strong> — VOHC-approved options mechanically reduce plaque</li>
         <li><strong>Water additives</strong> — easy daily supplement that reduces bacteria in the mouth</li>
-        <li><strong>Professional dental cleaning</strong> — under anesthesia, recommended every 1-2 years by AAHA</li>
+        <li><strong>Professional dental cleaning</strong> — under anesthesia, recommended every 1-2 years by <a href="https://www.aaha.org/guidelines" target="_blank" rel="noopener" class="source-link">AAHA</a></li>
         <li><strong>Dental wipes &amp; sprays</strong> — alternatives for dogs that won't tolerate brushing</li>
       </ul>
       <div class="hs-facts">
@@ -787,7 +801,7 @@
       </div>
     </div>
     <div class="hs-body">
-      <p>Skin allergies are the #1 reason dogs visit the veterinarian (AKC). Environmental allergens, food sensitivities, and contact irritants can cause itching, hot spots, hair loss, and secondary infections. A dog's skin is also a mirror of their overall health — dull coat, excessive shedding, or chronic itching often signal an underlying issue. Consistent grooming and targeted skin care products can dramatically improve quality of life.</p>
+      <p>Skin allergies are the #1 reason dogs visit the veterinarian (<a href="https://www.akc.org/expert-advice/health/dog-allergies-symptoms-treatment/" target="_blank" rel="noopener" class="source-link">AKC</a>). Environmental allergens, food sensitivities, and contact irritants can cause itching, hot spots, hair loss, and secondary infections. A dog's skin is also a mirror of their overall health — dull coat, excessive shedding, or chronic itching often signal an underlying issue. Consistent grooming and targeted skin care products can dramatically improve quality of life.</p>
       <ul>
         <li><strong>Medicated shampoos</strong> — antifungal, antibacterial, or soothing (oatmeal/aloe) depending on condition</li>
         <li><strong>Hot spot treatments</strong> — sprays, creams, and hydrocortisone for acute flare-ups</li>
@@ -815,7 +829,7 @@
       </div>
     </div>
     <div class="hs-body">
-      <p>Supplements fill the gaps that even a great diet can leave — especially for aging dogs, active dogs, and dogs with specific health conditions. The right supplements, backed by veterinary research, can improve mobility, digestion, immunity, and quality of life. Not all supplements are created equal: look for products with NASC (National Animal Supplement Council) certification and published clinical research.</p>
+      <p>Supplements fill the gaps that even a great diet can leave — especially for aging dogs, active dogs, and dogs with specific health conditions. The right supplements, backed by veterinary research, can improve mobility, digestion, immunity, and quality of life. Not all supplements are created equal: look for products with <a href="https://nasc.cc/" target="_blank" rel="noopener" class="source-link">NASC</a> (National Animal Supplement Council) certification and published clinical research.</p>
       <ul>
         <li><strong>Joint support</strong> — glucosamine, chondroitin, MSM, green-lipped mussel; critical for seniors and large breeds</li>
         <li><strong>Probiotics &amp; digestive enzymes</strong> — restore gut health after antibiotics or stress; improve nutrient absorption</li>
