@@ -480,6 +480,7 @@
   </script>
   <link rel="sitemap" href="https://mtr587.github.io/dog-parenting/sitemap.xml" />
 
+  <style>
     /* ===== CALCULATOR ===== */
     .calc-section {
       background: var(--card);
@@ -820,6 +821,8 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
+
+  </style>
 </head>
 <body>
 
@@ -1285,7 +1288,7 @@ updateMixCalc();
 // Update range slider gradient
 document.getElementById('mixRatio').addEventListener('input', function() {
   const val = this.value;
-  this.style.background = 'linear-gradient(to right, var(--accent) 0%, var(--accent) ' + val + '%, var(--border) ' + val + '%, var(--border) 100%)';
+  this.style.background = 'linear-gradient(to right, #d97706 0%, #d97706 ' + val + '%, #e7e5e4 ' + val + '%, #e7e5e4 100%)';
   updateMixCalc();
 });
 </script>
