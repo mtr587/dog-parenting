@@ -482,302 +482,277 @@
 
   <style>
     /* ===== CALCULATOR ===== */
-    .calc-section {
+    .calc-box {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 2px solid var(--border);
       border-radius: var(--radius);
-      padding: 32px;
+      padding: 28px;
       margin: 32px 0;
     }
-    .calc-section h2 {
+    .calc-box h2 {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 24px;
-      margin: 0 0 8px 0;
+      font-size: 22px;
+      margin: 0 0 6px;
     }
-    .calc-section .calc-desc {
+    .calc-box .subtitle {
+      font-size: 13px;
       color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
-    .calc-grid {
+    .calc-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
     }
     @media (max-width: 640px) {
-      .calc-grid { grid-template-columns: 1fr; }
+      .calc-row { grid-template-columns: 1fr 1fr; }
     }
-    .calc-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    @media (max-width: 400px) {
+      .calc-row { grid-template-columns: 1fr; }
     }
-    .calc-field label {
-      font-size: 13px;
+    .field { display:flex; flex-direction:column; gap:4px; }
+    .field label {
+      font-size: 12px;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
     }
-    .calc-field input, .calc-field select {
-      padding: 12px 16px;
+    .field input, .field select {
+      padding: 10px 14px;
       border: 2px solid var(--border);
       border-radius: 8px;
-      font-size: 16px;
-      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-family: inherit;
       background: var(--card);
-      transition: border-color .15s;
     }
-    .calc-field input:focus, .calc-field select:focus {
+    .field input:focus, .field select:focus {
       outline: none;
       border-color: var(--accent);
     }
-    .calc-result {
-      background: var(--accent-light);
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 24px;
-      text-align: center;
-    }
-    .calc-result .result-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-    @media (max-width: 480px) {
-      .calc-result .result-grid { grid-template-columns: 1fr; }
-    }
-    .calc-result .result-item {
-      text-align: center;
-    }
-    .calc-result .result-value {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--accent);
-      display: block;
-    }
-    .calc-result .result-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 4px;
-    }
-    .calc-result .disclaimer {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 16px;
-      font-style: italic;
-    }
 
-    /* ===== MIX CALCULATOR ===== */
-    .mix-section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin: 32px 0;
+    .mix-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      background: var(--bg);
+      border-radius: 8px;
     }
-    .mix-section h2 {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 24px;
-      margin: 0 0 8px 0;
+    .mix-toggle-row label {
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+    .mix-toggle-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+    }
+    #mixPanel { display: none; }
+    #mixPanel.show { display: block; }
+
+    .mix-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding: 16px;
+      background: var(--bg);
+      border-radius: 8px;
+    }
+    @media (max-width: 500px) {
+      .mix-fields { grid-template-columns: 1fr; }
     }
     .mix-slider-row {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin: 20px 0;
+      gap: 12px;
     }
     .mix-slider-row input[type="range"] {
       flex: 1;
       -webkit-appearance: none;
       height: 8px;
       border-radius: 4px;
-      background: linear-gradient(to right, var(--accent) 0%, var(--accent) 50%, var(--border) 50%, var(--border) 100%);
+      background: linear-gradient(to right, #d97706 0%, #d97706 50%, #e7e5e4 50%, #e7e5e4 100%);
       outline: none;
     }
-    .mix-slider-row input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--accent);
-      cursor: pointer;
-      border: 3px solid #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,.15);
-    }
-    .mix-ratio-display {
-      font-size: 16px;
-      font-weight: 600;
-      min-width: 100px;
-      text-align: center;
+    .mix-ratio-label {
+      font-size: 14px;
+      font-weight: 700;
       color: var(--accent);
+      min-width: 80px;
+      text-align: center;
     }
-    .mix-result {
+
+    .calc-result {
       background: var(--accent-light);
-      border-radius: 8px;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
       padding: 20px;
-      margin-top: 20px;
+      text-align: center;
+    }
+    .result-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
     }
     @media (max-width: 480px) {
-      .mix-result { grid-template-columns: 1fr; }
+      .result-grid { grid-template-columns: 1fr; }
     }
-    .mix-result-item {
-      text-align: center;
-      padding: 12px;
-      background: var(--card);
-      border-radius: 8px;
-    }
-    .mix-result-item .food-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .mix-result-item .food-amount {
-      font-size: 22px;
+    .result-item { text-align: center; }
+    .result-val {
+      font-size: 26px;
       font-weight: 700;
       color: var(--accent);
     }
-    .mix-result-item .food-cost {
-      font-size: 13px;
+    .result-lbl {
+      font-size: 11px;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .result-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 12px;
     }
 
-    /* ===== PRODUCT CARDS ===== */
+    /* ===== PRODUCT CARD ===== */
     .product-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      margin: 24px 0;
+      margin: 28px 0;
       overflow: hidden;
       transition: box-shadow .15s;
     }
     .product-card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
     }
-    .product-card__header {
-      padding: 24px 28px 16px;
+    .pc-top {
+      display: flex;
+      gap: 24px;
+      padding: 24px 28px;
       border-bottom: 1px solid var(--border);
+      align-items: flex-start;
     }
-    .product-card__badge {
+    @media (max-width: 560px) {
+      .pc-top { flex-direction: column; align-items: center; text-align: center; }
+    }
+    .pc-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #f8f8f8;
+      flex-shrink: 0;
+    }
+    .pc-info { flex: 1; min-width: 0; }
+    .pc-rank {
       display: inline-block;
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
-      text-align: center;
       background: var(--accent);
       color: #fff;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
       border-radius: 50%;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    .product-card__name {
+    .pc-name {
       font-family: 'Newsreader', Georgia, serif;
       font-size: 20px;
       font-weight: 600;
-      margin: 0 0 4px 0;
-      color: var(--text);
+      margin: 0 0 4px;
     }
-    .product-card__flavor {
-      display: block;
+    .pc-flavor {
       font-size: 14px;
       color: var(--accent);
       font-weight: 500;
     }
-    .product-card__size {
-      display: block;
+    .pc-specs {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .pc-price-tag {
+      margin-top: 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pc-price {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .pc-unit {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .pc-pack-info {
       font-size: 12px;
       color: var(--text-muted);
-      margin-top: 2px;
     }
-    .product-card__body {
+
+    .pc-body {
       padding: 20px 28px 28px;
     }
-    .product-card__best {
+    .pc-best {
       background: var(--accent-light);
       border-radius: 8px;
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      display: flex;
-      gap: 8px;
+      padding: 10px 16px;
+      margin-bottom: 18px;
+      font-size: 13px;
     }
-    .product-card__best .label {
-      font-weight: 700;
-      color: var(--accent);
-      white-space: nowrap;
-    }
-    .product-card__pros-cons {
+    .pc-best strong { color: var(--accent); }
+    .pc-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
       margin-bottom: 20px;
     }
-    @media (max-width: 560px) {
-      .product-card__pros-cons { grid-template-columns: 1fr; }
+    @media (max-width: 500px) {
+      .pc-cols { grid-template-columns: 1fr; }
     }
-    .product-card__pros-cons h4 {
-      font-size: 13px;
+    .pc-cols h4 {
+      font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 0 0 8px 0;
+      letter-spacing: .5px;
+      margin: 0 0 8px;
     }
-    .pros h4 { color: #16a34a; }
-    .cautions h4 { color: #dc2626; }
-    .product-card__pros-cons ul {
+    .pc-pros h4 { color: #16a34a; }
+    .pc-cautions h4 { color: #dc2626; }
+    .pc-cols ul {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
-    .product-card__pros-cons li {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.5;
-      padding-left: 18px;
-      position: relative;
-    }
-    .product-card__pros-cons li::before {
-      position: absolute;
-      left: 0;
-      font-weight: 700;
-    }
-    .pros li::before { content: '+'; color: #16a34a; }
-    .cautions li::before { content: '!'; color: #dc2626; }
-    .product-card__price {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      padding: 16px 0;
-      border-top: 1px solid var(--border);
-      margin-bottom: 16px;
-    }
-    .product-card__price .price-value {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .product-card__price .price-unit {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-muted);
-    }
-    .product-card__price .price-size {
+    .pc-cols li {
       font-size: 13px;
       color: var(--text-muted);
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
     }
-    .product-card__btn {
+    .pc-pros li::before { content: '+'; position: absolute; left: 0; color: #16a34a; font-weight: 700; }
+    .pc-cautions li::before { content: '\26a0'; position: absolute; left: 0; color: #dc2626; font-size: 11px; }
+
+    .pc-btn {
       display: block;
       text-align: center;
       padding: 14px;
@@ -789,39 +764,35 @@
       font-weight: 600;
       transition: all .15s;
     }
-    .product-card__btn:hover {
-      filter: brightness(1.1);
-      transform: translateY(-1px);
-    }
+    .pc-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
 
-    /* ===== NOTES SECTION ===== */
-    .notes-section {
+    /* ===== NOTES ===== */
+    .notes-box {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 32px;
+      padding: 28px;
       margin: 32px 0;
     }
-    .notes-section h2 {
+    .notes-box h2 {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 24px;
-      margin: 0 0 16px 0;
+      font-size: 22px;
+      margin: 0 0 14px;
     }
-    .notes-section p {
+    .notes-box p {
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.7;
-      margin: 0 0 12px 0;
+      margin: 0 0 10px;
     }
-    .notes-section .disclaimer-box {
+    .notes-disclaimer {
       background: var(--accent-light);
       border-radius: 8px;
-      padding: 16px;
+      padding: 14px;
       font-size: 13px;
       color: var(--text-muted);
       line-height: 1.6;
     }
-
   </style>
 </head>
 <body>
@@ -838,458 +809,395 @@
 
 <div class="container" style="padding-top:40px;padding-bottom:60px">
 
-  <header class="hero" style="text-align:center;margin-bottom:40px">
-    <h1 style="font-family:'Newsreader',Georgia,serif;font-size:clamp(28px,5vw,40px);margin:0 0 12px">Best Dog Food for 2026</h1>
-    <p style="font-size:17px;color:var(--text-muted);max-width:600px;margin:0 auto">Human-grade, vet-formulated options your dog will actually be excited about. Plus a calculator to figure out exactly what you will spend each month.</p>
+  <header class="hero" style="text-align:center;margin-bottom:24px">
+    <h1 style="font-family:'Newsreader',Georgia,serif;font-size:clamp(28px,5vw,40px);margin:0 0 10px">Best Dog Food for 2026</h1>
+    <p style="font-size:17px;color:var(--text-muted);max-width:620px;margin:0 auto">Human-grade, vet-formulated, real ingredients you can see. Plus a calculator to figure out exactly what you'll spend each month.</p>
   </header>
 
-  <!-- ===== SINGLE FOOD CALCULATOR ===== -->
-  <div class="calc-section" id="calculator">
+  <!-- ===== MERGED CALCULATOR ===== -->
+  <div class="calc-box" id="calculator">
     <h2>Monthly Food Cost Calculator</h2>
-    <p class="calc-desc">Enter your dog's weight and the price of their food to estimate 30-day consumption and cost. Based on the standard guideline of 2-3% body weight daily feeding.</p>
-    
-    <div class="calc-grid">
-      <div class="calc-field">
+    <p class="subtitle">Estimate your 30-day consumption and cost based on your dog's weight and the food you choose.</p>
+
+    <div class="calc-row">
+      <div class="field">
         <label>Dog Weight (lbs)</label>
-        <input type="number" id="dogWeight" placeholder="e.g. 50" min="1" max="250" value="50">
+        <input type="number" id="dogWeight" value="50" min="1" max="250" oninput="updateCalc()">
       </div>
-      <div class="calc-field">
+      <div class="field">
         <label>Activity Level</label>
-        <select id="activityLevel">
+        <select id="activityLevel" onchange="updateCalc()">
           <option value="1.5">Low (couch potato)</option>
           <option value="2.0" selected>Moderate (daily walks)</option>
           <option value="2.5">Active (running, hiking)</option>
           <option value="3.0">Very Active (working dog)</option>
-          <option value="custom">Custom %</option>
         </select>
       </div>
-      <div class="calc-field" id="customPctField" style="display:none">
-        <label>Custom Daily % of Body Weight</label>
-        <input type="number" id="customPct" placeholder="e.g. 2.5" min="0.5" max="5" step="0.1" value="2.5">
+      <div class="field">
+        <label>Food A — Price ($/lb)</label>
+        <input type="number" id="priceA" value="11.55" min="0.01" step="0.01" oninput="updateCalc()">
       </div>
-      <div class="calc-field">
-        <label>Food Price ($/lb)</label>
-        <input type="number" id="foodPrice" placeholder="e.g. 8.50" min="0.01" step="0.01" value="8.50">
+    </div>
+
+    <!-- Mix toggle -->
+    <div class="mix-toggle-row">
+      <input type="checkbox" id="mixToggle" onchange="toggleMix()">
+      <label for="mixToggle">Mix with a second food</label>
+    </div>
+
+    <div id="mixPanel">
+      <div class="mix-fields">
+        <div class="field">
+          <label>Food B — Price ($/lb)</label>
+          <input type="number" id="priceB" value="12.70" min="0.01" step="0.01" oninput="updateCalc()">
+        </div>
+        <div class="field">
+          <label>Quick Fill</label>
+          <select id="quickFoodB" onchange="fillFoodB()">
+            <option value="">— Pick from our recommendations —</option>
+            <option value="12.7">Healthy Weight — Fish & Sweet Potato — $12.7/lb</option>
+            <option value="14.22">Vet RX — Critical Care Support — $14.22/lb</option>
+            <option value="10.24">Vet RX — Hepatic Support (Low Protein) — $10.24/lb</option>
+            <option value="14.35">Fresh Cat Food — Fish & Chicken — $14.35/lb</option>
+            <option value="11.55">Beef & Russet Potato — $11.55/lb</option>
+            <option value="11.99">JustFresh Wet — Home-Cooked Beef — $11.99/lb</option>
+            <option value="12.44">Joint & Skin Support — $12.44/lb</option>
+          </select>
+        </div>
       </div>
-      <div class="calc-field">
-        <label>Quick Select</label>
-        <select id="quickFood" onchange="quickSelectFood()">
-          <option value="">-- Pick a recommended food --</option>
-          <option value="8.5">JustFoodForDogs Fresh Frozen — Healthy Weight ($8.50/lb)</option>
-          <option value="14.0">JustFoodForDogs Vet RX — Critical Care Support ($14.00/lb)</option>
-          <option value="12.5">JustFoodForDogs Vet RX — Hepatic Support ($12.50/lb)</option>
-          <option value="8.0">JustFoodForDogs Fresh Frozen — Beef & Russet Potato ($8.00/lb)</option>
-          <option value="7.5">JustFoodForDogs JustFresh Wet Food — Home-Cooked Beef ($7.50/lb)</option>
-          <option value="9.0">JustFoodForDogs Fresh Frozen — Joint & Skin Support ($9.00/lb)</option>
-          <option value="10.0">JustFoodForDogs Fresh Frozen — Cat Food (Fish & Chicken) ($10.00/lb)</option>
-        </select>
+      <div class="mix-slider-row">
+        <span style="font-size:13px;font-weight:600;color:var(--text)" id="mixLabelA">Food A</span>
+        <input type="range" id="mixRatio" min="0" max="100" value="50" oninput="updateCalc()">
+        <span style="font-size:13px;font-weight:600;color:var(--text)" id="mixLabelB">Food B</span>
       </div>
+      <div class="mix-ratio-label" id="mixRatioDisplay" style="text-align:center;margin-bottom:8px">50 / 50</div>
     </div>
 
     <div class="calc-result" id="calcResult">
-      <strong style="font-size:16px">Monthly Estimate (30 days)</strong>
+      <strong style="font-size:15px">Monthly Estimate (30 days)</strong>
       <div class="result-grid">
         <div class="result-item">
-          <span class="result-value" id="dailyFood">—</span>
-          <span class="result-label">Daily Food (lbs)</span>
+          <span class="result-val" id="dailyLbs">—</span>
+          <span class="result-lbl">Daily Food (lbs)</span>
         </div>
         <div class="result-item">
-          <span class="result-value" id="monthlyFood">—</span>
-          <span class="result-label">Monthly Food (lbs)</span>
+          <span class="result-val" id="monthlyLbs">—</span>
+          <span class="result-lbl">Monthly Food (lbs)</span>
         </div>
         <div class="result-item">
-          <span class="result-value" id="monthlyCost">—</span>
-          <span class="result-label">Monthly Cost</span>
+          <span class="result-val" id="monthlyCost">—</span>
+          <span class="result-lbl">Monthly Cost</span>
         </div>
       </div>
-      <p class="disclaimer">This is an estimate. Always consult your vet for your dog's specific dietary needs. Adjust portions based on your dog's body condition.</p>
+      <div id="mixBreakdown" style="display:none;margin-top:16px;padding-top:12px;border-top:1px solid var(--border)">
+        <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap">
+          <div><span style="font-weight:600;font-size:14px" id="mixNameA">Food A</span>: <span id="mixAmtA">—</span> — <span id="mixCostA" style="font-weight:600">—</span></div>
+          <div><span style="font-weight:600;font-size:14px" id="mixNameB">Food B</span>: <span id="mixAmtB">—</span> — <span id="mixCostB" style="font-weight:600">—</span></div>
+        </div>
+      </div>
+      <p class="result-note">Based on 2-3% body weight daily. Adjust portions based on your dog's body condition. Always consult your vet.</p>
     </div>
   </div>
 
-  <!-- ===== MIX CALCULATOR ===== -->
-  <div class="mix-section" id="mix-calculator">
-    <h2>Food Mix Calculator</h2>
-    <p class="calc-desc">Mix two foods to balance quality and budget. Adjust the slider to set your blend ratio.</p>
-
-    <div class="calc-grid" style="margin-bottom:16px">
-      <div class="calc-field">
-        <label>Dog Weight (lbs)</label>
-        <input type="number" id="mixDogWeight" placeholder="50" min="1" max="250" value="50" oninput="updateMixCalc()">
-      </div>
-      <div class="calc-field">
-        <label>Activity Level</label>
-        <select id="mixActivityLevel" onchange="updateMixCalc()">
-          <option value="1.5">Low</option>
-          <option value="2.0" selected>Moderate</option>
-          <option value="2.5">Active</option>
-          <option value="3.0">Very Active</option>
-        </select>
-      </div>
-      <div class="calc-field">
-        <label>Food A — Name</label>
-        <select id="mixFoodA" onchange="updateMixCalc()">
-          <option value="8.5" data-name="JustFoodForDogs Fresh Frozen — Healthy Weight" selected>JustFoodForDogs Fresh Frozen — Healthy Weight ($8.50/lb)</option>
-          <option value="14.0" data-name="JustFoodForDogs Vet RX — Critical Care Support">JustFoodForDogs Vet RX — Critical Care Support ($14.00/lb)</option>
-          <option value="12.5" data-name="JustFoodForDogs Vet RX — Hepatic Support">JustFoodForDogs Vet RX — Hepatic Support ($12.50/lb)</option>
-          <option value="8.0" data-name="JustFoodForDogs Fresh Frozen — Beef & Russet Potato">JustFoodForDogs Fresh Frozen — Beef & Russet Potato ($8.00/lb)</option>
-          <option value="7.5" data-name="JustFoodForDogs JustFresh Wet Food — Home-Cooked Beef">JustFoodForDogs JustFresh Wet Food — Home-Cooked Beef ($7.50/lb)</option>
-          <option value="9.0" data-name="JustFoodForDogs Fresh Frozen — Joint & Skin Support">JustFoodForDogs Fresh Frozen — Joint & Skin Support ($9.00/lb)</option>
-          <option value="10.0" data-name="JustFoodForDogs Fresh Frozen — Cat Food (Fish & Chicken)">JustFoodForDogs Fresh Frozen — Cat Food (Fish & Chicken) ($10.00/lb)</option>
-        </select>
-      </div>
-      <div class="calc-field">
-        <label>Food B — Name</label>
-        <select id="mixFoodB" onchange="updateMixCalc()">
-          <option value="8.5" data-name="JustFoodForDogs Fresh Frozen — Healthy Weight">JustFoodForDogs Fresh Frozen — Healthy Weight ($8.50/lb)</option>
-          <option value="14.0" data-name="JustFoodForDogs Vet RX — Critical Care Support">JustFoodForDogs Vet RX — Critical Care Support ($14.00/lb)</option>
-          <option value="12.5" data-name="JustFoodForDogs Vet RX — Hepatic Support">JustFoodForDogs Vet RX — Hepatic Support ($12.50/lb)</option>
-          <option value="8.0" data-name="JustFoodForDogs Fresh Frozen — Beef & Russet Potato">JustFoodForDogs Fresh Frozen — Beef & Russet Potato ($8.00/lb)</option>
-          <option value="7.5" data-name="JustFoodForDogs JustFresh Wet Food — Home-Cooked Beef" selected>JustFoodForDogs JustFresh Wet Food — Home-Cooked Beef ($7.50/lb)</option>
-          <option value="9.0" data-name="JustFoodForDogs Fresh Frozen — Joint & Skin Support">JustFoodForDogs Fresh Frozen — Joint & Skin Support ($9.00/lb)</option>
-          <option value="10.0" data-name="JustFoodForDogs Fresh Frozen — Cat Food (Fish & Chicken)">JustFoodForDogs Fresh Frozen — Cat Food (Fish & Chicken) ($10.00/lb)</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="mix-slider-row">
-      <span style="font-size:13px;font-weight:600;color:var(--text-muted);white-space:nowrap" id="mixLabelA">Food A</span>
-      <input type="range" id="mixRatio" min="0" max="100" value="50" oninput="updateMixCalc()" style="flex:1">
-      <span style="font-size:13px;font-weight:600;color:var(--text-muted);white-space:nowrap" id="mixLabelB">Food B</span>
-    </div>
-    <div style="text-align:center;font-size:24px;font-weight:700;color:var(--accent)" id="mixRatioDisplay">50 / 50</div>
-
-    <div class="mix-result" id="mixResult">
-      <div class="mix-result-item">
-        <div class="food-name" id="mixResultNameA">Food A</div>
-        <div class="food-amount" id="mixAmountA">—</div>
-        <div class="food-cost" id="mixCostA">—</div>
-      </div>
-      <div class="mix-result-item">
-        <div class="food-name" id="mixResultNameB">Food B</div>
-        <div class="food-amount" id="mixAmountB">—</div>
-        <div class="food-cost" id="mixCostB">—</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:16px;padding:16px;background:var(--accent-light);border-radius:8px">
-      <span style="font-size:14px;color:var(--text-muted)">Total Monthly Cost: </span>
-      <span style="font-size:24px;font-weight:700;color:var(--accent)" id="mixTotalCost">—</span>
-      <span style="font-size:14px;color:var(--text-muted)"> / month</span>
-    </div>
-  </div>
-
-  <!-- ===== PRODUCT RECOMMENDATIONS ===== -->
-  <section id="recommendations">
+  <!-- ===== PRODUCTS ===== -->
+  <section id="products">
     <h2 style="font-family:'Newsreader',Georgia,serif;font-size:28px;text-align:center;margin:48px 0 8px">Recommended Dog Foods</h2>
-    <p style="text-align:center;font-size:15px;color:var(--text-muted);margin-bottom:32px">All JustFoodForDogs — human-grade, vet-formulated, made in the USA</p>
-<div class="product-card" id="product-0">
-  <div class="product-card__header">
-    <span class="product-card__badge">#1</span>
-    <h3 class="product-card__name">JustFoodForDogs Fresh Frozen — Healthy Weight</h3>
-    <span class="product-card__flavor">Fish & Sweet Potato / Venison & Squash</span>
-    <span class="product-card__size">18 oz (Pack of 7)</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Overweight dogs or those prone to weight gain</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Human-grade ingredients, no mystery meat</li><li>Designed specifically for weight management</li><li>Board-certified veterinary nutritionists formulated</li><li>Can be used as complete meal or topper</li></ul>
-      </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Must be kept frozen/thawed — not for travel</li><li>Premium pricing at ~$8.50/lb</li><li>Fish formula has a strong smell some dogs refuse</li></ul>
-      </div>
-    </div>
-    <div class="product-card__price">
-      <span class="price-value">$8.50<span class="price-unit">/lb</span></span>
-      <span class="price-size">(18 oz (Pack of 7))</span>
-    </div>
-    <a href="https://www.amazon.com/dp/B0BHL96WY6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
-  </div>
-</div>
+    <p style="text-align:center;font-size:15px;color:var(--text-muted);margin-bottom:32px">All JustFoodForDogs &mdash; human-grade, vet-formulated, made in the USA. Prices sourced live from Amazon.</p>
 
-<div class="product-card" id="product-1">
-  <div class="product-card__header">
-    <span class="product-card__badge">#2</span>
-    <h3 class="product-card__name">JustFoodForDogs Vet RX — Critical Care Support</h3>
-    <span class="product-card__flavor">Prescription Diet</span>
-    <span class="product-card__size">18 oz</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Post-surgery recovery, illness, picky eaters in crisis</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Veterinary-prescribed formula for recovery/critical care</li><li>Highly digestible, gentle on compromised GI tracts</li><li>Can be syringe-fed if needed</li><li>Used in major veterinary hospitals</li></ul>
-      </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Requires veterinarian authorization</li><li>Most expensive option (~$14/lb)</li><li>Not for long-term maintenance — short-term use only</li><li>Sold as single packs, not multi-packs</li></ul>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/91YsnjUTkYL._AC_SL1500_.jpg" alt="Healthy Weight — Fish & Sweet Potato" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#1</span>
+        <h3 class="pc-name">Healthy Weight — Fish & Sweet Potato</h3>
+        <span class="pc-flavor">Fish & Sweet Potato / Venison & Squash</span>
+        <span class="pc-specs">126oz total (7.9lbs) &middot; 12.7/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$99.99</span>
+          <span class="pc-unit">($12.7/lb)</span>
+          <span class="pc-pack-info">126oz — from title: JustFoodForDogs Frozen Fresh Healthy Weight Dog Food, Comple</span>
+        </div>
       </div>
     </div>
-    <div class="product-card__price">
-      <span class="price-value">$14.00<span class="price-unit">/lb</span></span>
-      <span class="price-size">(18 oz)</span>
-    </div>
-    <a href="https://www.amazon.com/dp/B0BLF6SLYP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
-  </div>
-</div>
-
-<div class="product-card" id="product-2">
-  <div class="product-card__header">
-    <span class="product-card__badge">#3</span>
-    <h3 class="product-card__name">JustFoodForDogs Vet RX — Hepatic Support</h3>
-    <span class="product-card__flavor">Low Protein Prescription Diet</span>
-    <span class="product-card__size">12.5 oz (Pack of 12)</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Dogs with hepatic/liver conditions under vet supervision</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Formulated for liver disease management</li><li>Controlled protein levels reduce liver workload</li><li>Shelf-stable pantry fresh — no freezing needed</li><li>12-pack lasts ~1 month for medium dogs</li></ul>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Overweight dogs or dogs prone to weight gain</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Human-grade ingredients, no mystery meat</li><li>Formulated for weight management by board-certified nutritionists</li><li>Can be used as complete meal or topper</li><li>Visible real food chunks — you see what you feed</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>Must be kept frozen until use</li><li>Fish formula has a strong smell (some dogs love it, others refuse)</li><li>Premium pricing at ~$12.70/lb</li></ul>
+        </div>
       </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Prescription required</li><li>Not suitable for healthy dogs — protein is too low</li><li>Higher sodium than frozen fresh varieties</li></ul>
-      </div>
+      <a href="https://www.amazon.com/dp/B0BHL96WY6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
     </div>
-    <div class="product-card__price">
-      <span class="price-value">$12.50<span class="price-unit">/lb</span></span>
-      <span class="price-size">(12.5 oz (Pack of 12))</span>
-    </div>
-    <a href="https://www.amazon.com/dp/B0BDDX5S9G?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
   </div>
-</div>
-
-<div class="product-card" id="product-3">
-  <div class="product-card__header">
-    <span class="product-card__badge">#4</span>
-    <h3 class="product-card__name">JustFoodForDogs Fresh Frozen — Beef & Russet Potato</h3>
-    <span class="product-card__flavor">Beef & Potato</span>
-    <span class="product-card__size">18 oz (Pack of 7)</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Active adult dogs, first-time fresh food buyers</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Most popular flavor — dogs love the beef taste</li><li>Whole food ingredients you can see (real beef chunks, potato)</li><li>No preservatives, growth hormones, or BHA/BHT</li><li>Great for active, healthy adult dogs</li></ul>
-      </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Beef is a common allergen — watch for reactions</li><li>Higher calorie density than the Healthy Weight formula</li><li>Requires freezer space</li></ul>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/91wsOPclsCL._AC_SL1500_.jpg" alt="Vet RX — Critical Care Support" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#2</span>
+        <h3 class="pc-name">Vet RX — Critical Care Support</h3>
+        <span class="pc-flavor">Prescription Critical Care Formula</span>
+        <span class="pc-specs">126oz total (7.9lbs) &middot; 14.22/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$111.99</span>
+          <span class="pc-unit">($14.22/lb)</span>
+          <span class="pc-pack-info">126oz — from title: Just Food For Dogs Vet RX Frozen Fresh Prescription Dog Food</span>
+        </div>
       </div>
     </div>
-    <div class="product-card__price">
-      <span class="price-value">$8.00<span class="price-unit">/lb</span></span>
-      <span class="price-size">(18 oz (Pack of 7))</span>
-    </div>
-    <a href="https://www.amazon.com/dp/B0B2KRGDMT?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
-  </div>
-</div>
-
-<div class="product-card" id="product-4">
-  <div class="product-card__header">
-    <span class="product-card__badge">#5</span>
-    <h3 class="product-card__name">JustFoodForDogs JustFresh Wet Food — Home-Cooked Beef</h3>
-    <span class="product-card__flavor">Home-Cooked Beef Recipe</span>
-    <span class="product-card__size">12 oz</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Trying fresh food for the first time, travel, picky eaters</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Resealable package — no freezing or thawing</li><li>Convenient for travel, camping, or boarding</li><li>Rich, stew-like texture dogs find irresistible</li><li>Lower entry price point to try fresh food</li></ul>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Post-surgery recovery, illness, dogs in crisis (vet supervised)</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Veterinary-prescribed for recovery/surgery/critical illness</li><li>Highly digestible — gentle on compromised GI tracts</li><li>Can be syringe-fed if necessary</li><li>Used in major veterinary hospitals nationwide</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>Requires veterinarian authorization (prescription)</li><li>Most expensive option at ~$14.22/lb</li><li>Short-term use only — not for long-term maintenance</li><li>Must be kept frozen</li></ul>
+        </div>
       </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Single 12oz pack — small quantity for medium+ dogs</li><li>Higher moisture = less calorie dense per lb</li><li>Not available in bulk multi-packs yet</li></ul>
-      </div>
+      <a href="https://www.amazon.com/dp/B0BLF6SLYP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
     </div>
-    <div class="product-card__price">
-      <span class="price-value">$7.50<span class="price-unit">/lb</span></span>
-      <span class="price-size">(12 oz)</span>
-    </div>
-    <a href="https://www.amazon.com/dp/B0DJ9HFR45?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
   </div>
-</div>
-
-<div class="product-card" id="product-5">
-  <div class="product-card__header">
-    <span class="product-card__badge">#6</span>
-    <h3 class="product-card__name">JustFoodForDogs Fresh Frozen — Joint & Skin Support</h3>
-    <span class="product-card__flavor">Joint & Skin Support Formula</span>
-    <span class="product-card__size">18 oz (Pack of 7)</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Senior dogs, dogs with skin allergies, large breeds with joint issues</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Targeted formula for skin allergies and joint health</li><li>Omega-3 rich ingredients reduce inflammation naturally</li><li>Glucosamine & chondroitin from whole food sources</li><li>Often eliminates need for separate joint supplements</li></ul>
-      </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Slightly more expensive than standard formula</li><li>Results for skin issues take 4-6 weeks to show</li><li>Fish-based — strong odor</li></ul>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/81LZFUldseL._AC_SL1500_.jpg" alt="Vet RX — Hepatic Support (Low Protein)" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#3</span>
+        <h3 class="pc-name">Vet RX — Hepatic Support (Low Protein)</h3>
+        <span class="pc-flavor">Prescription Hepatic Support, Low Protein</span>
+        <span class="pc-specs">150oz total (9.4lbs) &middot; 10.24/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$95.99</span>
+          <span class="pc-unit">($10.24/lb)</span>
+          <span class="pc-pack-info">150oz — from title: JustFoodForDogs Vet RX Pantry Fresh Prescription Dog Food, H</span>
+        </div>
       </div>
     </div>
-    <div class="product-card__price">
-      <span class="price-value">$9.00<span class="price-unit">/lb</span></span>
-      <span class="price-size">(18 oz (Pack of 7))</span>
-    </div>
-    <a href="https://www.amazon.com/dp/B0BCTB77FZ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
-  </div>
-</div>
-
-<div class="product-card" id="product-6">
-  <div class="product-card__header">
-    <span class="product-card__badge">#7</span>
-    <h3 class="product-card__name">JustFoodForDogs Fresh Frozen — Cat Food (Fish & Chicken)</h3>
-    <span class="product-card__flavor">Fish & Chicken (Cat Formula)</span>
-    <span class="product-card__size">18 oz</span>
-  </div>
-  <div class="product-card__body">
-    <div class="product-card__best">
-      <span class="label">Best For</span>
-      <span>Multi-pet households (cats), or as occasional dog food topper</span>
-    </div>
-    <div class="product-card__pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul><li>Same human-grade quality as the dog line</li><li>High protein, grain-free — ideal for obligate carnivores</li><li>Gravy texture cats love, even picky eaters</li><li>Can double as topper for dogs who need variety</li></ul>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Dogs with hepatic/liver conditions (vet supervised)</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Formulated specifically for liver disease management</li><li>Controlled protein levels reduce liver workload</li><li>Shelf-stable Pantry Fresh — no freezing needed</li><li>12-pack provides steady monthly supply</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>Prescription required — vet authorization mandatory</li><li>Not for healthy dogs — protein is intentionally low</li><li>Higher sodium content than frozen varieties</li></ul>
+        </div>
       </div>
-      <div class="cautions">
-        <h4>Notes &amp; Cautions</h4>
-        <ul><li>Formulated for cats — not balanced for dogs as sole diet</li><li>Small 18oz single pack, not multi-pack</li><li>Taurine levels optimized for cats, not dogs</li></ul>
+      <a href="https://www.amazon.com/dp/B0BDDX5S9G?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
+    </div>
+  </div>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/91posHXkpjL._AC_SL1500_.jpg" alt="Fresh Cat Food — Fish & Chicken" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#4</span>
+        <h3 class="pc-name">Fresh Cat Food — Fish & Chicken</h3>
+        <span class="pc-flavor">Fish & Chicken (Cat Formula)</span>
+        <span class="pc-specs">126oz total (7.9lbs) &middot; 14.35/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$112.99</span>
+          <span class="pc-unit">($14.35/lb)</span>
+          <span class="pc-pack-info">126oz — from title: JustFoodForDogs Frozen Fresh Cat Food, Human Grade Wet Cat F</span>
+        </div>
       </div>
     </div>
-    <div class="product-card__price">
-      <span class="price-value">$10.00<span class="price-unit">/lb</span></span>
-      <span class="price-size">(18 oz)</span>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Multi-pet households (cats), or as occasional dog food topper</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Same human-grade quality as the dog food line</li><li>High protein, grain-free — ideal for obligate carnivores</li><li>Gravy texture most cats love</li><li>Can be used as limited-ingredient topper for dogs</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>Formulated for cats — not balanced for dogs as sole diet</li><li>Taurine and nutrient profile optimized for felines</li><li>Keep frozen until use</li></ul>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0C7LVN6YB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
     </div>
-    <a href="https://www.amazon.com/dp/B0C7LVN6YB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="product-card__btn">View on Amazon →</a>
   </div>
-</div>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/91KrtVyAXwL._AC_SL1500_.jpg" alt="Beef & Russet Potato" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#5</span>
+        <h3 class="pc-name">Beef & Russet Potato</h3>
+        <span class="pc-flavor">Beef & Russet Potato</span>
+        <span class="pc-specs">126oz total (7.9lbs) &middot; 11.55/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$90.99</span>
+          <span class="pc-unit">($11.55/lb)</span>
+          <span class="pc-pack-info">126oz — from title: JustFoodForDogs Frozen Fresh Dog Food, Complete Meal or Topp</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Active adult dogs, first-time fresh food buyers</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Most popular flavor — dogs consistently love it</li><li>Real beef chunks and potato — whole food ingredients visible</li><li>No preservatives, growth hormones, or BHA/BHT</li><li>Best value at ~$11.55/lb</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>Beef is a common allergen — monitor for reactions</li><li>Higher calorie density than Healthy Weight formula</li><li>Requires freezer space for storage</li></ul>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0B2KRGDMT?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
+    </div>
+  </div>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/81C5Ny5u2aL._AC_SL1500_.jpg" alt="JustFresh Wet — Home-Cooked Beef" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#6</span>
+        <h3 class="pc-name">JustFresh Wet — Home-Cooked Beef</h3>
+        <span class="pc-flavor">Home-Cooked Beef Recipe</span>
+        <span class="pc-specs">84oz total (5.2lbs) &middot; 11.99/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$62.93</span>
+          <span class="pc-unit">($11.99/lb)</span>
+          <span class="pc-pack-info">84oz — from title: JustFoodForDogs JustFresh Wet Dog Food, Fresh Pet Meals and </span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Trying fresh food for the first time, travel, picky eaters</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Resealable package — no freezing needed</li><li>Perfect for travel, camping, or boarding</li><li>Rich stew-like texture dogs devour</li><li>Lowest entry price to try fresh food at $62.93 for 7-pack</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>12oz packs — smaller than frozen 18oz counterparts</li><li>Higher moisture means less calorie density per lb</li><li>Limited flavor variety currently available</li></ul>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0DJ9HFR45?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
+    </div>
+  </div>
+  <div class="product-card">
+    <div class="pc-top">
+      <img class="pc-img" src="https://m.media-amazon.com/images/I/91A7rx3k1gL._AC_SL1500_.jpg" alt="Joint & Skin Support" loading="lazy" onerror="this.style.display='none'">
+      <div class="pc-info">
+        <span class="pc-rank">#7</span>
+        <h3 class="pc-name">Joint & Skin Support</h3>
+        <span class="pc-flavor">Joint & Skin Support Formula (Fish-based)</span>
+        <span class="pc-specs">126oz total (7.9lbs) &middot; 12.44/lb</span>
+        <div class="pc-price-tag">
+          <span class="pc-price">$97.99</span>
+          <span class="pc-unit">($12.44/lb)</span>
+          <span class="pc-pack-info">126oz — from title: JustFoodForDogs Frozen Fresh Dog Food for Sensitive Skin All</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-best"><strong>Best for:</strong> Senior dogs, dogs with skin allergies, large breeds with joint issues</div>
+      <div class="pc-cols">
+        <div class="pc-pros">
+          <h4>Pros</h4>
+          <ul><li>Targeted formula for skin allergies + joint health</li><li>Omega-3 rich — reduces inflammation naturally</li><li>Glucosamine & chondroitin from whole food sources</li><li>Often eliminates need for separate joint supplements</li></ul>
+        </div>
+        <div class="pc-cautions">
+          <h4>Notes &amp; Cautions</h4>
+          <ul><li>Results for skin issues take 4-6 weeks to show</li><li>Fish-based formula has a strong odor</li><li>Slightly pricier than standard formula at $12.44/lb</li></ul>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0BCTB77FZ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">View on Amazon →</a>
+    </div>
+  </div>
   </section>
 
-  <!-- ===== NOTES ===== -->
-  <div class="notes-section" style="margin-top:48px">
+  <div class="notes-box" style="margin-top:48px">
     <h2>Important Notes</h2>
-    <p><strong>Prices shown are estimates</strong> based on current Amazon listings as of June 2026. Prices may fluctuate. Always check the current price on Amazon before purchasing.</p>
-    <p><strong>Prescription diets (#2 and #3)</strong> require veterinarian authorization. Do not feed these to your dog without consulting your vet first.</p>
-    <p><strong>Transition slowly:</strong> When switching to a new food, mix it with the old food over 7-10 days to avoid digestive upset.</p>
-    <div class="disclaimer-box">
-      <strong>Disclosure:</strong> This page contains affiliate links. If you purchase through these links, I may earn a small commission at no extra cost to you. I only recommend products I genuinely believe in. This is not veterinary advice — always consult your veterinarian for your dog's specific dietary needs.
+    <p><strong>Prices shown are live from Amazon</strong> as of June 2026. Click through for current pricing — Amazon prices can change daily.</p>
+    <p><strong>#2 and #3 are prescription diets</strong> — they require veterinarian authorization. Do not feed these without consulting your vet.</p>
+    <p><strong>Transition slowly:</strong> When switching foods, mix old and new over 7-10 days to avoid digestive upset.</p>
+    <div class="notes-disclaimer">
+      <strong>Disclosure:</strong> This page contains Amazon affiliate links. Purchases through these links may earn a small commission at no extra cost to you. This is not veterinary advice — always consult your veterinarian for your dog's specific dietary needs.
     </div>
   </div>
 
 </div>
 
 <script>
-// ===== SINGLE FOOD CALCULATOR =====
 function updateCalc() {
-  const weight = parseFloat(document.getElementById('dogWeight').value) || 0;
-  const activity = document.getElementById('activityLevel').value;
-  let pct;
+  var w = parseFloat(document.getElementById('dogWeight').value) || 0;
+  var act = parseFloat(document.getElementById('activityLevel').value);
+  var pct = act / 100;
+  var daily = (w * pct);
+  var monthly = daily * 30;
+  var pa = parseFloat(document.getElementById('priceA').value) || 0;
   
-  if (activity === 'custom') {
-    document.getElementById('customPctField').style.display = '';
-    pct = parseFloat(document.getElementById('customPct').value) || 2;
+  var mixOn = document.getElementById('mixToggle').checked;
+  var mixPanel = document.getElementById('mixPanel');
+  var mixBD = document.getElementById('mixBreakdown');
+  var ratioA = 1;
+  
+  if (mixOn) {
+    mixPanel.classList.add('show');
+    mixBD.style.display = '';
+    var ratioRaw = parseInt(document.getElementById('mixRatio').value);
+    ratioA = ratioRaw / 100;
+    var ratioB = 1 - ratioA;
+    var pb = parseFloat(document.getElementById('priceB').value) || 0;
+    
+    var monthlyA = monthly * ratioA;
+    var monthlyB = monthly * ratioB;
+    var costA = monthlyA * pa;
+    var costB = monthlyB * pb;
+    var totalCost = costA + costB;
+    var avgPrice = (pa * ratioA + pb * ratioB);
+    
+    document.getElementById('mixLabelA').textContent = 'Food A (' + Math.round(ratioA*100) + '%)';
+    document.getElementById('mixLabelB').textContent = 'Food B (' + Math.round(ratioB*100) + '%)';
+    document.getElementById('mixRatioDisplay').textContent = Math.round(ratioA*100) + ' / ' + Math.round(ratioB*100);
+    document.getElementById('mixAmtA').textContent = monthlyA.toFixed(1) + ' lbs';
+    document.getElementById('mixAmtB').textContent = monthlyB.toFixed(1) + ' lbs';
+    document.getElementById('mixCostA').textContent = '$' + costA.toFixed(2);
+    document.getElementById('mixCostB').textContent = '$' + costB.toFixed(2);
+    
+    document.getElementById('monthlyCost').textContent = '$' + totalCost.toFixed(2);
   } else {
-    document.getElementById('customPctField').style.display = 'none';
-    pct = parseFloat(activity);
+    mixPanel.classList.remove('show');
+    mixBD.style.display = 'none';
+    document.getElementById('monthlyCost').textContent = '$' + (monthly * pa).toFixed(2);
   }
   
-  const price = parseFloat(document.getElementById('foodPrice').value) || 0;
-  const dailyLbs = (weight * pct) / 100;
-  const monthlyLbs = dailyLbs * 30;
-  const monthlyCost = monthlyLbs * price;
+  document.getElementById('dailyLbs').textContent = daily.toFixed(2);
+  document.getElementById('monthlyLbs').textContent = monthly.toFixed(1);
   
-  document.getElementById('dailyFood').textContent = dailyLbs.toFixed(2);
-  document.getElementById('monthlyFood').textContent = monthlyLbs.toFixed(1);
-  document.getElementById('monthlyCost').textContent = '$' + monthlyCost.toFixed(2);
+  // Update slider gradient
+  var slider = document.getElementById('mixRatio');
+  if (slider) {
+    var v = slider.value;
+    slider.style.background = 'linear-gradient(to right, #d97706 0%, #d97706 ' + v + '%, #e7e5e4 ' + v + '%, #e7e5e4 100%)';
+  }
 }
 
-function quickSelectFood() {
-  const sel = document.getElementById('quickFood');
+function toggleMix() {
+  updateCalc();
+}
+
+function fillFoodB() {
+  var sel = document.getElementById('quickFoodB');
   if (sel.value) {
-    document.getElementById('foodPrice').value = sel.value;
+    document.getElementById('priceB').value = sel.value;
     updateCalc();
   }
 }
 
-// ===== MIX CALCULATOR =====
-function updateMixCalc() {
-  const weight = parseFloat(document.getElementById('mixDogWeight').value) || 0;
-  const activity = parseFloat(document.getElementById('mixActivityLevel').value) || 2;
-  const pct = activity;
-  
-  const ratioRaw = parseInt(document.getElementById('mixRatio').value);
-  const ratioA = ratioRaw / 100;
-  const ratioB = 1 - ratioA;
-  
-  const selA = document.getElementById('mixFoodA');
-  const selB = document.getElementById('mixFoodB');
-  const priceA = parseFloat(selA.value);
-  const priceB = parseFloat(selB.value);
-  const nameA = selA.selectedOptions[0].getAttribute('data-name');
-  const nameB = selB.selectedOptions[0].getAttribute('data-name');
-  
-  const dailyLbs = (weight * pct) / 100;
-  const monthlyLbs = dailyLbs * 30;
-  
-  const monthlyA = monthlyLbs * ratioA;
-  const monthlyB = monthlyLbs * ratioB;
-  const costA = monthlyA * priceA;
-  const costB = monthlyB * priceB;
-  const totalCost = costA + costB;
-  
-  document.getElementById('mixLabelA').textContent = nameA.substring(0, 40) + ' (' + Math.round(ratioA * 100) + '%)';
-  document.getElementById('mixLabelB').textContent = nameB.substring(0, 40) + ' (' + Math.round(ratioB * 100) + '%)';
-  document.getElementById('mixRatioDisplay').textContent = Math.round(ratioA * 100) + ' / ' + Math.round(ratioB * 100);
-  
-  document.getElementById('mixResultNameA').textContent = nameA;
-  document.getElementById('mixResultNameB').textContent = nameB;
-  document.getElementById('mixAmountA').textContent = monthlyA.toFixed(1) + ' lbs';
-  document.getElementById('mixAmountB').textContent = monthlyB.toFixed(1) + ' lbs';
-  document.getElementById('mixCostA').textContent = '$' + costA.toFixed(2) + ' / month';
-  document.getElementById('mixCostB').textContent = '$' + costB.toFixed(2) + ' / month';
-  document.getElementById('mixTotalCost').textContent = '$' + totalCost.toFixed(2);
-}
-
-// Initialize
-document.getElementById('dogWeight').addEventListener('input', updateCalc);
-document.getElementById('activityLevel').addEventListener('change', updateCalc);
-document.getElementById('customPct').addEventListener('input', updateCalc);
-document.getElementById('foodPrice').addEventListener('input', updateCalc);
-updateCalc();
-updateMixCalc();
-
-// Update range slider gradient
-document.getElementById('mixRatio').addEventListener('input', function() {
-  const val = this.value;
-  this.style.background = 'linear-gradient(to right, #d97706 0%, #d97706 ' + val + '%, #e7e5e4 ' + val + '%, #e7e5e4 100%)';
-  updateMixCalc();
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('mixRatio').addEventListener('input', updateCalc);
+  updateCalc();
 });
 </script>
 
