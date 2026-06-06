@@ -500,19 +500,10 @@
       opacity: .6;
       margin-top: 4px;
     }
-    .stat-src a {
-      color: var(--text-muted);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
+    .stat-src a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
     .stat-src a:hover { color: var(--accent); }
 
-    .source-link {
-      font-size: 11px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .source-link { font-size: 11px; color: var(--accent); text-decoration: none; font-weight: 500; }
     .source-link:hover { text-decoration: underline; }
 
     .intro-sources {
@@ -529,6 +520,17 @@
     .intro-sources p:last-child { margin: 0; }
     .intro-sources a { color: #0369a1; text-decoration: underline; text-underline-offset: 2px; }
     .intro-sources a:hover { color: var(--accent); }
+
+    .disclosure {
+      background: var(--accent-light);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+    }
 
     .health-section {
       background: var(--card);
@@ -648,16 +650,89 @@
     }
     .freq-table tr:last-child td { border-bottom: none; }
 
-    .disclosure {
-      background: var(--accent-light);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      border-radius: var(--radius);
+    /* Product Cards */
+    .supp-subcat { margin: 28px 0 36px; }
+    .supp-subcat-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 4px;
     }
+    .supp-subcat-desc { font-size: 14px; color: var(--text-muted); margin: 0 0 16px; }
+    .supp-grid { display: flex; flex-direction: column; gap: 20px; }
+    .supp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow .15s;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+    }
+    .supp-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .supp-top {
+      display: flex;
+      gap: 24px;
+      padding: 24px 28px 0;
+      align-items: flex-start;
+    }
+    @media (max-width: 560px) { .supp-top { flex-direction: column; align-items: center; text-align: center; } }
+    .supp-img {
+      width: 160px; height: 160px;
+      border-radius: 8px; object-fit: contain;
+      background: #f8f8f8; flex-shrink: 0;
+    }
+    .supp-info { flex: 1; min-width: 0; }
+    .supp-name {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 20px; font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .supp-ing { font-size: 14px; color: var(--accent); font-weight: 500; line-height: 1.4; }
+    .supp-price-tag {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .supp-price { font-size: 28px; font-weight: 700; color: var(--text); }
+    .supp-best {
+      background: var(--accent-light);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .supp-best strong { color: var(--accent); }
+    .supp-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: filter .15s;
+      margin-left: 8px;
+    }
+    .supp-btn:hover { filter: brightness(1.1); }
+
+    .supp-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+    .supp-fbtn {
+      padding: 6px 16px; border-radius: 20px;
+      border: 1px solid var(--border); background: var(--card);
+      font-size: 12px; font-weight: 500; color: var(--text-muted);
+      cursor: pointer; transition: all .15s; font-family: inherit;
+    }
+    .supp-fbtn:hover { border-color: var(--accent); color: var(--accent); }
+    .supp-fbtn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .supp-card.hidden { display: none; }
+    .supp-subcat.hidden { display: none; }
   </style>
 </head>
 <body>
@@ -735,12 +810,206 @@
         <h4>Usage Frequency</h4>
         <table class="freq-table">
           <tr><td>Toothbrushing (ideal)</td><td><strong>Daily</strong></td></tr>
-          <tr><td>Toothbrushing (minimum)</td><td><strong>3× per week</strong></td></tr>
+          <tr><td>Toothbrushing (minimum)</td><td><strong>3&times; per week</strong></td></tr>
           <tr><td>Dental chews</td><td><strong>Daily</strong></td></tr>
           <tr><td>Water additives</td><td><strong>Daily (with every water change)</strong></td></tr>
           <tr><td>Dental wipes &amp; sprays</td><td><strong>Daily, after meals</strong></td></tr>
         </table>
       </div>
+      <div class="supp-filter"><button class="supp-fbtn active" data-filter="all">All</button><button class="supp-fbtn" data-filter="kit">Starter Kits</button><button class="supp-fbtn" data-filter="powder">Dental Powders</button><button class="supp-fbtn" data-filter="additive">Water Additives</button><button class="supp-fbtn" data-filter="chew">Chews & Treats</button><button class="supp-fbtn" data-filter="spray">Sprays</button><button class="supp-fbtn" data-filter="wipe">Wipes</button></div>    <div class="supp-subcat" data-sub="kit">
+      <h4 class="supp-subcat-title">Starter Kits</h4>
+      <p class="supp-subcat-desc">All-in-one bundles with toothpaste, brush, and spray</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0FLDXMV63?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="kit">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/711BaVcmIBL._AC_SL1500_.jpg" alt="Kwippy Dog Teeth Cleaning Toothpaste & Brushing Kit" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Kwippy Dog Teeth Cleaning Toothpaste & Brushing Kit &mdash; 3-Piece Kit</h3>
+            <span class="supp-ing">Enzymatic toothpaste + finger brush + oral spray</span>
+            <div class="supp-best"><strong>Best for:</strong> First-time brushers — complete starter kit with everything you need</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$15.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>    <div class="supp-subcat" data-sub="powder">
+      <h4 class="supp-subcat-title">Dental Powders</h4>
+      <p class="supp-subcat-desc">Sprinkle on food — no brushing needed</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0G4XKYKH6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81Xp4o7bIVL._AC_SL1500_.jpg" alt="Probiotic Dog Dental Powder — Plaque Off" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Probiotic Dog Dental Powder — Plaque Off &mdash; 150g / 5.3 oz</h3>
+            <span class="supp-ing">Enzymes & Probiotics, Natural Cleaning Formula</span>
+            <div class="supp-best"><strong>Best for:</strong> No-brush daily dental maintenance — sprinkle on food</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$17.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B0GR8CGYMC?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71uJ0n9Yw+L._AC_SL1500_.jpg" alt="Vetriuntrix Dog Dental Powder" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Vetriuntrix Dog Dental Powder &mdash; 150g</h3>
+            <span class="supp-ing">Natural Enzymes & Probiotics</span>
+            <div class="supp-best"><strong>Best for:</strong> Picky eaters — tasteless powder mixes invisibly into food</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$26.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B0FS71H7CP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71w0B34eSwL._AC_SL1500_.jpg" alt="LHQR Dog Teeth Cleaning Powder — Mint" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">LHQR Dog Teeth Cleaning Powder — Mint &mdash; 160g / 80 Servings</h3>
+            <span class="supp-ing">Natural plaque & tartar remover, mint flavor</span>
+            <div class="supp-best"><strong>Best for:</strong> Value pick — 80 servings at a great price</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$16.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B0GXF77824?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71TQ1kdgpOL._AC_SL1500_.jpg" alt="Qgala Dog Dental Powder with 750M CFU Probiotics" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Qgala Dog Dental Powder with 750M CFU Probiotics &mdash; 4 oz</h3>
+            <span class="supp-ing">750M CFU Probiotics, Seaweed, Rosemary, Green Tea</span>
+            <div class="supp-best"><strong>Best for:</strong> Probiotic-powered cleaning — supports healthy oral microbiome</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$19.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B0DZTV3VTV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71heNEYJBBL._AC_SL1500_.jpg" alt="Bark&Spark Dog Teeth Cleaning Powder" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bark&Spark Dog Teeth Cleaning Powder &mdash; 90 Servings</h3>
+            <span class="supp-ing">Pro formula — plaque & tartar remover, breath freshener</span>
+            <div class="supp-best"><strong>Best for:</strong> Visible results — most dogs show improvements in 3 weeks</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$19.75</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B0FSS94PDM?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71-mJ8lS1sL._AC_SL1500_.jpg" alt="NATURE TARGET Dog Dental Powder" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">NATURE TARGET Dog Dental Powder &mdash; 180g</h3>
+            <span class="supp-ing">Brown Algae, Rosemary, Green Tea & Probiotics</span>
+            <div class="supp-best"><strong>Best for:</strong> All-natural formula — works from the inside out</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$17.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>    <div class="supp-subcat" data-sub="additive">
+      <h4 class="supp-subcat-title">Water Additives</h4>
+      <p class="supp-subcat-desc">Add to water bowl daily for zero-effort cleaning</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B09RTKP5QS?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="additive">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/91oWtXSaMXL._AC_SL1500_.jpg" alt="Bodhi Dog Peppermint Dental Water Additive" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bodhi Dog Peppermint Dental Water Additive &mdash; 8 oz</h3>
+            <span class="supp-ing">Peppermint, plaque-reducing formula — Made in USA</span>
+            <div class="supp-best"><strong>Best for:</strong> The easiest option — just add to water bowl daily</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$9.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B07GXW7NPQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="additive">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71vRRAfUAZL._AC_SL1500_.jpg" alt="Bodhi Dog Peppermint Dental Water Additive — Large" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bodhi Dog Peppermint Dental Water Additive — Large &mdash; 17 oz</h3>
+            <span class="supp-ing">Peppermint, tartar-reducing formula — Made in USA</span>
+            <div class="supp-best"><strong>Best for:</strong> Multi-dog households — large bottle lasts months</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$17.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>    <div class="supp-subcat" data-sub="chew">
+      <h4 class="supp-subcat-title">Dental Chews & Treats</h4>
+      <p class="supp-subcat-desc">Treats that clean teeth while your dog chews</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08TPWTCT5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="chew">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/818Ub6L4CHL._AC_SL1500_.jpg" alt="Shameless Pets Dental Treats — A Cluck A Day" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Shameless Pets Dental Treats — A Cluck A Day &mdash; 6 oz</h3>
+            <span class="supp-ing">Chicken, grain-free dental chews with digestive support</span>
+            <div class="supp-best"><strong>Best for:</strong> Dogs who love treats — dental care disguised as a snack</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$7.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a>      <a href="https://www.amazon.com/dp/B0FM3QYR1Z?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="chew">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/813ZUYDvtXL._AC_SL1500_.jpg" alt="PETPHABET Dental Chews — 3 Flavor Variety Pack" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">PETPHABET Dental Chews — 3 Flavor Variety Pack &mdash; 15 Chews</h3>
+            <span class="supp-ing">Mint, Chicken & Beef flavors — SGS tested, no sugar or fillers</span>
+            <div class="supp-best"><strong>Best for:</strong> Medium & large breeds — 3 flavors in one pack</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$15.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>    <div class="supp-subcat" data-sub="spray">
+      <h4 class="supp-subcat-title">Oral Sprays</h4>
+      <p class="supp-subcat-desc">Quick spray for dogs that resist brushing</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0FP2WWRY6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="spray">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71K+afujnTL._AC_SL1500_.jpg" alt="Dog Dental Spray with Nano Silver & Valerian" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Dog Dental Spray with Nano Silver & Valerian &mdash; 4 oz</h3>
+            <span class="supp-ing">Nano Silver, Chamomile, Neem Oil, Green Tea, Valerian</span>
+            <div class="supp-best"><strong>Best for:</strong> Dogs that won't let you near their mouth — just spray</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$7.77</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>    <div class="supp-subcat" data-sub="wipe">
+      <h4 class="supp-subcat-title">Dental Wipes</h4>
+      <p class="supp-subcat-desc">Wipe teeth clean — great for on-the-go</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0GTC4PPM3?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="wipe">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71HRa5JPAnL._AC_SL1500_.jpg" alt="Dr. Oakley Yukon Vet Pet Teeth Cleaning Wipes" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Dr. Oakley Yukon Vet Pet Teeth Cleaning Wipes &mdash; 50 Wipes</h3>
+            <span class="supp-ing">Chicken-flavored dental cleaning formula</span>
+            <div class="supp-best"><strong>Best for:</strong> Quick daily wipe-downs — no brush, no mess</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$10.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>
     </div>
   </div>
 
@@ -768,11 +1037,15 @@
         <h4>Usage Frequency</h4>
         <table class="freq-table">
           <tr><td>Ear cleaning (at-risk/floppy-ear breeds)</td><td><strong>Weekly</strong></td></tr>
-          <tr><td>Ear cleaning (upright-ear breeds)</td><td><strong>Every 2–4 weeks</strong></td></tr>
-          <tr><td>Ear wipes (maintenance)</td><td><strong>1–2× per week</strong></td></tr>
-          <tr><td>Ear mite treatment</td><td><strong>As directed (typically every 2–4 weeks during treatment)</strong></td></tr>
+          <tr><td>Ear cleaning (upright-ear breeds)</td><td><strong>Every 2&ndash;4 weeks</strong></td></tr>
+          <tr><td>Ear wipes (maintenance)</td><td><strong>1&ndash;2&times; per week</strong></td></tr>
+          <tr><td>Ear mite treatment</td><td><strong>As directed (typically every 2&ndash;4 weeks during treatment)</strong></td></tr>
           <tr><td>Post-swim/bath drying</td><td><strong>Every time after water exposure</strong></td></tr>
         </table>
+      </div>
+      <div class="products-placeholder" style="margin-top:16px;text-align:center;padding:28px;background:#f8f8f8;border-radius:8px">
+        <span style="font-size:15px;font-weight:600;color:var(--text-muted)">Products Coming Soon</span>
+        <p style="margin:6px 0 0;font-size:13px;color:var(--text-muted)">We're curating the best ear care products. Check back soon.</p>
       </div>
     </div>
   </div>
@@ -801,19 +1074,23 @@
       <div class="usage-freq">
         <h4>Usage Frequency</h4>
         <table class="freq-table">
-          <tr><td>Medicated shampoo (treatment)</td><td><strong>Every 1–2 weeks</strong></td></tr>
-          <tr><td>General grooming bath</td><td><strong>Every 2–4 weeks</strong></td></tr>
-          <tr><td>Hot spot treatment (flare-up)</td><td><strong>2–3× per day as needed</strong></td></tr>
+          <tr><td>Medicated shampoo (treatment)</td><td><strong>Every 1&ndash;2 weeks</strong></td></tr>
+          <tr><td>General grooming bath</td><td><strong>Every 2&ndash;4 weeks</strong></td></tr>
+          <tr><td>Hot spot treatment (flare-up)</td><td><strong>2&ndash;3&times; per day as needed</strong></td></tr>
           <tr><td>Omega-3 fish oil</td><td><strong>Daily</strong></td></tr>
           <tr><td>Paw balm / nose butter</td><td><strong>Daily in extreme weather</strong></td></tr>
           <tr><td>Brushing (long-haired breeds)</td><td><strong>Daily</strong></td></tr>
-          <tr><td>Brushing (short-haired breeds)</td><td><strong>2–3× per week</strong></td></tr>
+          <tr><td>Brushing (short-haired breeds)</td><td><strong>2&ndash;3&times; per week</strong></td></tr>
         </table>
+      </div>
+      <div class="products-placeholder" style="margin-top:16px;text-align:center;padding:28px;background:#f8f8f8;border-radius:8px">
+        <span style="font-size:15px;font-weight:600;color:var(--text-muted)">Products Coming Soon</span>
+        <p style="margin:6px 0 0;font-size:13px;color:var(--text-muted)">We're curating the best skin and coat care products. Check back soon.</p>
       </div>
     </div>
   </div>
 
-  <div class="notes-box" style="margin-top:32px;padding:20px 28px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text-muted);line-height:1.7">
+  <div style="margin-top:32px;padding:20px 28px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text-muted);line-height:1.7">
     <h2 style="font-family:'Newsreader',Georgia,serif;font-size:20px;color:var(--text);margin:0 0 8px">Important Disclaimer</h2>
     <p style="margin:0 0 8px">This guide is for informational purposes only. Always consult your veterinarian before starting any new care routine — especially for dogs with pre-existing conditions.</p>
     <div style="font-size:12px;color:var(--text-muted)">
@@ -822,6 +1099,27 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('.supp-fbtn');
+  const subcats = document.querySelectorAll('.supp-subcat');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      subcats.forEach(sc => {
+        if (filter === 'all' || sc.dataset.sub === filter) {
+          sc.classList.remove('hidden');
+        } else {
+          sc.classList.add('hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
