@@ -1082,10 +1082,41 @@
           <tr><td>Post-swim/bath drying</td><td><strong>Every time after water exposure</strong></td></tr>
         </table>
       </div>
-      <div class="products-placeholder" style="margin-top:16px;text-align:center;padding:28px;background:#f8f8f8;border-radius:8px">
-        <span style="font-size:15px;font-weight:600;color:var(--text-muted)">Products Coming Soon</span>
-        <p style="margin:6px 0 0;font-size:13px;color:var(--text-muted)">We're curating the best ear care products. Check back soon.</p>
-      </div>
+      <div class="supp-filter ear-filter"><button class="supp-fbtn ear-fbtn active" data-filter="all">All</button><button class="supp-fbtn ear-fbtn" data-filter="swab">Cotton Swabs</button><button class="supp-fbtn ear-fbtn" data-filter="wipe">Ear Wipes</button></div>    <div class="supp-subcat ear-subcat" data-sub="swab">
+      <h4 class="supp-subcat-title">Cotton Swabs</h4>
+      <p class="supp-subcat-desc">Long cotton swabs for deep cleaning ear folds and crevices</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0G1RLH5DG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card ear-card" data-sub="swab">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/61x8Ik7+lCL._AC_SL1500_.jpg" alt="UrbanAbode 200 Pcs 6" Long Cotton Swabs" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">UrbanAbode 200 Pcs 6" Long Cotton Swabs &mdash; 200 Swabs</h3>
+            <span class="supp-ing">Bamboo handle, lint-free cotton — highly absorbent</span>
+            <div class="supp-best"><strong>Best for:</strong> Deep cleaning ear folds & crevices — extra-long for safety</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$11.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>    <div class="supp-subcat ear-subcat" data-sub="wipe">
+      <h4 class="supp-subcat-title">Ear Wipes</h4>
+      <p class="supp-subcat-desc">Pre-moistened wipes for quick, gentle daily ear cleaning</p>
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DZ8L262L?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card ear-card" data-sub="wipe">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71WzQzfhMyL._AC_SL1500_.jpg" alt="REFRESHIFY Dog Ear Wipes — Mint Scented" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">REFRESHIFY Dog Ear Wipes — Mint Scented &mdash; 100 Wipes</h3>
+            <span class="supp-ing">Aloe, Witch Hazel, Mint — vet-formulated, alcohol-free</span>
+            <div class="supp-best"><strong>Best for:</strong> Daily quick clean — finger-sleeve design for easy control</div>
+            <div class="supp-price-tag">
+              <span class="supp-price">$11.99</span>
+              <span class="supp-btn">View on Amazon &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </a></div>
+    </div>
     </div>
   </div>
 
@@ -1165,14 +1196,32 @@
   });
 
   // Product filter (oral sub-categories)
-  const btns = document.querySelectorAll('.supp-fbtn');
-  const subcats = document.querySelectorAll('.supp-subcat');
+  const btns = document.querySelectorAll('.supp-fbtn:not(.ear-fbtn)');
+  const subcats = document.querySelectorAll('.supp-subcat:not(.ear-subcat)');
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
       btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       subcats.forEach(sc => {
+        if (filter === 'all' || sc.dataset.sub === filter) {
+          sc.classList.remove('hidden');
+        } else {
+          sc.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Ear product filter
+  const earBtns = document.querySelectorAll('.ear-fbtn');
+  const earSubcats = document.querySelectorAll('.ear-subcat');
+  earBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      earBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      earSubcats.forEach(sc => {
         if (filter === 'all' || sc.dataset.sub === filter) {
           sc.classList.remove('hidden');
         } else {
