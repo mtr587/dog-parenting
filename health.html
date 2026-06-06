@@ -707,100 +707,113 @@
       border-radius: var(--radius);
     }
 
-    /* Supplement Product Cards */
-    .supp-subcat { margin: 24px 0 32px; }
+    /* Supplement Product Cards — matching dog-food format */
+    .supp-subcat { margin: 28px 0 36px; }
     .supp-subcat-title {
-      font-size: 15px;
-      font-weight: 700;
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
       color: var(--text);
       margin: 0 0 4px;
     }
     .supp-subcat-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
-      margin: 0 0 12px;
+      margin: 0 0 16px;
     }
     .supp-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 12px;
-    }
-    @media (max-width: 400px) { .supp-grid { grid-template-columns: 1fr; } }
-    .supp-card {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      background: var(--bg);
+      flex-direction: column;
+      gap: 20px;
+    }
+    .supp-card {
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow .15s;
       text-decoration: none;
       color: var(--text);
-      transition: border-color .15s, box-shadow .15s;
+      display: block;
     }
     .supp-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
     }
-    .supp-img-wrap {
-      flex-shrink: 0;
-      width: 72px;
-      height: 72px;
+    .supp-top {
+      display: flex;
+      gap: 24px;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    @media (max-width: 560px) {
+      .supp-top { flex-direction: column; align-items: center; text-align: center; }
+    }
+    .supp-img {
+      width: 160px;
+      height: 160px;
       border-radius: 8px;
-      overflow: hidden;
-      background: var(--card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .supp-img-wrap img {
-      width: 100%;
-      height: 100%;
       object-fit: contain;
+      background: #f8f8f8;
+      flex-shrink: 0;
     }
-    .supp-info {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .supp-info { flex: 1; min-width: 0; }
     .supp-name {
-      font-size: 13px;
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 20px;
       font-weight: 600;
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      margin: 0 0 4px;
     }
-    .supp-ing, .supp-for {
-      font-size: 11px;
+    .supp-ing {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .supp-for {
+      font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.35;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      margin-top: 4px;
+    }
+    .supp-price-tag {
+      margin-top: 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
     }
     .supp-price {
-      flex-shrink: 0;
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 2px;
-    }
-    .supp-dollar {
-      font-size: 16px;
+      font-size: 28px;
       font-weight: 700;
-      color: var(--accent);
+      color: var(--text);
     }
-    .supp-buy {
-      font-size: 11px;
-      color: var(--accent);
-      white-space: nowrap;
+    .supp-unit {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
     }
+    .supp-body {
+      padding: 20px 28px 28px;
+    }
+    .supp-best {
+      background: var(--accent-light);
+      border-radius: 8px;
+      padding: 10px 16px;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+    .supp-best strong { color: var(--accent); }
+    .supp-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: filter .15s;
+    }
+    .supp-btn:hover { filter: brightness(1.1); }
   </style>
 </head>
 <body>
@@ -881,445 +894,541 @@
           <div class="supp-subcat">
       <h4 class="supp-subcat-title">Joint &amp; Mobility Support</h4>
       <p class="supp-subcat-desc">Glucosamine, chondroitin, and natural anti-inflammatories to keep your dog moving comfortably</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXV92CFD?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71KmMjYJJRL._AC_SL1500_.jpg" alt="Life4Legs Hip & Joint Soft Chews" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXV92CFD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71KmMjYJJRL._AC_SL1500_.jpg" alt="Life4Legs Hip & Joint Soft Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Life4Legs Hip & Joint Soft Chews</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Turmeric, Omega-3</span>
+            <span class="supp-for">All breeds, especially seniors and large dogs</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$16</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Life4Legs Hip & Joint Soft Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Turmeric, Omega-3</span>
-          <span class="supp-for"><strong>Best For:</strong> All breeds, especially seniors and large dogs</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All breeds, especially seniors and large dogs</div>
+          <a href="https://www.amazon.com/dp/B0BXV92CFD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$16</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0C43VWFFB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71CWBYkTsXL._AC_SL1342_.jpg" alt="Bernie's Healthy Hips Joint Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bernie's Healthy Hips Joint Chews</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Turmeric + 13 more (16 total)</span>
+            <span class="supp-for">All dogs, all life stages</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0C43VWFFB?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71CWBYkTsXL._AC_SL1342_.jpg" alt="Bernie's Healthy Hips Joint Chews" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, all life stages</div>
+          <a href="https://www.amazon.com/dp/B0C43VWFFB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Bernie's Healthy Hips Joint Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Turmeric + 13 more (16 total)</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, all life stages</span>
+      </a>      <a href="https://www.amazon.com/dp/B0C43W7GPB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71CqaP3Cr6L._AC_SL1342_.jpg" alt="Bernie's Marvelous Mobility Joint Support" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bernie's Marvelous Mobility Joint Support</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Omega-3s (EPA/DHA), Antioxidants</span>
+            <span class="supp-for">All dogs, especially active and aging</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, especially active and aging</div>
+          <a href="https://www.amazon.com/dp/B0C43W7GPB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0C43W7GPB?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71CqaP3Cr6L._AC_SL1342_.jpg" alt="Bernie's Marvelous Mobility Joint Support" loading="lazy" />
+      </a>      <a href="https://www.amazon.com/dp/B0CV9B9VCD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81WVwsscxNL._AC_SL1500_.jpg" alt="Natural Dog Company Hip & Joint Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Natural Dog Company Hip & Joint Chews</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Green Lipped Mussel, Turmeric</span>
+            <span class="supp-for">All breeds and sizes</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$49</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Bernie's Marvelous Mobility Joint Support</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Omega-3s (EPA/DHA), Antioxidants</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, especially active and aging</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All breeds and sizes</div>
+          <a href="https://www.amazon.com/dp/B0CV9B9VCD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0DK7J25LP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71MgHgXWhKL._AC_SL1500_.jpg" alt="Life4Legs Joint + Multivitamin Bundle" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Life4Legs Joint + Multivitamin Bundle</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Omega-3 + 23 Vitamins & Minerals</span>
+            <span class="supp-for">All sizes, convenient two-in-one daily care</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$44</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CV9B9VCD?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81WVwsscxNL._AC_SL1500_.jpg" alt="Natural Dog Company Hip & Joint Chews" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All sizes, convenient two-in-one daily care</div>
+          <a href="https://www.amazon.com/dp/B0DK7J25LP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Natural Dog Company Hip & Joint Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Green Lipped Mussel, Turmeric</span>
-          <span class="supp-for"><strong>Best For:</strong> All breeds and sizes</span>
+      </a>      <a href="https://www.amazon.com/dp/B0G4C913H5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81YcqTorDkL._AC_SL1500_.jpg" alt="Dog Glucosamine Joint Supplement" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Dog Glucosamine Joint Supplement</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Turmeric</span>
+            <span class="supp-for">All breeds, seniors, dogs with stiffness</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$14</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$49</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All breeds, seniors, dogs with stiffness</div>
+          <a href="https://www.amazon.com/dp/B0G4C913H5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0DK7J25LP?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71MgHgXWhKL._AC_SL1500_.jpg" alt="Life4Legs Joint + Multivitamin Bundle" loading="lazy" />
+      </a>      <a href="https://www.amazon.com/dp/B0GFY487R1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81YkRmwtE+L._AC_SL1500_.jpg" alt="Ayourpets Hip & Joint Herbal Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Ayourpets Hip & Joint Herbal Chews</h3>
+            <span class="supp-ing">Key Ingredients: Boswellia, Guggulu, Turmeric, Ashwagandha (Ayurvedic)</span>
+            <span class="supp-for">Dogs with stiff joints, natural alternative to glucosamine</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Life4Legs Joint + Multivitamin Bundle</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Omega-3 + 23 Vitamins & Minerals</span>
-          <span class="supp-for"><strong>Best For:</strong> All sizes, convenient two-in-one daily care</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$44</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0G4C913H5?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81YcqTorDkL._AC_SL1500_.jpg" alt="Dog Glucosamine Joint Supplement" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Dog Glucosamine Joint Supplement</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Turmeric</span>
-          <span class="supp-for"><strong>Best For:</strong> All breeds, seniors, dogs with stiffness</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$14</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFY487R1?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81YkRmwtE+L._AC_SL1500_.jpg" alt="Ayourpets Hip & Joint Herbal Chews" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Ayourpets Hip & Joint Herbal Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Boswellia, Guggulu, Turmeric, Ashwagandha (Ayurvedic)</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with stiff joints, natural alternative to glucosamine</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with stiff joints, natural alternative to glucosamine</div>
+          <a href="https://www.amazon.com/dp/B0GFY487R1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Daily Multivitamins</h4>
       <p class="supp-subcat-desc">All-in-one formulas covering the nutritional gaps in your dog's diet</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXWW3Z65?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71cdEatiOZL._AC_SL1500_.jpg" alt="Life4Legs 12-in-1 Multivitamin" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXWW3Z65?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71cdEatiOZL._AC_SL1500_.jpg" alt="Life4Legs 12-in-1 Multivitamin" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Life4Legs 12-in-1 Multivitamin</h3>
+            <span class="supp-ing">Key Ingredients: Omega-3 Salmon Oil, Glucosamine, Hemp Oil, Biotin, Vitamin E</span>
+            <span class="supp-for">All dogs, daily wellness</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$19</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Life4Legs 12-in-1 Multivitamin</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Omega-3 Salmon Oil, Glucosamine, Hemp Oil, Biotin, Vitamin E</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, daily wellness</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, daily wellness</div>
+          <a href="https://www.amazon.com/dp/B0BXWW3Z65?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$19</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0CV4KDDKJ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/813uSukLkdL._AC_SL1500_.jpg" alt="Natural Dog Company 25-in-1 Multivitamin" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Natural Dog Company 25-in-1 Multivitamin</h3>
+            <span class="supp-ing">Key Ingredients: 25 Vitamins & Minerals, Zinc, Folic Acid, Omega-Rich Nutrients</span>
+            <span class="supp-for">Puppies and adult dogs, vet-formulated</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$49</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CV4KDDKJ?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/813uSukLkdL._AC_SL1500_.jpg" alt="Natural Dog Company 25-in-1 Multivitamin" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Puppies and adult dogs, vet-formulated</div>
+          <a href="https://www.amazon.com/dp/B0CV4KDDKJ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Natural Dog Company 25-in-1 Multivitamin</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> 25 Vitamins & Minerals, Zinc, Folic Acid, Omega-Rich Nutrients</span>
-          <span class="supp-for"><strong>Best For:</strong> Puppies and adult dogs, vet-formulated</span>
+      </a>      <a href="https://www.amazon.com/dp/B0FVDXYS3W?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81v-Sjmd5JL._AC_SL1500_.jpg" alt="GuruAmi 40-in-1 Dog Multivitamin" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">GuruAmi 40-in-1 Dog Multivitamin</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, MSM, Turmeric, Probiotics, Omega-3, Vitamins A-K</span>
+            <span class="supp-for">All breeds, comprehensive daily support</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$49</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All breeds, comprehensive daily support</div>
+          <a href="https://www.amazon.com/dp/B0FVDXYS3W?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FVDXYS3W?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81v-Sjmd5JL._AC_SL1500_.jpg" alt="GuruAmi 40-in-1 Dog Multivitamin" loading="lazy" />
+      </a>      <a href="https://www.amazon.com/dp/B0GDY1QB94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71MxZRDZX9L._AC_SL1500_.jpg" alt="GuruAmi 40-in-1 Dog Vitamins (Value)" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">GuruAmi 40-in-1 Dog Vitamins (Value)</h3>
+            <span class="supp-ing">Key Ingredients: Probiotics, Omega-3, Glucosamine, Essential Vitamins & Minerals</span>
+            <span class="supp-for">Budget-friendly complete multivitamin for all dogs</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$13</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">GuruAmi 40-in-1 Dog Multivitamin</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, MSM, Turmeric, Probiotics, Omega-3, Vitamins A-K</span>
-          <span class="supp-for"><strong>Best For:</strong> All breeds, comprehensive daily support</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Budget-friendly complete multivitamin for all dogs</div>
+          <a href="https://www.amazon.com/dp/B0GDY1QB94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0GTLVWWMC?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/61dKBBdS6TL._AC_SL1500_.jpg" alt="AnLipro 24-in-1 Dog Multivitamin" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">AnLipro 24-in-1 Dog Multivitamin</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Probiotics, Omega-3</span>
+            <span class="supp-for">All dogs, supports joints, skin, gut, and immunity</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$15</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GDY1QB94?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71MxZRDZX9L._AC_SL1500_.jpg" alt="GuruAmi 40-in-1 Dog Vitamins (Value)" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">GuruAmi 40-in-1 Dog Vitamins (Value)</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Probiotics, Omega-3, Glucosamine, Essential Vitamins & Minerals</span>
-          <span class="supp-for"><strong>Best For:</strong> Budget-friendly complete multivitamin for all dogs</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$13</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GTLVWWMC?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/61dKBBdS6TL._AC_SL1500_.jpg" alt="AnLipro 24-in-1 Dog Multivitamin" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">AnLipro 24-in-1 Dog Multivitamin</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Probiotics, Omega-3</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, supports joints, skin, gut, and immunity</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$15</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, supports joints, skin, gut, and immunity</div>
+          <a href="https://www.amazon.com/dp/B0GTLVWWMC?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Probiotics &amp; Digestive Health</h4>
       <p class="supp-subcat-desc">Good bacteria and enzymes for a happy gut, better digestion, and stronger immunity</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRKJ46?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71mB6a9bcVL._AC_SL1500_.jpg" alt="Perfect Poop Digestion Supplement" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRKJ46?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71mB6a9bcVL._AC_SL1500_.jpg" alt="Perfect Poop Digestion Supplement" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Perfect Poop Digestion Supplement</h3>
+            <span class="supp-ing">Key Ingredients: Fiber, Prebiotics, Probiotics, Digestive Enzymes (4-in-1)</span>
+            <span class="supp-for">Dogs with digestive issues, gas, loose stools</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$25</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Perfect Poop Digestion Supplement</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Fiber, Prebiotics, Probiotics, Digestive Enzymes (4-in-1)</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with digestive issues, gas, loose stools</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with digestive issues, gas, loose stools</div>
+          <a href="https://www.amazon.com/dp/B08KWRKJ46?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$25</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0FCHBP3HV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81x0HLcevBL._AC_SL1500_.jpg" alt="Joyfull Probiotics for Dogs" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Joyfull Probiotics for Dogs</h3>
+            <span class="supp-ing">Key Ingredients: 1 Billion CFU Lactobacillus, Enterococcus, Beef Bone Broth</span>
+            <span class="supp-for">All dogs, picky eaters, daily digestive health</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FCHBP3HV?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81x0HLcevBL._AC_SL1500_.jpg" alt="Joyfull Probiotics for Dogs" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, picky eaters, daily digestive health</div>
+          <a href="https://www.amazon.com/dp/B0FCHBP3HV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Joyfull Probiotics for Dogs</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> 1 Billion CFU Lactobacillus, Enterococcus, Beef Bone Broth</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, picky eaters, daily digestive health</span>
+      </a>      <a href="https://www.amazon.com/dp/B0GFW4FB7T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/716e4jxxotL._AC_SL1500_.jpg" alt="GuruAmi Probiotic Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">GuruAmi Probiotic Chews</h3>
+            <span class="supp-ing">Key Ingredients: 12 Probiotic Strains, Pumpkin, Inulin, Omega-3</span>
+            <span class="supp-for">Dogs with yeast issues, itchy skin, digestive upset</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$9</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with yeast issues, itchy skin, digestive upset</div>
+          <a href="https://www.amazon.com/dp/B0GFW4FB7T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFW4FB7T?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/716e4jxxotL._AC_SL1500_.jpg" alt="GuruAmi Probiotic Chews" loading="lazy" />
+      </a>      <a href="https://www.amazon.com/dp/B0GFY726FN?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81TJha5I5ZL._AC_SL1500_.jpg" alt="Ayourpets Herbal Digestive Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Ayourpets Herbal Digestive Chews</h3>
+            <span class="supp-ing">Key Ingredients: Ginger, Fennel, Turmeric, Bilva (Ayurvedic)</span>
+            <span class="supp-for">Dogs with diarrhea, sensitive stomachs, gas</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">GuruAmi Probiotic Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> 12 Probiotic Strains, Pumpkin, Inulin, Omega-3</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with yeast issues, itchy skin, digestive upset</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$9</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFY726FN?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81TJha5I5ZL._AC_SL1500_.jpg" alt="Ayourpets Herbal Digestive Chews" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Ayourpets Herbal Digestive Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Ginger, Fennel, Turmeric, Bilva (Ayurvedic)</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with diarrhea, sensitive stomachs, gas</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with diarrhea, sensitive stomachs, gas</div>
+          <a href="https://www.amazon.com/dp/B0GFY726FN?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Omega-3 &amp; Skin Health</h4>
       <p class="supp-subcat-desc">Fish oil, algae oil, and anti-itch formulas for a shiny coat and healthy skin</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DG34TQBQ?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71BNDJ+MU-L._AC_SL1342_.jpg" alt="Bernie's OMG! Omegas Fish Oil Chews" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DG34TQBQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71BNDJ+MU-L._AC_SL1342_.jpg" alt="Bernie's OMG! Omegas Fish Oil Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bernie's OMG! Omegas Fish Oil Chews</h3>
+            <span class="supp-ing">Key Ingredients: 5X DHA+EPA, Fish Oil, Vitamin E, Plant Polyphenols</span>
+            <span class="supp-for">All dogs, skin & coat health, heart & brain support</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$27</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Bernie's OMG! Omegas Fish Oil Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> 5X DHA+EPA, Fish Oil, Vitamin E, Plant Polyphenols</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, skin & coat health, heart & brain support</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, skin & coat health, heart & brain support</div>
+          <a href="https://www.amazon.com/dp/B0DG34TQBQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$27</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0DX7GSJXH?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71-bdZWqB6L._AC_SL1500_.jpg" alt="Natural Dog Company Omega-3 for Seniors" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Natural Dog Company Omega-3 for Seniors</h3>
+            <span class="supp-ing">Key Ingredients: EPA+DHA Salmon & Pollock Oil, Turmeric, Borage Oil (GLA)</span>
+            <span class="supp-for">Senior dogs 7+, mobility, cognitive function, heart</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0DX7GSJXH?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71-bdZWqB6L._AC_SL1500_.jpg" alt="Natural Dog Company Omega-3 for Seniors" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Senior dogs 7+, mobility, cognitive function, heart</div>
+          <a href="https://www.amazon.com/dp/B0DX7GSJXH?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Natural Dog Company Omega-3 for Seniors</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> EPA+DHA Salmon & Pollock Oil, Turmeric, Borage Oil (GLA)</span>
-          <span class="supp-for"><strong>Best For:</strong> Senior dogs 7+, mobility, cognitive function, heart</span>
+      </a>      <a href="https://www.amazon.com/dp/B0GFXS832T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81DAeSxCzVL._AC_SL1500_.jpg" alt="Ayourpets Dog Allergy & Itch Relief" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Ayourpets Dog Allergy & Itch Relief</h3>
+            <span class="supp-ing">Key Ingredients: Turmeric, Stinging Nettle, Algae Oil Omega-3, DGL Licorice</span>
+            <span class="supp-for">Dogs with itchy skin, hot spots, paw licking, ear itching</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFXS832T?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81DAeSxCzVL._AC_SL1500_.jpg" alt="Ayourpets Dog Allergy & Itch Relief" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Ayourpets Dog Allergy & Itch Relief</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Turmeric, Stinging Nettle, Algae Oil Omega-3, DGL Licorice</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with itchy skin, hot spots, paw licking, ear itching</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with itchy skin, hot spots, paw licking, ear itching</div>
+          <a href="https://www.amazon.com/dp/B0GFXS832T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Heart, Urinary &amp; Organ Support</h4>
       <p class="supp-subcat-desc">Targeted support for heart health, urinary tract, and cognitive function</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B07GTZ6WV1?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71uxHRividL._AC_SL1500_.jpg" alt="CardioMAX Heart Support Chewable" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B07GTZ6WV1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71uxHRividL._AC_SL1500_.jpg" alt="CardioMAX Heart Support Chewable" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">CardioMAX Heart Support Chewable</h3>
+            <span class="supp-ing">Key Ingredients: L-Taurine, L-Carnitine, Omega-3 (EPA/DHA), CoQ10</span>
+            <span class="supp-for">Dogs with breed-related heart concerns (Dobermans, Boxers, etc.)</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$34</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">CardioMAX Heart Support Chewable</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> L-Taurine, L-Carnitine, Omega-3 (EPA/DHA), CoQ10</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with breed-related heart concerns (Dobermans, Boxers, etc.)</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with breed-related heart concerns (Dobermans, Boxers, etc.)</div>
+          <a href="https://www.amazon.com/dp/B07GTZ6WV1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$34</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0CXLV9H94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/712t1jzly2L._AC_SL1500_.jpg" alt="CardioMAX Heart Support Granules" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">CardioMAX Heart Support Granules</h3>
+            <span class="supp-ing">Key Ingredients: L-Taurine, L-Carnitine, CoQ10, Hawthorne, Arginine</span>
+            <span class="supp-for">Dogs with heart murmurs, valve disease, circulation support</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$39</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CXLV9H94?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/712t1jzly2L._AC_SL1500_.jpg" alt="CardioMAX Heart Support Granules" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with heart murmurs, valve disease, circulation support</div>
+          <a href="https://www.amazon.com/dp/B0CXLV9H94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">CardioMAX Heart Support Granules</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> L-Taurine, L-Carnitine, CoQ10, Hawthorne, Arginine</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with heart murmurs, valve disease, circulation support</span>
+      </a>      <a href="https://www.amazon.com/dp/B0FXZ8JK3X?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71mkQegrrJL._AC_SL1500_.jpg" alt="CardioMAX Heart Support Large Breed" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">CardioMAX Heart Support Large Breed</h3>
+            <span class="supp-ing">Key Ingredients: L-Taurine, L-Carnitine, CoQ10, Hawthorne</span>
+            <span class="supp-for">Large breed dogs, cardiovascular wellness</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$58</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$39</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Large breed dogs, cardiovascular wellness</div>
+          <a href="https://www.amazon.com/dp/B0FXZ8JK3X?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FXZ8JK3X?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71mkQegrrJL._AC_SL1500_.jpg" alt="CardioMAX Heart Support Large Breed" loading="lazy" />
+      </a>      <a href="https://www.amazon.com/dp/B0G4V6GP5Q?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81cew6EOzRL._AC_SL1500_.jpg" alt="Dog Urinary Tract Supplement" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Dog Urinary Tract Supplement</h3>
+            <span class="supp-ing">Key Ingredients: Cranberry, D-Mannose, Astragalus Root</span>
+            <span class="supp-for">Dogs with UTI or bladder health concerns</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$21</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">CardioMAX Heart Support Large Breed</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> L-Taurine, L-Carnitine, CoQ10, Hawthorne</span>
-          <span class="supp-for"><strong>Best For:</strong> Large breed dogs, cardiovascular wellness</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs with UTI or bladder health concerns</div>
+          <a href="https://www.amazon.com/dp/B0G4V6GP5Q?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$58</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0GFXHL45T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/811sVle6k2L._AC_SL1500_.jpg" alt="Ayourpets Senior Brain & Cognitive" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Ayourpets Senior Brain & Cognitive</h3>
+            <span class="supp-ing">Key Ingredients: Brahmi, Ashwagandha, Algae Oil Omega-3 (DHA)</span>
+            <span class="supp-for">Senior dogs, cognitive support, memory & focus</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$29</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0G4V6GP5Q?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81cew6EOzRL._AC_SL1500_.jpg" alt="Dog Urinary Tract Supplement" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Dog Urinary Tract Supplement</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Cranberry, D-Mannose, Astragalus Root</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs with UTI or bladder health concerns</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$21</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFXHL45T?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/811sVle6k2L._AC_SL1500_.jpg" alt="Ayourpets Senior Brain & Cognitive" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Ayourpets Senior Brain & Cognitive</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Brahmi, Ashwagandha, Algae Oil Omega-3 (DHA)</span>
-          <span class="supp-for"><strong>Best For:</strong> Senior dogs, cognitive support, memory & focus</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$29</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Senior dogs, cognitive support, memory & focus</div>
+          <a href="https://www.amazon.com/dp/B0GFXHL45T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Calming &amp; Anxiety Relief</h4>
       <p class="supp-subcat-desc">Natural relaxation aids for stressed, anxious, or hyperactive dogs</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0CX5MDHQF?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81xgjjTuhlL._AC_SL1500_.jpg" alt="Get Joy Calming Chews for Dogs" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0CX5MDHQF?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81xgjjTuhlL._AC_SL1500_.jpg" alt="Get Joy Calming Chews for Dogs" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Get Joy Calming Chews for Dogs</h3>
+            <span class="supp-ing">Key Ingredients: Valerian Root, Chamomile, L-Tryptophan</span>
+            <span class="supp-for">Anxious dogs, separation anxiety, fireworks, travel</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$44</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Get Joy Calming Chews for Dogs</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Valerian Root, Chamomile, L-Tryptophan</span>
-          <span class="supp-for"><strong>Best For:</strong> Anxious dogs, separation anxiety, fireworks, travel</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Anxious dogs, separation anxiety, fireworks, travel</div>
+          <a href="https://www.amazon.com/dp/B0CX5MDHQF?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$44</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0F193H3FG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71tcaxwpXXL._AC_SL1500_.jpg" alt="Joint + Calming Chews Combo" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Joint + Calming Chews Combo</h3>
+            <span class="supp-ing">Key Ingredients: Glucosamine, Chondroitin, MSM, Turmeric + Chamomile, Valerian, Melatonin</span>
+            <span class="supp-for">Anxious dogs that also need joint support</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$17</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0F193H3FG?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71tcaxwpXXL._AC_SL1500_.jpg" alt="Joint + Calming Chews Combo" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Joint + Calming Chews Combo</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Glucosamine, Chondroitin, MSM, Turmeric + Chamomile, Valerian, Melatonin</span>
-          <span class="supp-for"><strong>Best For:</strong> Anxious dogs that also need joint support</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$17</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Anxious dogs that also need joint support</div>
+          <a href="https://www.amazon.com/dp/B0F193H3FG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Dental, Toppers &amp; More</h4>
       <p class="supp-subcat-desc">Food toppers, dental chews, flea & tick support, and specialty bundles</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRX4CV?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71mB6a9bcVL._AC_SL1500_.jpg" alt="Perfect Poop Digestion &amp; Health Supplement for Dogs: Fib" loading="lazy" />
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRX4CV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71mB6a9bcVL._AC_SL1500_.jpg" alt="Perfect Poop Digestion &amp; Health Supplement for Dogs: Fib" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Perfect Poop Digestion &amp; Health Supplement for Dogs: Fib</h3>
+            <span class="supp-ing">Key Ingredients: </span>
+            <span class="supp-for"></span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$25</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Perfect Poop Digestion &amp; Health Supplement for Dogs: Fib</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> </span>
-          <span class="supp-for"><strong>Best For:</strong> </span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> </div>
+          <a href="https://www.amazon.com/dp/B08KWRX4CV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$25</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0BZ9R4JRQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81dNqmzF5nL._AC_SL1500_.jpg" alt="Bernie's Charming Chompers Dental Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bernie's Charming Chompers Dental Chews</h3>
+            <span class="supp-ing">Key Ingredients: Pumpkin, Sweet Potato, Turkey, Minerals & Vitamins</span>
+            <span class="supp-for">Dogs 15-25 lbs, daily dental care</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$24</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0BZ9R4JRQ?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81dNqmzF5nL._AC_SL1500_.jpg" alt="Bernie's Charming Chompers Dental Chews" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs 15-25 lbs, daily dental care</div>
+          <a href="https://www.amazon.com/dp/B0BZ9R4JRQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Bernie's Charming Chompers Dental Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Pumpkin, Sweet Potato, Turkey, Minerals & Vitamins</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs 15-25 lbs, daily dental care</span>
+      </a>      <a href="https://www.amazon.com/dp/B0CBN69T3P?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71ffnFk6fZL._AC_SL1500_.jpg" alt="Beg & Barker Beef Dog Food Toppers" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Beg & Barker Beef Dog Food Toppers</h3>
+            <span class="supp-ing">Key Ingredients: 100% USA Beef, Single Ingredient, Grain-Free</span>
+            <span class="supp-for">All dogs, picky eaters, meal enhancement</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$19</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$24</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> All dogs, picky eaters, meal enhancement</div>
+          <a href="https://www.amazon.com/dp/B0CBN69T3P?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CBN69T3P?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71ffnFk6fZL._AC_SL1500_.jpg" alt="Beg & Barker Beef Dog Food Toppers" loading="lazy" />
+      </a>      <a href="https://www.amazon.com/dp/B0FC3ZX9WV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/81dNqmzF5nL._AC_SL1500_.jpg" alt="Bernie's Charming Chompers Dental Chews" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Bernie's Charming Chompers Dental Chews</h3>
+            <span class="supp-ing">Key Ingredients: Pumpkin, Sweet Potato, Turkey, Minerals & Vitamins</span>
+            <span class="supp-for">Dogs 15-25 lbs, daily teeth cleaning & fresh breath</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$24</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Beg & Barker Beef Dog Food Toppers</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> 100% USA Beef, Single Ingredient, Grain-Free</span>
-          <span class="supp-for"><strong>Best For:</strong> All dogs, picky eaters, meal enhancement</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs 15-25 lbs, daily teeth cleaning & fresh breath</div>
+          <a href="https://www.amazon.com/dp/B0FC3ZX9WV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$19</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+      </a>      <a href="https://www.amazon.com/dp/B0FF5BT9J6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71VfLFpm2LL._AC_SL1500_.jpg" alt="Natural Dog Company Senior Bundle" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Natural Dog Company Senior Bundle</h3>
+            <span class="supp-ing">Key Ingredients: Omega-3 Fish Oil + Senior Wellness Chews with Vision Support</span>
+            <span class="supp-for">Senior dogs, full-body aging support</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$54</span>
+            </div>
+          </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FC3ZX9WV?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/81dNqmzF5nL._AC_SL1500_.jpg" alt="Bernie's Charming Chompers Dental Chews" loading="lazy" />
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Senior dogs, full-body aging support</div>
+          <a href="https://www.amazon.com/dp/B0FF5BT9J6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
-        <div class="supp-info">
-          <span class="supp-name">Bernie's Charming Chompers Dental Chews</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Pumpkin, Sweet Potato, Turkey, Minerals & Vitamins</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs 15-25 lbs, daily teeth cleaning & fresh breath</span>
+      </a>      <a href="https://www.amazon.com/dp/B0FM779YJY?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+        <div class="supp-top">
+          <img class="supp-img" src="https://m.media-amazon.com/images/I/71DYUBzChbL._AC_SL1500_.jpg" alt="Natural Flea & Tick Chewable Supplement" loading="lazy" onerror="this.style.display='none'">
+          <div class="supp-info">
+            <h3 class="supp-name">Natural Flea & Tick Chewable Supplement</h3>
+            <span class="supp-ing">Key Ingredients: Herbal Blend, Skin & Coat Nutrients</span>
+            <span class="supp-for">Dogs needing seasonal pest support, skin health</span>
+            <div class="supp-price-tag">
+              <span class="supp-price">$22</span>
+            </div>
+          </div>
         </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$24</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FF5BT9J6?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71VfLFpm2LL._AC_SL1500_.jpg" alt="Natural Dog Company Senior Bundle" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Natural Dog Company Senior Bundle</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Omega-3 Fish Oil + Senior Wellness Chews with Vision Support</span>
-          <span class="supp-for"><strong>Best For:</strong> Senior dogs, full-body aging support</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$54</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
-        </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FM779YJY?tag=jamesma06-20" target="_blank" rel="nofollow noopener" class="supp-card">
-        <div class="supp-img-wrap">
-          <img src="https://m.media-amazon.com/images/I/71DYUBzChbL._AC_SL1500_.jpg" alt="Natural Flea & Tick Chewable Supplement" loading="lazy" />
-        </div>
-        <div class="supp-info">
-          <span class="supp-name">Natural Flea & Tick Chewable Supplement</span>
-          <span class="supp-ing"><strong>Key Ingredients:</strong> Herbal Blend, Skin & Coat Nutrients</span>
-          <span class="supp-for"><strong>Best For:</strong> Dogs needing seasonal pest support, skin health</span>
-        </div>
-        <div class="supp-price">
-          <span class="supp-dollar">$22</span>
-          <span class="supp-buy">View on Amazon &#8594;</span>
+        <div class="supp-body">
+          <div class="supp-best"><strong>Best for:</strong> Dogs needing seasonal pest support, skin health</div>
+          <a href="https://www.amazon.com/dp/B0FM779YJY?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-btn">View on Amazon →</a>
         </div>
       </a></div>
     </div>
