@@ -170,7 +170,6 @@
     .carousel-item .thumb:has(img[src])::before{display:none}
     .carousel-item .thumb:has(img[src]){background:var(--card)}
     .carousel-item .thumb img{cursor:pointer}
-    @media(min-width:769px){.float-share{display:none}}
     @media(max-width:480px){.carousel-item{flex:0 0 100%}.carousel-btn{display:none}.carousel-item .thumb{max-height:none}}
 
     /* LAYOUT: sidebar TOC + main content */
@@ -337,86 +336,10 @@
     .share-btn:hover{box-shadow:0 2px 8px rgba(0,0,0,.08);border-color:var(--accent);color:var(--accent)}
     .share-btn .icon{font-size:18px;line-height:1}
 
-    /* Floating share bar */
-    .float-share{
-      position:fixed;
-      bottom:24px;
-      right:24px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      z-index:100;
-      opacity:0;
-      transform:translateY(20px);
-      transition:opacity .3s,transform .3s;
-      pointer-events:none;
-    }
-    .float-share.visible{
-      opacity:1;
-      transform:translateY(0);
-      pointer-events:auto;
-    }
-    .float-btn{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      border:1px solid var(--border);
-      background:var(--card);
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:18px;
-      color:var(--text);
-      text-decoration:none;
-      box-shadow:0 2px 12px rgba(0,0,0,.1);
-      transition:all .15s;
-    }
-    .float-btn:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);border-color:var(--accent);color:var(--accent);transform:scale(1.05)}
-
-    .share-btn-wrap{position:relative}
-
-    /* Share popup — shows on hover */
-    .share-popup{
-      position:absolute;
-      bottom:52px;
-      right:0;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      box-shadow:0 4px 20px rgba(0,0,0,.12);
-      display:none;
-      flex-direction:column;
-      gap:6px;
-      min-width:160px;
-    }
-    .float-share .share-btn-wrap:hover .share-popup,
-    .share-popup:hover{
-      display:flex;
-    }
-    /* Keep popup open when hovering between button and popup */
-    .share-btn-wrap.hover .share-popup{
-      display:flex;
-    }
-    .share-popup .popup-btn{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border:none;
-      background:none;
-      cursor:pointer;
-      font-size:14px;
-      color:var(--text);
-      border-radius:6px;
-      text-decoration:none;
-      transition:background .1s;
-    }
-    .share-popup .popup-btn:hover{background:var(--bg)}
+    
 
     @media(max-width:480px){
-      .float-share{bottom:16px;right:16px}
+     
     }
 
     .footer{
@@ -1003,32 +926,6 @@
 </main>
 </div><!-- /article-layout -->
 
-<!-- ==================== FLOATING SHARE ==================== -->
-<div class="float-share" id="floatShare">
-  <div class="share-btn-wrap">
-    <div class="share-popup" id="sharePopup">
-      <button class="popup-btn" onclick="shareTwitter()"><span>𝕏</span> Twitter</button>
-      <button class="popup-btn" onclick="shareFacebook()"><span>f</span> Facebook</button>
-      <button class="popup-btn" onclick="shareInstagram(event)"><span>📷</span> Instagram</button>
-      <button class="popup-btn" onclick="shareSnapchat()"><span>👻</span> Snapchat</button>
-      <button class="popup-btn" onclick="shareTiktok(event)"><span>🎵</span> TikTok</button>
-      <button class="popup-btn" onclick="sharePinterest()"><span>📌</span> Pinterest</button>
-      <button class="popup-btn" onclick="shareEmail()"><span>✉️</span> Email</button>
-      <button class="popup-btn" onclick="shareNative()" id="floatNativeBtn" style="display:none"><span>📤</span> More</button>
-      <button class="popup-btn" onclick="copyLink(event)"><span>🔗</span> Copy Link</button>
-    </div>
-    <button class="float-btn" id="shareToggle" title="Share">📤</button>
-  </div>
-  <a class="float-btn" href="#" title="Back to top" style="font-size:16px">↑</a>
-        
-      </div>
-
-<!-- ===== LIGHTBOX ===== -->
-<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image enlarged view">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-  <img id="lightboxImg" src="" alt="Enlarged product image" / loading="lazy">
-</div>
-
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
   <p>Written for busy dog parents &bull; Made with 🐕 and coffee &bull; <a href="#">Back to top</a></p>
@@ -1095,53 +992,6 @@ document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
   window.addEventListener('resize', () => updateButtons());
   updateButtons();
 });
-
-// ===================== FLOATING SHARE BAR =====================
-(function() {
-  'use strict';
-  var floatBar = document.getElementById('floatShare');
-  if (!floatBar) return;
-  
-  var topBtn = floatBar.querySelector('a[href="#"]');
-  
-  // Show native share button if available
-  var nativeBtn = document.getElementById('shareNativeBtn');
-  var floatNative = document.getElementById('floatNativeBtn');
-  if (navigator.share) {
-    if (nativeBtn) nativeBtn.style.display = 'inline-flex';
-    if (floatNative) floatNative.style.display = 'flex';
-  }
-  
-  var checkScroll = function() {
-    var scrollY = window.scrollY || window.pageYOffset;
-    floatBar.classList.toggle('visible', scrollY > window.innerHeight * 0.6);
-  };
-  setTimeout(checkScroll, 50);
-  window.addEventListener('scroll', checkScroll);
-  
-  // Hover handling for popup
-  var shareWrap = floatBar.querySelector('.share-btn-wrap');
-  if (shareWrap) {
-    var hoverTimer;
-    shareWrap.addEventListener('mouseenter', function() {
-      clearTimeout(hoverTimer);
-      shareWrap.classList.add('hover');
-    });
-    shareWrap.addEventListener('mouseleave', function() {
-      hoverTimer = setTimeout(function() {
-        shareWrap.classList.remove('hover');
-      }, 200);
-    });
-  }
-
-  // Smooth scroll to top
-  if (topBtn) {
-    topBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-})();
 
 // ===================== SHARE FUNCTIONS =====================
 function getShareUrl() {
