@@ -835,6 +835,7 @@
       color: #fff;
     }
     .supp-card.hidden { display: none; }
+    .supp-subcat.hidden { display: none; }
 
   </style>
 </head>
@@ -913,7 +914,7 @@
           <tr><td>Calming aids (as needed)</td><td><strong>30–60 min before stressful event</strong></td></tr>
         </table>
       </div>
-      <div class="supp-filter" id="suppFilter"><button class="supp-fbtn active" data-filter="all">All</button><button class="supp-fbtn" data-filter="joint">Joint & Mobility</button><button class="supp-fbtn" data-filter="multi">Multivitamins</button><button class="supp-fbtn" data-filter="gut">Probiotics</button><button class="supp-fbtn" data-filter="omega">Omega & Skin</button><button class="supp-fbtn" data-filter="heart">Heart & Organ</button><button class="supp-fbtn" data-filter="calm">Calming</button><button class="supp-fbtn" data-filter="other">Dental & More</button></div>    <div class="supp-subcat">
+      <div class="supp-filter" id="suppFilter"><button class="supp-fbtn active" data-filter="all">All</button><button class="supp-fbtn" data-filter="joint">Joint & Mobility</button><button class="supp-fbtn" data-filter="multi">Multivitamins</button><button class="supp-fbtn" data-filter="gut">Probiotics</button><button class="supp-fbtn" data-filter="omega">Omega & Skin</button><button class="supp-fbtn" data-filter="heart">Heart & Organ</button><button class="supp-fbtn" data-filter="calm">Calming</button><button class="supp-fbtn" data-filter="other">Dental & More</button></div>    <div class="supp-subcat" data-sub="joint">
       <h4 class="supp-subcat-title">Joint &amp; Mobility Support</h4>
       <p class="supp-subcat-desc">Glucosamine, chondroitin, and natural anti-inflammatories to keep your dog moving comfortably</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXV92CFD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
@@ -1008,7 +1009,7 @@
           </div>
         </div>
       </a></div>
-    </div>    <div class="supp-subcat">
+    </div>    <div class="supp-subcat" data-sub="multi">
       <h4 class="supp-subcat-title">Daily Multivitamins</h4>
       <p class="supp-subcat-desc">All-in-one formulas covering the nutritional gaps in your dog's diet</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXWW3Z65?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="multi">
@@ -1077,7 +1078,7 @@
           </div>
         </div>
       </a></div>
-    </div>    <div class="supp-subcat">
+    </div>    <div class="supp-subcat" data-sub="gut">
       <h4 class="supp-subcat-title">Probiotics &amp; Digestive Health</h4>
       <p class="supp-subcat-desc">Good bacteria and enzymes for a happy gut, better digestion, and stronger immunity</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRKJ46?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="gut">
@@ -1133,7 +1134,7 @@
           </div>
         </div>
       </a></div>
-    </div>    <div class="supp-subcat">
+    </div>    <div class="supp-subcat" data-sub="omega">
       <h4 class="supp-subcat-title">Omega-3 &amp; Skin Health</h4>
       <p class="supp-subcat-desc">Fish oil, algae oil, and anti-itch formulas for a shiny coat and healthy skin</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DG34TQBQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="omega">
@@ -1176,7 +1177,7 @@
           </div>
         </div>
       </a></div>
-    </div>    <div class="supp-subcat">
+    </div>    <div class="supp-subcat" data-sub="heart">
       <h4 class="supp-subcat-title">Heart, Urinary &amp; Organ Support</h4>
       <p class="supp-subcat-desc">Targeted support for heart health, urinary tract, and cognitive function</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B07GTZ6WV1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="heart">
@@ -1245,7 +1246,7 @@
           </div>
         </div>
       </a></div>
-    </div>    <div class="supp-subcat">
+    </div>    <div class="supp-subcat" data-sub="calm">
       <h4 class="supp-subcat-title">Calming &amp; Anxiety Relief</h4>
       <p class="supp-subcat-desc">Natural relaxation aids for stressed, anxious, or hyperactive dogs</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0CX5MDHQF?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="calm">
@@ -1275,7 +1276,7 @@
           </div>
         </div>
       </a></div>
-    </div>    <div class="supp-subcat">
+    </div>    <div class="supp-subcat" data-sub="other">
       <h4 class="supp-subcat-title">Dental, Toppers &amp; More</h4>
       <p class="supp-subcat-desc">Food toppers, dental chews, flea & tick support, and specialty bundles</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRX4CV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
@@ -1489,11 +1490,19 @@
 (function(){
   const btns = document.querySelectorAll('.supp-fbtn');
   const cards = document.querySelectorAll('.supp-card');
+  const subcats = document.querySelectorAll('.supp-subcat');
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
       btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
+      subcats.forEach(sc => {
+        if (filter === 'all' || sc.dataset.sub === filter) {
+          sc.classList.remove('hidden');
+        } else {
+          sc.classList.add('hidden');
+        }
+      });
       cards.forEach(card => {
         if (filter === 'all' || card.dataset.sub === filter) {
           card.classList.remove('hidden');
