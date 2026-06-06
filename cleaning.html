@@ -794,21 +794,15 @@
         justify-content: center;
       }
     }
-    .health-section.hidden { display: none; }
-  
-    /* Back to Top */
-    #btt-btn {
-      position: fixed; bottom: 32px; right: 28px; z-index: 9999;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--accent); color: #fff; border: none;
-      font-size: 20px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-      opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
-      display: flex; align-items: center; justify-content: center;
+    
+    @media (max-width: 560px) {
+      .supp-top { flex-direction: column; align-items: center; text-align: center; }
+      .supp-img { width: 200px; height: 200px; }
+      .supp-best { text-align: center; }
+      .supp-price-tag { justify-content: center; }
     }
-    #btt-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
-    #btt-btn.show { opacity: 1; visibility: visible; }
-    @media (max-width: 640px) { #btt-btn { bottom: 20px; right: 16px; width: 44px; height: 44px; font-size: 18px; } }
 
+    .health-section.hidden { display: none; }
   </style>
 </head>
 <body>
@@ -1100,6 +1094,11 @@
       <div style="margin-top:24px;padding:16px 20px;background:#f0f9ff;border-radius:10px;font-size:13px;color:var(--text-muted);line-height:1.7">
         <strong style="color:#0369a1">&#128161; Dental health affects the whole body:</strong> Bacteria from gum disease can spread to the heart, liver, and kidneys. Pair with <a href="#ear" style="color:#0369a1;text-decoration:underline;text-underline-offset:2px" onclick="document.querySelector('.sec-nav-btn[data-sec='ear']').click()">Ear Care &rarr;</a> and <a href="#skin" style="color:#0369a1;text-decoration:underline;text-underline-offset:2px" onclick="document.querySelector('.sec-nav-btn[data-sec='skin']').click()">Skin Care &rarr;</a> for complete preventive care.
       </div>
+
+        <div style="margin-top:24px;padding:16px 20px;background:#f0f9ff;border-radius:10px;font-size:13px;color:var(--text-muted);line-height:1.7">
+        <strong style="color:#0369a1">&#128161; Dental health affects the whole body:</strong> Bacteria from gum disease can spread to the heart, liver, and kidneys. Pair with <a href="#ear" style="color:#0369a1;text-decoration:underline;text-underline-offset:2px" onclick="document.querySelector('.sec-nav-btn[data-sec=\'ear\']').click()">Ear Care &rarr;</a> and <a href="#skin" style="color:#0369a1;text-decoration:underline;text-underline-offset:2px" onclick="document.querySelector('.sec-nav-btn[data-sec=\'skin\']').click()">Skin Care &rarr;</a> for complete preventive care.
+      </div>
+
 
   <!-- 2. Ear Care -->
   <div class="health-section" id="ear">
