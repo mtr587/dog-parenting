@@ -157,7 +157,6 @@
     .carousel-item .thumb:has(img[src])::before{display:none}
     .carousel-item .thumb:has(img[src]){background:var(--card)}
     .carousel-item .thumb img{cursor:pointer}
-    @media(min-width:769px){.float-share{display:none}}
     @media(max-width:480px){.carousel-item{flex:0 0 100%}.carousel-btn{display:none}.carousel-item .thumb{max-height:none}}
 
     /* LAYOUT: sidebar TOC + main content */
@@ -324,86 +323,10 @@
     .share-btn:hover{box-shadow:0 2px 8px rgba(0,0,0,.08);border-color:var(--accent);color:var(--accent)}
     .share-btn .icon{font-size:18px;line-height:1}
 
-    /* Floating share bar */
-    .float-share{
-      position:fixed;
-      bottom:24px;
-      right:24px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      z-index:100;
-      opacity:0;
-      transform:translateY(20px);
-      transition:opacity .3s,transform .3s;
-      pointer-events:none;
-    }
-    .float-share.visible{
-      opacity:1;
-      transform:translateY(0);
-      pointer-events:auto;
-    }
-    .float-btn{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      border:1px solid var(--border);
-      background:var(--card);
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:18px;
-      color:var(--text);
-      text-decoration:none;
-      box-shadow:0 2px 12px rgba(0,0,0,.1);
-      transition:all .15s;
-    }
-    .float-btn:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);border-color:var(--accent);color:var(--accent);transform:scale(1.05)}
-
-    .share-btn-wrap{position:relative}
-
-    /* Share popup — shows on hover */
-    .share-popup{
-      position:absolute;
-      bottom:52px;
-      right:0;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      box-shadow:0 4px 20px rgba(0,0,0,.12);
-      display:none;
-      flex-direction:column;
-      gap:6px;
-      min-width:160px;
-    }
-    .float-share .share-btn-wrap:hover .share-popup,
-    .share-popup:hover{
-      display:flex;
-    }
-    /* Keep popup open when hovering between button and popup */
-    .share-btn-wrap.hover .share-popup{
-      display:flex;
-    }
-    .share-popup .popup-btn{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border:none;
-      background:none;
-      cursor:pointer;
-      font-size:14px;
-      color:var(--text);
-      border-radius:6px;
-      text-decoration:none;
-      transition:background .1s;
-    }
-    .share-popup .popup-btn:hover{background:var(--bg)}
+    
 
     @media(max-width:480px){
-      .float-share{bottom:16px;right:16px}
+     
     }
 
     .footer{
@@ -463,7 +386,7 @@
     gtag("js", new Date());
     gtag("config", "G-644HJHNCG0");
   </script>
-  <link rel="canonical" href="https://lazypawlife.com/" />
+  <link rel="canonical" href="https://lazypawlife.com/health.html" />
 <meta property="og:title" content="Dog Supplement Guide — Vitamins & Joint Care | Lazy Paw Life" />
 <meta property="og:description" content="Dog supplement guide: joint support, multivitamins, probiotics, omega-3, and more. 32 recommended products." />
 <meta property="og:type" content="website" />
