@@ -607,6 +607,38 @@
     }
     .hs-facts strong { color: var(--accent); }
 
+    .usage-freq {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: #f0f9ff;
+      border-radius: 8px;
+    }
+    .usage-freq h4 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0c4a6e;
+      margin: 0 0 10px;
+    }
+    .freq-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .freq-table td {
+      font-size: 13px;
+      color: var(--text);
+      padding: 5px 0;
+      border-bottom: 1px solid #e0f2fe;
+    }
+    .freq-table td:first-child { padding-right: 12px; }
+    .freq-table td:last-child {
+      text-align: right;
+      white-space: nowrap;
+      color: #0369a1;
+    }
+    .freq-table tr:last-child td { border-bottom: none; }
+
     .products-placeholder {
       background: var(--bg);
       border: 2px dashed var(--border);
@@ -729,6 +761,18 @@
       <div class="hs-facts">
         <p><strong>Key fact:</strong> Many monthly heartworm preventatives also cover common intestinal parasites. One pill can protect against 3-5 types of worms — making compliance dramatically easier.</p>
       </div>
+      <div class="usage-freq">
+        <h4>Usage Frequency</h4>
+        <table class="freq-table">
+          <tr><td>Heartworm prevention (oral)</td><td><strong>Monthly</strong></td></tr>
+          <tr><td>Heartworm prevention (injectable)</td><td><strong>Every 6–12 months</strong></td></tr>
+          <tr><td>Broad-spectrum dewormer (adult dogs)</td><td><strong>Every 3–6 months</strong></td></tr>
+          <tr><td>Broad-spectrum dewormer (puppies)</td><td><strong>Every 2–4 weeks until 6 months</strong></td></tr>
+          <tr><td>Flea &amp; tick (topical/oral)</td><td><strong>Monthly</strong></td></tr>
+          <tr><td>Flea &amp; tick (collar)</td><td><strong>Every 6–8 months</strong></td></tr>
+          <tr><td>Fecal testing (routine)</td><td><strong>Annually</strong></td></tr>
+        </table>
+      </div>
       <div class="products-placeholder">
         <span class="coming-soon">Products Coming Soon</span>
         <p>We're curating the best deworming and parasite prevention products. Check back soon.</p>
@@ -757,6 +801,17 @@
       <div class="hs-facts">
         <p><strong>Key fact:</strong> Brushing just 3 times per week makes a measurable difference. Daily brushing is ideal, but even intermittent brushing reduces periodontal disease risk by 60-70% compared to never brushing.</p>
       </div>
+      <div class="usage-freq">
+        <h4>Usage Frequency</h4>
+        <table class="freq-table">
+          <tr><td>Toothbrushing (ideal)</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Toothbrushing (minimum)</td><td><strong>3× per week</strong></td></tr>
+          <tr><td>Dental chews</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Water additives</td><td><strong>Daily (with every water change)</strong></td></tr>
+          <tr><td>Dental wipes &amp; sprays</td><td><strong>Daily, after meals</strong></td></tr>
+          <tr><td>Professional cleaning</td><td><strong>Every 1–2 years</strong></td></tr>
+        </table>
+      </div>
       <div class="products-placeholder">
         <span class="coming-soon">Products Coming Soon</span>
         <p>We're curating the best dental care products. Check back soon.</p>
@@ -783,6 +838,16 @@
       </ul>
       <div class="hs-facts">
         <p><strong>Key fact:</strong> Dogs with floppy ears are 3-5x more likely to develop ear infections than dogs with upright ears. Weekly cleaning with a drying solution can reduce infection rates by up to 80% in at-risk breeds.</p>
+      </div>
+      <div class="usage-freq">
+        <h4>Usage Frequency</h4>
+        <table class="freq-table">
+          <tr><td>Ear cleaning (at-risk/floppy-ear breeds)</td><td><strong>Weekly</strong></td></tr>
+          <tr><td>Ear cleaning (upright-ear breeds)</td><td><strong>Every 2–4 weeks</strong></td></tr>
+          <tr><td>Ear wipes (maintenance)</td><td><strong>1–2× per week</strong></td></tr>
+          <tr><td>Ear mite treatment</td><td><strong>As directed (typically every 2–4 weeks during treatment)</strong></td></tr>
+          <tr><td>Post-swim/bath drying</td><td><strong>Every time after water exposure</strong></td></tr>
+        </table>
       </div>
       <div class="products-placeholder">
         <span class="coming-soon">Products Coming Soon</span>
@@ -812,6 +877,18 @@
       <div class="hs-facts">
         <p><strong>Key fact:</strong> Allergic dermatitis is the most common type of allergic reaction in dogs — triggered by fleas, food, and environmental allergens. Regular bathing with a gentle, moisturizing shampoo can wash allergens off the skin and reduce itching significantly without medication.</p>
       </div>
+      <div class="usage-freq">
+        <h4>Usage Frequency</h4>
+        <table class="freq-table">
+          <tr><td>Medicated shampoo (treatment)</td><td><strong>Every 1–2 weeks</strong></td></tr>
+          <tr><td>General grooming bath</td><td><strong>Every 2–4 weeks</strong></td></tr>
+          <tr><td>Hot spot treatment (flare-up)</td><td><strong>2–3× per day as needed</strong></td></tr>
+          <tr><td>Omega-3 fish oil</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Paw balm / nose butter</td><td><strong>Daily in extreme weather</strong></td></tr>
+          <tr><td>Brushing (long-haired breeds)</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Brushing (short-haired breeds)</td><td><strong>2–3× per week</strong></td></tr>
+        </table>
+      </div>
       <div class="products-placeholder">
         <span class="coming-soon">Products Coming Soon</span>
         <p>We're curating the best skin and coat care products. Check back soon.</p>
@@ -840,6 +917,18 @@
       </ul>
       <div class="hs-facts">
         <p><strong>Key fact:</strong> A 2021 clinical study found that dogs receiving glucosamine + chondroitin supplementation showed measurable improvement in mobility within 6-8 weeks, with effects comparable to NSAIDs in mild-to-moderate arthritis — without the gastrointestinal side effects.</p>
+      </div>
+      <div class="usage-freq">
+        <h4>Usage Frequency</h4>
+        <table class="freq-table">
+          <tr><td>Joint support (glucosamine/chondroitin)</td><td><strong>Daily — effects visible in 6–8 weeks</strong></td></tr>
+          <tr><td>Probiotics (maintenance)</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Probiotics (post-antibiotics)</td><td><strong>Daily for 2–4 weeks</strong></td></tr>
+          <tr><td>Omega-3 fish oil</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Multivitamins</td><td><strong>Daily</strong></td></tr>
+          <tr><td>Calming aids (situational)</td><td><strong>30–60 min before stressful event</strong></td></tr>
+          <tr><td>Calming aids (chronic anxiety)</td><td><strong>Daily</strong></td></tr>
+        </table>
       </div>
       <div class="products-placeholder">
         <span class="coming-soon">Products Coming Soon</span>
