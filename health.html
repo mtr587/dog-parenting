@@ -808,6 +808,33 @@
       margin-left: 8px;
     }
     .supp-btn:hover { filter: brightness(1.1); }
+
+    /* Supplement Filter Bar */
+    .supp-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 20px;
+    }
+    .supp-fbtn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all .15s;
+      font-family: inherit;
+    }
+    .supp-fbtn:hover { border-color: var(--accent); color: var(--accent); }
+    .supp-fbtn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .supp-card.hidden { display: none; }
   </style>
 </head>
 <body>
@@ -885,10 +912,10 @@
           <tr><td>Calming aids (as needed)</td><td><strong>30–60 min before stressful event</strong></td></tr>
         </table>
       </div>
-          <div class="supp-subcat">
+      <div class="supp-filter" id="suppFilter"><button class="supp-fbtn active" data-filter="all">All</button><button class="supp-fbtn" data-filter="joint">Joint & Mobility</button><button class="supp-fbtn" data-filter="multi">Multivitamins</button><button class="supp-fbtn" data-filter="gut">Probiotics</button><button class="supp-fbtn" data-filter="omega">Omega & Skin</button><button class="supp-fbtn" data-filter="heart">Heart & Organ</button><button class="supp-fbtn" data-filter="calm">Calming</button><button class="supp-fbtn" data-filter="other">Dental & More</button></div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Joint &amp; Mobility Support</h4>
       <p class="supp-subcat-desc">Glucosamine, chondroitin, and natural anti-inflammatories to keep your dog moving comfortably</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXV92CFD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXV92CFD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71KmMjYJJRL._AC_SL1500_.jpg" alt="Life4Legs Hip & Joint Soft Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -901,7 +928,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0C43VWFFB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0C43VWFFB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71CWBYkTsXL._AC_SL1342_.jpg" alt="Bernie's Healthy Hips Joint Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -914,7 +941,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0C43W7GPB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0C43W7GPB?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71CqaP3Cr6L._AC_SL1342_.jpg" alt="Bernie's Marvelous Mobility Joint Support" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -927,7 +954,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CV9B9VCD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0CV9B9VCD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81WVwsscxNL._AC_SL1500_.jpg" alt="Natural Dog Company Hip & Joint Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -940,7 +967,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0DK7J25LP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0DK7J25LP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71MgHgXWhKL._AC_SL1500_.jpg" alt="Life4Legs Joint + Multivitamin Bundle" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -953,7 +980,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0G4C913H5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0G4C913H5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81YcqTorDkL._AC_SL1500_.jpg" alt="Dog Glucosamine Joint Supplement" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -966,7 +993,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFY487R1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GFY487R1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="joint">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81YkRmwtE+L._AC_SL1500_.jpg" alt="Ayourpets Hip & Joint Herbal Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -983,7 +1010,7 @@
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Daily Multivitamins</h4>
       <p class="supp-subcat-desc">All-in-one formulas covering the nutritional gaps in your dog's diet</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXWW3Z65?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0BXWW3Z65?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="multi">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71cdEatiOZL._AC_SL1500_.jpg" alt="Life4Legs 12-in-1 Multivitamin" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -996,7 +1023,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CV4KDDKJ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0CV4KDDKJ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="multi">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/813uSukLkdL._AC_SL1500_.jpg" alt="Natural Dog Company 25-in-1 Multivitamin" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1009,7 +1036,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FVDXYS3W?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0FVDXYS3W?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="multi">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81v-Sjmd5JL._AC_SL1500_.jpg" alt="GuruAmi 40-in-1 Dog Multivitamin" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1022,7 +1049,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GDY1QB94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GDY1QB94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="multi">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71MxZRDZX9L._AC_SL1500_.jpg" alt="GuruAmi 40-in-1 Dog Vitamins (Value)" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1035,7 +1062,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GTLVWWMC?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GTLVWWMC?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="multi">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/61dKBBdS6TL._AC_SL1500_.jpg" alt="AnLipro 24-in-1 Dog Multivitamin" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1052,7 +1079,7 @@
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Probiotics &amp; Digestive Health</h4>
       <p class="supp-subcat-desc">Good bacteria and enzymes for a happy gut, better digestion, and stronger immunity</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRKJ46?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRKJ46?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="gut">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71mB6a9bcVL._AC_SL1500_.jpg" alt="Perfect Poop Digestion Supplement" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1065,7 +1092,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FCHBP3HV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0FCHBP3HV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="gut">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81x0HLcevBL._AC_SL1500_.jpg" alt="Joyfull Probiotics for Dogs" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1078,7 +1105,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFW4FB7T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GFW4FB7T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="gut">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/716e4jxxotL._AC_SL1500_.jpg" alt="GuruAmi Probiotic Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1091,7 +1118,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFY726FN?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GFY726FN?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="gut">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81TJha5I5ZL._AC_SL1500_.jpg" alt="Ayourpets Herbal Digestive Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1108,7 +1135,7 @@
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Omega-3 &amp; Skin Health</h4>
       <p class="supp-subcat-desc">Fish oil, algae oil, and anti-itch formulas for a shiny coat and healthy skin</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DG34TQBQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DG34TQBQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="omega">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71BNDJ+MU-L._AC_SL1342_.jpg" alt="Bernie's OMG! Omegas Fish Oil Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1121,7 +1148,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0DX7GSJXH?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0DX7GSJXH?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="omega">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71-bdZWqB6L._AC_SL1500_.jpg" alt="Natural Dog Company Omega-3 for Seniors" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1134,7 +1161,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFXS832T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GFXS832T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="omega">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81DAeSxCzVL._AC_SL1500_.jpg" alt="Ayourpets Dog Allergy & Itch Relief" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1151,7 +1178,7 @@
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Heart, Urinary &amp; Organ Support</h4>
       <p class="supp-subcat-desc">Targeted support for heart health, urinary tract, and cognitive function</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B07GTZ6WV1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B07GTZ6WV1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="heart">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71uxHRividL._AC_SL1500_.jpg" alt="CardioMAX Heart Support Chewable" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1164,7 +1191,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CXLV9H94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0CXLV9H94?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="heart">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/712t1jzly2L._AC_SL1500_.jpg" alt="CardioMAX Heart Support Granules" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1177,7 +1204,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FXZ8JK3X?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0FXZ8JK3X?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="heart">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71mkQegrrJL._AC_SL1500_.jpg" alt="CardioMAX Heart Support Large Breed" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1190,7 +1217,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0G4V6GP5Q?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0G4V6GP5Q?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="heart">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81cew6EOzRL._AC_SL1500_.jpg" alt="Dog Urinary Tract Supplement" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1203,7 +1230,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0GFXHL45T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0GFXHL45T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="heart">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/811sVle6k2L._AC_SL1500_.jpg" alt="Ayourpets Senior Brain & Cognitive" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1220,7 +1247,7 @@
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Calming &amp; Anxiety Relief</h4>
       <p class="supp-subcat-desc">Natural relaxation aids for stressed, anxious, or hyperactive dogs</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0CX5MDHQF?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0CX5MDHQF?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="calm">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81xgjjTuhlL._AC_SL1500_.jpg" alt="Get Joy Calming Chews for Dogs" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1233,7 +1260,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0F193H3FG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0F193H3FG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="calm">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71tcaxwpXXL._AC_SL1500_.jpg" alt="Joint + Calming Chews Combo" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1250,7 +1277,7 @@
     </div>    <div class="supp-subcat">
       <h4 class="supp-subcat-title">Dental, Toppers &amp; More</h4>
       <p class="supp-subcat-desc">Food toppers, dental chews, flea & tick support, and specialty bundles</p>
-      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRX4CV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KWRX4CV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71mB6a9bcVL._AC_SL1500_.jpg" alt="Perfect Poop Digestion &amp; Health Supplement for Dogs: Fib" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1263,7 +1290,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0BZ9R4JRQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0BZ9R4JRQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81dNqmzF5nL._AC_SL1500_.jpg" alt="Bernie's Charming Chompers Dental Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1276,7 +1303,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0CBN69T3P?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0CBN69T3P?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71ffnFk6fZL._AC_SL1500_.jpg" alt="Beg & Barker Beef Dog Food Toppers" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1289,7 +1316,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FC3ZX9WV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0FC3ZX9WV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81dNqmzF5nL._AC_SL1500_.jpg" alt="Bernie's Charming Chompers Dental Chews" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1302,7 +1329,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FF5BT9J6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0FF5BT9J6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71VfLFpm2LL._AC_SL1500_.jpg" alt="Natural Dog Company Senior Bundle" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1315,7 +1342,7 @@
             </div>
           </div>
         </div>
-      </a>      <a href="https://www.amazon.com/dp/B0FM779YJY?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card">
+      </a>      <a href="https://www.amazon.com/dp/B0FM779YJY?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="other">
         <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71DYUBzChbL._AC_SL1500_.jpg" alt="Natural Flea & Tick Chewable Supplement" loading="lazy" onerror="this.style.display='none'">
           <div class="supp-info">
@@ -1456,6 +1483,27 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('.supp-fbtn');
+  const cards = document.querySelectorAll('.supp-card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.sub === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
