@@ -722,6 +722,36 @@
     }
     .supp-btn:hover { filter: brightness(1.1); }
 
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 28px 0 32px;
+    }
+    .sec-nav-btn {
+      padding: 10px 24px;
+      border-radius: 24px;
+      border: 2px solid var(--border);
+      background: var(--card);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
+    }
+    .sec-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .sec-nav-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
     .supp-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
     .supp-fbtn {
       padding: 6px 16px; border-radius: 20px;
@@ -733,6 +763,7 @@
     .supp-fbtn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
     .supp-card.hidden { display: none; }
     .supp-subcat.hidden { display: none; }
+    .health-section.hidden { display: none; }
   </style>
 </head>
 <body>
@@ -785,6 +816,14 @@
   </div>
 
   <p style="text-align:center;font-size:14px;color:var(--text-muted);max-width:680px;margin:0 auto 12px">A few minutes of regular care — brushing teeth, cleaning ears, and bathing — can prevent years of pain, expensive vet visits, and serious health problems. Here's what every dog parent needs to know.</p>
+
+  <!-- Section Navigation -->
+  <div class="section-nav">
+    <button class="sec-nav-btn active" data-sec="all">All</button>
+    <button class="sec-nav-btn" data-sec="oral">&#129463; Oral &amp; Dental Care</button>
+    <button class="sec-nav-btn" data-sec="ear">&#128066; Ear Care &amp; Cleaning</button>
+    <button class="sec-nav-btn" data-sec="skin">&#128062; Skin &amp; Coat Care</button>
+  </div>
 
   <!-- 1. Oral & Dental Care -->
   <div class="health-section" id="oral">
@@ -1102,6 +1141,30 @@
 
 <script>
 (function(){
+  // Section navigation (oral, ear, skin)
+  const secBtns = document.querySelectorAll('.sec-nav-btn');
+  const sections = document.querySelectorAll('.health-section');
+  secBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      secBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const sec = btn.dataset.sec;
+      sections.forEach(s => {
+        if (sec === 'all' || s.id === sec) {
+          s.classList.remove('hidden');
+        } else {
+          s.classList.add('hidden');
+        }
+      });
+      // Scroll to top of sections if a specific one is selected
+      if (sec !== 'all') {
+        const target = document.getElementById(sec);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Product filter (oral sub-categories)
   const btns = document.querySelectorAll('.supp-fbtn');
   const subcats = document.querySelectorAll('.supp-subcat');
   btns.forEach(btn => {
