@@ -374,7 +374,69 @@
     #btt-btn.show { opacity: 1; visibility: visible; }
     @media (max-width: 640px) { #btt-btn { bottom: 20px; right: 16px; width: 44px; height: 44px; font-size: 18px; } }
 
-  </style>
+  
+/* Site Search */
+.site-search {
+  position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.search-input {
+  padding: 6px 14px;
+  font-size: .82rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  color: var(--text);
+  width: 180px;
+  transition: all .2s;
+  outline: none;
+  font-family: inherit;
+}
+.search-input:focus {
+  border-color: var(--accent);
+  width: 240px;
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 74 144 226), .15);
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-results {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  width: 360px;
+  max-height: 420px;
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  z-index: 10000;
+}
+.search-res-item {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: .85rem;
+  transition: background .1s;
+}
+.search-res-item:last-child { border-bottom: none; }
+.search-res-item:hover { background: var(--bg); }
+.search-res-item strong { color: var(--accent); }
+.search-res-item .sr-type {
+  font-size: .72rem;
+  color: var(--text-muted);
+}
+@media (max-width: 640px) {
+  .site-search { margin: 8px 0 0 0; width: 100%; }
+  .search-input { width: 100%; }
+  .search-input:focus { width: 100%; }
+  .search-results { width: 100%; left: 0; right: auto; }
+}
+
+</style>
 
   
   
@@ -1520,5 +1582,73 @@
       <span style="font-weight:600">📌 Related Guides:</span> <a href="/health.html" style="color:var(--accent);text-decoration:none;font-weight:500">Health &amp; Supplements</a>
     </div>
 
+
+<script>
+(function(){
+var idx = null;
+var loading = false;
+
+window.doSearch = function(q) {
+  var results = document.getElementById('search-results');
+  if (!q || q.length < 2) {
+    results.style.display = 'none';
+    results.innerHTML = '';
+    return;
+  }
+  q = q.toLowerCase();
+
+  function render(items) {
+    if (!items || items.length === 0) {
+      results.innerHTML = '<div class="search-res-item" style="color:var(--text-muted)">No results. Try a different keyword.</div>';
+      return;
+    }
+    results.innerHTML = items.slice(0,15).map(function(it) {
+      return '<a class="search-res-item" href="' + it.page + '"><strong>' + it.title.slice(0,80) + '</strong><br><span class="sr-type">' + (it.desc || '').slice(0,100) + '</span></a>';
+    }).join('');
+  }
+
+  if (idx) {
+    var filtered = idx.filter(function(it) {
+      return (it.title || '').toLowerCase().indexOf(q) > -1 || (it.desc || '').toLowerCase().indexOf(q) > -1 || (it.category || '').toLowerCase().indexOf(q) > -1;
+    });
+    render(filtered);
+    results.style.display = 'block';
+  } else if (!loading) {
+    loading = true;
+    fetch('/search-index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        idx = data;
+        var filtered = idx.filter(function(it) {
+          return (it.title || '').toLowerCase().indexOf(q) > -1 || (it.desc || '').toLowerCase().indexOf(q) > -1 || (it.category || '').toLowerCase().indexOf(q) > -1;
+        });
+        render(filtered);
+        results.style.display = 'block';
+        loading = false;
+      })
+      .catch(function() {
+        results.innerHTML = '<div class="search-res-item" style="color:var(--text-muted)">Search unavailable right now.</div>';
+        results.style.display = 'block';
+        loading = false;
+      });
+  }
+};
+
+// Close on outside click
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.site-search')) {
+    var r = document.getElementById('search-results');
+    if (r) r.style.display = 'none';
+  }
+});
+})();
+</script>
+
 </body>
 </html>
+  <div class="site-search">
+    <input type="text" id="search-input" class="search-input" placeholder="Search products..." autocomplete="off" oninput="doSearch(this.value)" onfocus="this.select()">
+    <div class="search-results" id="search-results" style="display:none"></div>
+  </div>
+
+
