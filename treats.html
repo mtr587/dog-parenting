@@ -361,13 +361,32 @@
       font-size:.85rem;
     }
     @media(max-width:480px){
-      .pros-cons-content .grid{grid-template-columns:1fr}
+      .pros-cons-content .grid{grid-template-columns:1fr;gap:12px}
     }
     .pros-cons-content .pros{color:#16a34a}
     .pros-cons-content .cons{color:#d63031}
+    .pros-cons-content .pros,.pros-cons-content .cons{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
     .pros-cons-content .pros span,.pros-cons-content .cons span{
       display:block;
-      margin-bottom:3px;
+      padding-left:14px;
+      position:relative;
+      line-height:1.5;
+    }
+    .pros-cons-content .pros span::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      font-weight:700;
+    }
+    .pros-cons-content .cons span::before{
+      content:"✗";
+      position:absolute;
+      left:0;
+      font-weight:700;
     }
     .product-info .btn{
       display:inline-block;
@@ -599,7 +618,7 @@
                 <div class="pros">
                   <strong>👍 Pros</strong>
                   <span>Single ingredient — no fillers</span>
-                  <span>Human-grade, USA beef</span>
+                  <span>Human-grade beef sourced in the USA</span>
                   <span>Safe for all life stages</span>
                 </div>
                 <div class="cons">
@@ -630,9 +649,9 @@
               <div class="grid">
                 <div class="pros">
                   <strong>👍 Pros</strong>
-                  <span>Great crunch &amp; aroma</span>
-                  <span>Natural ingredients only</span>
-                  <span>Resealable bag stays fresh</span>
+                  <span>Great crunch and aroma dogs love</span>
+                  <span>Made with natural ingredients, nothing artificial</span>
+                  <span>Resealable bag keeps product fresh</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -664,7 +683,7 @@
                   <strong>👍 Pros</strong>
                   <span>Dual-purpose: topper + treat</span>
                   <span>Soft — great for seniors' teeth</span>
-                  <span>Antioxidant-rich ingredients</span>
+                  <span>Blueberry &amp; beetroot for antioxidants</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -699,7 +718,7 @@
                   <span>100% dehydrated turkey bone broth</span>
                   <span>2lb bag — economical for multi-dog homes</span>
                   <span>Rich in collagen & glucosamine</span>
-                  <span>No synthetics or preservatives</span>
+                  <span>No synthetic additives or preservatives</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -762,7 +781,7 @@
                   <strong>👍 Pros</strong>
                   <span>2lb bag — long-lasting supply</span>
                   <span>Natural glucosamine for joints</span>
-                  <span>Zero artificial ingredients</span>
+                  <span>Zero artificial colors, flavors, or fillers</span>
                   <span>Works on any dry food</span>
                 </div>
                 <div class="cons">
@@ -794,7 +813,7 @@
                   <strong>👍 Pros</strong>
                   <span>Powder — no mixing or refrigeration</span>
                   <span>100% natural bone broth blend</span>
-                  <span>Convenient daily use</span>
+                  <span>Easy daily use — just scoop and serve</span>
                   <span>Joint and gut support</span>
                 </div>
                 <div class="cons">
@@ -827,7 +846,7 @@
                   <span>Chicken — most dogs love it</span>
                   <span>2lb bag — excellent value</span>
                   <span>Natural glucosamine & chondroitin</span>
-                  <span>USA-sourced, no synthetics</span>
+                  <span>Sourced in USA, no synthetic additives</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -859,7 +878,7 @@
                   <span>Fresh pork protein — great rotation</span>
                   <span>2lb bag — generous size</span>
                   <span>Single ingredient — nothing added</span>
-                  <span>Grain-free, no synthetics</span>
+                  <span>Grain-free formula, zero synthetic additives</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -987,7 +1006,7 @@
                   <span>100% USDA beef lung — single ingredient</span>
                   <span>Airy texture — gentle on teeth</span>
                   <span>Promotes dental hygiene</span>
-                  <span>Not irradiated</span>
+                  <span>Never irradiated or chemically treated</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -1083,7 +1102,7 @@
                   <span>Novel rabbit protein — great for allergies</span>
                   <span>25lb kibble + bone broth topper</span>
                   <span>No peas, potatoes, corn, wheat, soy</span>
-                  <span>Natural joint support</span>
+                  <span>Natural glucosamine for joint support</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
@@ -1216,7 +1235,7 @@
                 <div class="cons">
                   <strong>👎 Cons</strong>
                   <span>Fish smell — some owners mind it</span>
-                  <span>Supervise bone chewing</span>
+                  <span>Supervise during bone chewing sessions</span>
                 </div>
               </div>
             </div>
@@ -1242,7 +1261,7 @@
                   <strong>👍 Pros</strong>
                   <span>Rabbit — least allergenic protein</span>
                   <span>25lb + bonus lung chew</span>
-                  <span>Zero common allergens</span>
+                  <span>Free of common dog allergens</span>
                   <span>Bone broth for joint health</span>
                 </div>
                 <div class="cons">
@@ -1275,12 +1294,12 @@
                   <span>Turkey — gentler than chicken</span>
                   <span>87% protein from turkey</span>
                   <span>Bone broth for mobility</span>
-                  <span>Alternative poultry option</span>
+                  <span>Quality poultry alternative to chicken</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
                   <span>Still poultry — cross-allergies possible</span>
-                  <span>Premium price for turkey</span>
+                  <span>Higher price point for turkey variety</span>
                 </div>
               </div>
             </div>
@@ -1312,7 +1331,7 @@
                 <div class="cons">
                   <strong>👎 Cons</strong>
                   <span>Lamb is richer — may not suit all</span>
-                  <span>Supervise tendon chew</span>
+                  <span>Always supervise during tendon chewing</span>
                 </div>
               </div>
             </div>
@@ -1339,7 +1358,7 @@
                   <span>Unique pork protein for rotation</span>
                   <span>Includes beef shank bone</span>
                   <span>Bone broth for glucosamine</span>
-                  <span>No common allergens</span>
+                  <span>No common dog allergens, gentle formula</span>
                 </div>
                 <div class="cons">
                   <strong>👎 Cons</strong>
