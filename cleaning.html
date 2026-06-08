@@ -374,45 +374,7 @@
     #btt-btn.show { opacity: 1; visibility: visible; }
     @media (max-width: 640px) { #btt-btn { bottom: 20px; right: 16px; width: 44px; height: 44px; font-size: 18px; } }
 
-  
-        
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 20px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .filter-label {
-      font-size: .82rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-right: 4px;
-    }
-    .filter-tag {
-      display: inline-block;
-      padding: 5px 14px;
-      font-size: .82rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all .15s;
-      font-family: inherit;
-    }
-    .filter-tag:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-tag.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-    .supp-top.hidden-by-filter { display: none; }
-
-</style>
+  </style>
 
   
   
@@ -797,33 +759,8 @@
 
     .health-section.hidden { display: none; }
   </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Lazy Paw Life",
-      "item": "https://lazypawlife.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Cleaning &amp; Grooming",
-      "item": "https://lazypawlife.com/cleaning.html"
-    }
-  ]
-}
-</script>
-
 </head>
 <body>
-  <div class="breadcrumb" style="max-width:860px;margin:0 auto;padding:12px 20px 0;font-size:13px;color:var(--text-muted)">
-    <a href="/" style="color:var(--accent);text-decoration:none">Lazy Paw Life</a> &rsaquo; <span style="color:var(--text)">Cleaning &amp; Grooming</span>
-  </div>
-
 
 <div class="nav-bar">
   <div class="nav-inner">
@@ -875,18 +812,7 @@
   <p style="text-align:center;font-size:14px;color:var(--text-muted);max-width:680px;margin:0 auto 12px">A few minutes of regular care — brushing teeth, cleaning ears, and bathing — can prevent years of pain, expensive vet visits, and serious health problems. Here's what every dog parent needs to know.</p>
 
   <!-- Section Navigation -->
-  
-    <div class="filter-bar" id="benefit-filter">
-      <span class="filter-label">Filter by benefit:</span>
-      <button class="filter-tag active" data-filter="all" onclick="setCleaningFilter('all',this)">All</button>
-      <button class="filter-tag" data-filter="plaque" onclick="setCleaningFilter('plaque',this)">Plaque &amp; Tartar</button>
-      <button class="filter-tag" data-filter="breath" onclick="setCleaningFilter('breath',this)">Fresh Breath</button>
-      <button class="filter-tag" data-filter="natural" onclick="setCleaningFilter('natural',this)">Natural/Enzymatic</button>
-      <button class="filter-tag" data-filter="skin" onclick="setCleaningFilter('skin',this)">Sensitive Skin</button>
-      <button class="filter-tag" data-filter="itch" onclick="setCleaningFilter('itch',this)">Itch &amp; Hot Spot</button>
-      <button class="filter-tag" data-filter="tools" onclick="setCleaningFilter('tools',this)">Bathing &amp; Tools</button>
-    </div>
-<div class="section-nav">
+  <div class="section-nav">
     <button class="sec-nav-btn active" data-sec="all">All</button>
     <button class="sec-nav-btn" data-sec="oral">&#129463; Oral &amp; Dental Care</button>
     <button class="sec-nav-btn" data-sec="ear">&#128066; Ear Care &amp; Cleaning</button>
@@ -927,7 +853,7 @@
       <h4 class="supp-subcat-title">Starter Kits</h4>
       <p class="supp-subcat-desc">All-in-one bundles with toothpaste, brush, and spray</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0FLDXMV63?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="kit">
-        <div class="supp-top" data-benefits="plaque breath natural tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/711BaVcmIBL._AC_SL1500_.jpg" alt="Kwippy Dog Teeth Cleaning Toothpaste & Brushing Kit" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Kwippy Dog Teeth Cleaning Toothpaste & Brushing Kit &mdash; 3-Piece Kit</h3>
@@ -944,7 +870,7 @@
       <h4 class="supp-subcat-title">Dental Powders</h4>
       <p class="supp-subcat-desc">Sprinkle on food — no brushing needed</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0G4XKYKH6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
-        <div class="supp-top" data-benefits="plaque natural tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81Xp4o7bIVL._AC_SL1500_.jpg" alt="Probiotic Dog Dental Powder — Plaque Off" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Probiotic Dog Dental Powder — Plaque Off &mdash; 150g / 5.3 oz</h3>
@@ -957,7 +883,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0GR8CGYMC?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
-        <div class="supp-top" data-benefits="natural"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71uJ0n9Yw+L._AC_SL1500_.jpg" alt="Vetriuntrix Dog Dental Powder" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Vetriuntrix Dog Dental Powder &mdash; 150g</h3>
@@ -970,7 +896,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0FS71H7CP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
-        <div class="supp-top" data-benefits="plaque breath natural"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71w0B34eSwL._AC_SL1500_.jpg" alt="LHQR Dog Teeth Cleaning Powder — Mint" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">LHQR Dog Teeth Cleaning Powder — Mint &mdash; 160g / 80 Servings</h3>
@@ -983,7 +909,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0GXF77824?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
-        <div class="supp-top" data-benefits="natural"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71TQ1kdgpOL._AC_SL1500_.jpg" alt="Qgala Dog Dental Powder with 750M CFU Probiotics" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Qgala Dog Dental Powder with 750M CFU Probiotics &mdash; 4 oz</h3>
@@ -996,7 +922,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0DZTV3VTV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
-        <div class="supp-top" data-benefits="plaque breath"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71heNEYJBBL._AC_SL1500_.jpg" alt="Bark&Spark Dog Teeth Cleaning Powder" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bark&Spark Dog Teeth Cleaning Powder &mdash; 90 Servings</h3>
@@ -1009,7 +935,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0FSS94PDM?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="powder">
-        <div class="supp-top" data-benefits="natural"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71-mJ8lS1sL._AC_SL1500_.jpg" alt="NATURE TARGET Dog Dental Powder" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">NATURE TARGET Dog Dental Powder &mdash; 180g</h3>
@@ -1026,7 +952,7 @@
       <h4 class="supp-subcat-title">Water Additives</h4>
       <p class="supp-subcat-desc">Add to water bowl daily for zero-effort cleaning</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B09RTKP5QS?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="additive">
-        <div class="supp-top" data-benefits="plaque breath"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/91oWtXSaMXL._AC_SL1500_.jpg" alt="Bodhi Dog Peppermint Dental Water Additive" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Peppermint Dental Water Additive &mdash; 8 oz</h3>
@@ -1039,7 +965,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B07GXW7NPQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="additive">
-        <div class="supp-top" data-benefits="plaque breath"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71vRRAfUAZL._AC_SL1500_.jpg" alt="Bodhi Dog Peppermint Dental Water Additive — Large" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Peppermint Dental Water Additive — Large &mdash; 17 oz</h3>
@@ -1056,7 +982,7 @@
       <h4 class="supp-subcat-title">Dental Chews & Treats</h4>
       <p class="supp-subcat-desc">Treats that clean teeth while your dog chews</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08TPWTCT5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="chew">
-        <div class="supp-top" data-benefits="plaque"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/818Ub6L4CHL._AC_SL1500_.jpg" alt="Shameless Pets Dental Treats — A Cluck A Day" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Shameless Pets Dental Treats — A Cluck A Day &mdash; 6 oz</h3>
@@ -1069,7 +995,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0FM3QYR1Z?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="chew">
-        <div class="supp-top" data-benefits="plaque breath"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/813ZUYDvtXL._AC_SL1500_.jpg" alt="PETPHABET Dental Chews — 3 Flavor Variety Pack" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">PETPHABET Dental Chews — 3 Flavor Variety Pack &mdash; 15 Chews</h3>
@@ -1086,7 +1012,7 @@
       <h4 class="supp-subcat-title">Oral Sprays</h4>
       <p class="supp-subcat-desc">Quick spray for dogs that resist brushing</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0FP2WWRY6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="spray">
-        <div class="supp-top" data-benefits="breath natural"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71K+afujnTL._AC_SL1500_.jpg" alt="Dog Dental Spray with Nano Silver & Valerian" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Dog Dental Spray with Nano Silver & Valerian &mdash; 4 oz</h3>
@@ -1103,7 +1029,7 @@
       <h4 class="supp-subcat-title">Dental Wipes</h4>
       <p class="supp-subcat-desc">Wipe teeth clean — great for on-the-go</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0GTC4PPM3?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card" data-sub="wipe">
-        <div class="supp-top" data-benefits="plaque tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71HRa5JPAnL._AC_SL1500_.jpg" alt="Dr. Oakley Yukon Vet Pet Teeth Cleaning Wipes" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Dr. Oakley Yukon Vet Pet Teeth Cleaning Wipes &mdash; 50 Wipes</h3>
@@ -1183,7 +1109,7 @@
       <h4 class="supp-subcat-title">Cotton Swabs</h4>
       <p class="supp-subcat-desc">Long cotton swabs for deep cleaning ear folds and crevices</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0G1RLH5DG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card ear-card" data-sub="swab">
-        <div class="supp-top" data-benefits="tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/61x8Ik7+lCL._AC_SL1500_.jpg" alt="UrbanAbode 200 Pcs 6" Long Cotton Swabs" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">UrbanAbode 200 Pcs 6" Long Cotton Swabs &mdash; 200 Swabs</h3>
@@ -1200,7 +1126,7 @@
       <h4 class="supp-subcat-title">Ear Wipes</h4>
       <p class="supp-subcat-desc">Pre-moistened wipes for quick, gentle daily ear cleaning</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0DZ8L262L?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card ear-card" data-sub="wipe">
-        <div class="supp-top" data-benefits="breath natural itch tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71WzQzfhMyL._AC_SL1500_.jpg" alt="REFRESHIFY Dog Ear Wipes — Mint Scented" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">REFRESHIFY Dog Ear Wipes — Mint Scented &mdash; 100 Wipes</h3>
@@ -1254,7 +1180,7 @@
       <h4 class="supp-subcat-title">Dog Shampoos</h4>
       <p class="supp-subcat-desc">Gentle cleansing formulas for regular baths</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B08KR7GFBX?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="shampoo">
-        <div class="supp-top" data-benefits="natural skin itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/91pSADYa3xL._AC_SL1500_.jpg" alt="Bodhi Dog Oatmeal Shampoo & Conditioner" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Oatmeal Shampoo & Conditioner &mdash; 17 oz</h3>
@@ -1267,7 +1193,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0FXLXXKDD?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="shampoo">
-        <div class="supp-top" data-benefits="natural skin itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/61P0mwFNIrL._AC_SL1500_.jpg" alt="1 Gallon Oatmeal Honey Dog Shampoo" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">1 Gallon Oatmeal Honey Dog Shampoo &mdash; 1 Gallon</h3>
@@ -1280,7 +1206,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0DZ19C2SG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="shampoo">
-        <div class="supp-top" data-benefits="natural skin itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71E3aDggwCL._AC_SL1500_.jpg" alt="LEGITPET Oatmeal Dog Shampoo & Conditioner" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">LEGITPET Oatmeal Dog Shampoo & Conditioner &mdash; 16 oz</h3>
@@ -1293,7 +1219,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0CSLJKT9T?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="shampoo">
-        <div class="supp-top" data-benefits="natural skin"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81UQHry7DIL._AC_SL1500_.jpg" alt="True Coat Curly & Wavy Dog Shampoo 5-in-1" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">True Coat Curly & Wavy Dog Shampoo 5-in-1 &mdash; 16 oz</h3>
@@ -1306,7 +1232,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0FY981RB2?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="shampoo">
-        <div class="supp-top" data-benefits="natural skin"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/61UdJAX02sL._AC_SL1500_.jpg" alt="Nonaste Aloe Glow Premium Dog Shampoo" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Nonaste Aloe Glow Premium Dog Shampoo &mdash; 16 oz</h3>
@@ -1323,7 +1249,7 @@
       <h4 class="supp-subcat-title">Medicated & Treatment Shampoos</h4>
       <p class="supp-subcat-desc">Targeted relief for allergies, yeast, and infections</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0GF49VGKZ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="medicated">
-        <div class="supp-top" data-benefits="skin itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/61rhGN41DnL._AC_SL1500_.jpg" alt="Medicated Dog Shampoo for Allergies & Itching" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Medicated Dog Shampoo for Allergies & Itching &mdash; 16 oz</h3>
@@ -1340,7 +1266,7 @@
       <h4 class="supp-subcat-title">Conditioners & Detanglers</h4>
       <p class="supp-subcat-desc">Post-bath moisture and coat softening</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B01KYJ0YW0?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="conditioner">
-        <div class="supp-top" data-benefits="natural skin itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/91fZOGGKImL._AC_SL1500_.jpg" alt="Bodhi Dog Gentle Moisturizing Conditioner" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Gentle Moisturizing Conditioner &mdash; 17 oz</h3>
@@ -1353,7 +1279,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B0GQJ9DQYH?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="conditioner">
-        <div class="supp-top" data-benefits="natural skin"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71d5+UDFTRL._AC_SL1254_.jpg" alt="Natural Dog Company Sensitive Skin Conditioner" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Natural Dog Company Sensitive Skin Conditioner &mdash; 12 oz</h3>
@@ -1370,7 +1296,7 @@
       <h4 class="supp-subcat-title">Hot Spot & Skin Treatments</h4>
       <p class="supp-subcat-desc">Sprays and treatments for sudden flare-ups</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0D49PR4L3?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="treatment">
-        <div class="supp-top" data-benefits="itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/81raLz09-aL._AC_SL1500_.jpg" alt="Hot Spot Treatment Spray for Dogs & Cats" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Hot Spot Treatment Spray for Dogs & Cats &mdash; 8 oz</h3>
@@ -1387,7 +1313,7 @@
       <h4 class="supp-subcat-title">Dry & Waterless Shampoos</h4>
       <p class="supp-subcat-desc">No-rinse cleaning for between baths</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B01J8JMFKG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="dry">
-        <div class="supp-top" data-benefits="natural skin tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71n0kFZ5JIL._AC_SL1500_.jpg" alt="Bodhi Dog Waterless Dry Shampoo" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Waterless Dry Shampoo &mdash; 8 oz</h3>
@@ -1404,7 +1330,7 @@
       <h4 class="supp-subcat-title">Specialty Products</h4>
       <p class="supp-subcat-desc">Sunscreen, skunk remover, and other must-haves</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B07SB22JNX?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="specialty">
-        <div class="supp-top" data-benefits="skin"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/616wU6bMzoL._AC_SL1500_.jpg" alt="EBPP Dog Sunscreen Skin Protector Spray" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">EBPP Dog Sunscreen Skin Protector Spray &mdash; 8 oz</h3>
@@ -1417,7 +1343,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B07S42TVT1?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="specialty">
-        <div class="supp-top" data-benefits="natural skin itch"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71H42LmLzML._AC_SL1500_.jpg" alt="Bodhi Dog Skunk Odor Remover Shampoo" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Skunk Odor Remover Shampoo &mdash; 17 oz</h3>
@@ -1434,7 +1360,7 @@
       <h4 class="supp-subcat-title">Bath Tools & Brushes</h4>
       <p class="supp-subcat-desc">Everything you need for a better bath</p>
       <div class="supp-grid">      <a href="https://www.amazon.com/dp/B0D6BQLKCJ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="tools">
-        <div class="supp-top" data-benefits="skin tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71FARpgeerL._AC_SL1500_.jpg" alt="IDQQUQQ Dog Washing Gloves & Shampoo Brush Set" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">IDQQUQQ Dog Washing Gloves & Shampoo Brush Set &mdash; 2-Piece Set</h3>
@@ -1447,7 +1373,7 @@
           </div>
         </div>
       </a>      <a href="https://www.amazon.com/dp/B01FE3IIC4?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="supp-card skin-card" data-sub="tools">
-        <div class="supp-top" data-benefits="skin tools"
+        <div class="supp-top">
           <img class="supp-img" src="https://m.media-amazon.com/images/I/71G+PHly1oL._SL1500_.jpg" alt="Bodhi Dog Shampoo Brush — Pet Bath Massage Tool" width="140" height="140" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <div class="supp-info">
             <h3 class="supp-name">Bodhi Dog Shampoo Brush — Pet Bath Massage Tool &mdash; 1 Brush</h3>
@@ -1593,35 +1519,6 @@
     <div style="max-width:860px;margin:32px auto 0;padding:16px 20px;text-align:center;border-top:1px solid var(--border);font-size:14px;color:var(--text-muted)">
       <span style="font-weight:600">📌 Related Guides:</span> <a href="/health.html" style="color:var(--accent);text-decoration:none;font-weight:500">Health &amp; Supplements</a>
     </div>
-
-
-
-
-
-<script>
-var cleaningActiveFilter = 'all';
-window.setCleaningFilter = function(filter, btn) {
-  cleaningActiveFilter = filter;
-  document.querySelectorAll('#benefit-filter .filter-tag').forEach(function(t) {
-    t.classList.remove('active');
-  });
-  btn.classList.add('active');
-
-  document.querySelectorAll('.supp-top[data-benefits]').forEach(function(el) {
-    var benefits = el.getAttribute('data-benefits').split(' ');
-    el.classList.toggle('hidden-by-filter', filter !== 'all' && benefits.indexOf(filter) === -1);
-  });
-
-  // Hide empty subcategory sections
-  document.querySelectorAll('.supp-subcat').forEach(function(sub) {
-    var visible = false;
-    sub.querySelectorAll('.supp-top[data-benefits]').forEach(function(el) {
-      if (!el.classList.contains('hidden-by-filter')) visible = true;
-    });
-    sub.style.display = visible ? '' : 'none';
-  });
-};
-</script>
 
 </body>
 </html>
