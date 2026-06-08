@@ -736,6 +736,44 @@
     }
     .filter-btn.active .filter-count { background: rgba(0,0,0,.15); }
 
+    /* ===== PRICE FILTER ===== */
+    .price-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .price-filter-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 4px;
+    }
+    .price-btn {
+      padding: 6px 16px;
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      background: var(--card);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all .15s;
+      font-family: inherit;
+      color: var(--text);
+    }
+    .price-btn:hover { border-color: #16a34a; }
+    .price-btn.active {
+      background: #16a34a;
+      color: #fff;
+      border-color: #16a34a;
+    }
+    .price-btn .filter-count { font-size: 11px; margin-left: 4px; opacity: .7; }
+    .price-btn.active .filter-count { opacity: 1; }
+
     /* ===== PAGINATION ===== */
     .pagination {
       display: flex;
@@ -890,10 +928,17 @@
       <button class="filter-btn" data-cat="puppy" onclick="toggleFilter('puppy', this)">Puppy<span class="filter-count">2</span></button>
       <button class="filter-btn" data-cat="fresh" onclick="toggleFilter('fresh', this)">Fresh<span class="filter-count">5</span></button>
     </div>
+    <div class="price-filter-bar">
+      <span class="price-filter-label">Price per lb:</span>
+      <button class="price-btn active" data-price="all" onclick="setPriceFilter('all', this)">Any<span class="filter-count">30</span></button>
+      <button class="price-btn" data-price="under5" onclick="setPriceFilter('under5', this)">Under $3<span class="filter-count">17</span></button>
+      <button class="price-btn" data-price="5to10" onclick="setPriceFilter('5to10', this)">$3–5<span class="filter-count">5</span></button>
+      <button class="price-btn" data-price="over10" onclick="setPriceFilter('over10', this)">Over $5<span class="filter-count">8</span></button>
+    </div>
 
     <div id="productGrid">
 
-  <div class="product-card" data-categories="weight fresh">
+  <div class="product-card" data-categories="weight fresh" data-ppl="12.7">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/91YsnjUTkYL._AC_SL1500_.jpg" alt="Healthy Weight — Fish & Sweet Potato" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -922,7 +967,7 @@
       <a href="https://www.amazon.com/dp/B0BHL96WY6?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday fresh">
+  <div class="product-card" data-categories="everyday fresh" data-ppl="11.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/91KrtVyAXwL._AC_SL1500_.jpg" alt="Beef & Russet Potato" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -951,7 +996,7 @@
       <a href="https://www.amazon.com/dp/B0B2KRGDMT?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday fresh">
+  <div class="product-card" data-categories="everyday fresh" data-ppl="12.0">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81C5Ny5u2aL._AC_SL1500_.jpg" alt="JustFresh Wet — Home-Cooked Beef" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -980,7 +1025,7 @@
       <a href="https://www.amazon.com/dp/B0DJ9HFR45?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive fresh">
+  <div class="product-card" data-categories="sensitive fresh" data-ppl="12.4">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/91A7rx3k1gL._AC_SL1500_.jpg" alt="Joint & Skin Support" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1009,7 +1054,7 @@
       <a href="https://www.amazon.com/dp/B0BCTB77FZ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive">
+  <div class="product-card" data-categories="sensitive" data-ppl="2.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81hbbBVh3JL._AC_SL1500_.jpg" alt="Yukon River Canine — Grain Free" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1038,7 +1083,7 @@
       <a href="https://www.amazon.com/dp/B00CHCOMX0?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active puppy">
+  <div class="product-card" data-categories="active puppy" data-ppl="2.3">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81hgyer2Q+L._AC_SL1500_.jpg" alt="Active Dog & Puppy — Grain Free" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1067,7 +1112,7 @@
       <a href="https://www.amazon.com/dp/B00ATP1BTK?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="2.0">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81ADk9O57lL._AC_SL1500_.jpg" alt="Select Ocean Fish Formula" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1096,7 +1141,7 @@
       <a href="https://www.amazon.com/dp/B00COVAYNQ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="1.4">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81FzVTtc94L._AC_SL1500_.jpg" alt="Multi-Pro — Best Value" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1125,7 +1170,7 @@
       <a href="https://www.amazon.com/dp/B01IB156BW?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active">
+  <div class="product-card" data-categories="active" data-ppl="2.3">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81tW+-CqLOL._AC_SL1500_.jpg" alt="Hi-Pro Plus — High Protein" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1154,7 +1199,7 @@
       <a href="https://www.amazon.com/dp/B01IAJQMTU?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="1.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/71Ym3v-ZX4L._AC_SL1500_.jpg" alt="Select Beef Meal & Brown Rice" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1183,7 +1228,7 @@
       <a href="https://www.amazon.com/dp/B0DQ2LJRKG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive">
+  <div class="product-card" data-categories="sensitive" data-ppl="1.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81ee2DNjCjL._AC_SL1500_.jpg" alt="Sensitive Skin & Stomach" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1212,7 +1257,7 @@
       <a href="https://www.amazon.com/dp/B0F165WBHK?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active">
+  <div class="product-card" data-categories="active" data-ppl="1.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81Lz08j-bXL._AC_SL1500_.jpg" alt="High Energy — Sporting Dogs" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1241,7 +1286,7 @@
       <a href="https://www.amazon.com/dp/B00ESCZBWI?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="weight">
+  <div class="product-card" data-categories="weight" data-ppl="2.3">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81YnOI9RQOL._AC_SL1500_.jpg" alt="Senior Healthy Weight" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1270,7 +1315,7 @@
       <a href="https://www.amazon.com/dp/B01IAUF9T8?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday puppy">
+  <div class="product-card" data-categories="everyday puppy" data-ppl="1.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81a1tBK3HrL._AC_SL1500_.jpg" alt="Elite Canine — Large Breed" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1299,7 +1344,7 @@
       <a href="https://www.amazon.com/dp/B091M7KDS2?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="1.8">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81+Hrtf1sDL._AC_SL1500_.jpg" alt="Professional Formula" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1328,7 +1373,7 @@
       <a href="https://www.amazon.com/dp/B0DQ2KKCJT?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active">
+  <div class="product-card" data-categories="active" data-ppl="3.2">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/71Z67PIBL5L._AC_SL1500_.jpg" alt="Bully Fuel — Muscle Builder" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1357,7 +1402,7 @@
       <a href="https://www.amazon.com/dp/B0FNWTHRJ2?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="fresh">
+  <div class="product-card" data-categories="fresh" data-ppl="20.0">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/61Xc4JixagL._AC_SL1000_.jpg" alt="Beef & Berries — Air Dried" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1386,7 +1431,7 @@
       <a href="https://www.amazon.com/dp/B0DK45VWHP?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="2.5">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81VpV+pC6HL._AC_SL1500_.jpg" alt="Science Diet — Large Breed Chicken & Barley" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1415,7 +1460,7 @@
       <a href="https://www.amazon.com/dp/B06WLQDW12?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive">
+  <div class="product-card" data-categories="sensitive" data-ppl="1.5">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/71dqcKUwfeL._AC_SL1500_.jpg" alt="Diamond Naturals — Skin & Coat Salmon" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1444,7 +1489,7 @@
       <a href="https://www.amazon.com/dp/B079FHJMMG?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive">
+  <div class="product-card" data-categories="sensitive" data-ppl="2.6">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81v4zW-9XRL._AC_SL1500_.jpg" alt="Pro Plan — Sensitive Skin & Stomach" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1473,7 +1518,7 @@
       <a href="https://www.amazon.com/dp/B01EY9KQ2Y?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="2.1">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/71RhgGnb4sL._AC_SL1500_.jpg" alt="Taste of the Wild — High Prairie Bison & Venison" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1502,7 +1547,7 @@
       <a href="https://www.amazon.com/dp/B07L97GQW5?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="0.9">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81y+guqTGxL._AC_SL1500_.jpg" alt="Pedigree — Complete Nutrition" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1531,7 +1576,7 @@
       <a href="https://www.amazon.com/dp/B09RPL4Z4J?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive">
+  <div class="product-card" data-categories="sensitive" data-ppl="3.0">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81lpO77pKDL._AC_SL1500_.jpg" alt="Natural Balance — Limited Ingredient (Grain-Free)" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1560,7 +1605,7 @@
       <a href="https://www.amazon.com/dp/B08746LRDJ?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="2.3">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81MEQO2FBVL._AC_SL1500_.jpg" alt="Science Diet — Adult Chicken & Barley" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1589,7 +1634,7 @@
       <a href="https://www.amazon.com/dp/B09RPFTCPF?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive everyday">
+  <div class="product-card" data-categories="sensitive everyday" data-ppl="4.8">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/31T18y2XlxL._AC_.jpg" alt="Duck & Salmon Meal Feast" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1618,7 +1663,7 @@
       <a href="https://www.amazon.com/dp/B0FNB5NB8F?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active">
+  <div class="product-card" data-categories="active" data-ppl="54.8">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/71bM7QPoYzL._AC_SL1500_.jpg" alt="Beef Hind Shank Bone" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1647,7 +1692,7 @@
       <a href="https://www.amazon.com/dp/B00JN9HR0K?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active">
+  <div class="product-card" data-categories="active" data-ppl="31.3">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/81t1Aq7poPL._AC_SL1500_.jpg" alt="Beef Lung Steak Treats" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1676,7 +1721,7 @@
       <a href="https://www.amazon.com/dp/B07BCLR7FN?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="everyday">
+  <div class="product-card" data-categories="everyday" data-ppl="4.1">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/31sRlgU1s7L._AC_.jpg" alt="Chicken Meal Feast" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1705,7 +1750,7 @@
       <a href="https://www.amazon.com/dp/B0FNBJ2G81?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="sensitive active">
+  <div class="product-card" data-categories="sensitive active" data-ppl="4.1">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/31bbPijaTKL._AC_.jpg" alt="Grain-Free Chicken Meal Feast" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1734,7 +1779,7 @@
       <a href="https://www.amazon.com/dp/B0FNBHZ2SV?tag=jamesma06-20" target="_blank" rel="nofollow sponsored" class="pc-btn">Check Price on Amazon →</a>
     </div>
   </div>
-  <div class="product-card" data-categories="active">
+  <div class="product-card" data-categories="active" data-ppl="32.9">
     <div class="pc-top">
       <img class="pc-img" src="https://m.media-amazon.com/images/I/617w4H3mETL._AC_SL1000_.jpg" alt="Beef Trachea Pieces" loading="lazy" onerror="this.style.display='none'">
       <div class="pc-info">
@@ -1841,8 +1886,26 @@ function toggleMix() {
 
 // ===== FILTER + PAGINATION =====
 var activeFilters = new Set();
+var activePrice = 'all';
 var currentPage = 1;
 var perPage = 10;
+
+function setPriceFilter(band, btn) {
+  activePrice = band;
+  document.querySelectorAll('.price-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  currentPage = 1;
+  renderProducts();
+}
+
+function matchesPrice(card) {
+  if (activePrice === 'all') return true;
+  var ppl = parseFloat(card.getAttribute('data-ppl')) || 0;
+  if (activePrice === 'under5') return ppl < 3;
+  if (activePrice === '5to10') return ppl >= 3 && ppl < 5;
+  if (activePrice === 'over10') return ppl >= 5;
+  return true;
+}
 
 function toggleFilter(cat, btn) {
   // Deselect 'All' when picking specific filters
@@ -1895,6 +1958,7 @@ function renderProducts() {
         if (cats.indexOf(f) !== -1) show = true;
       });
     }
+    if (show) show = matchesPrice(card);
     if (show) {
       visible.push(card);
       card.style.display = '';
@@ -1942,6 +2006,7 @@ function goPage(n) {
       if (!show) {
         activeFilters.forEach(function(f) { if (cats.indexOf(f) !== -1) show = true; });
       }
+      if (show) show = matchesPrice(card);
       if (show) visible.push(card);
     }
   });
