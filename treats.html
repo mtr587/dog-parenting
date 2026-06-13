@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior:smooth">
 <head>
+<script>
+(function(){
+  var host = window.location.hostname;
+  // Only redirect if NOT on the canonical domain
+  if (host !== 'lazypawlife.com' && host.indexOf('localhost') === -1 && host.indexOf('127.0.0.1') === -1) {
+    // Strip /dog-parenting prefix from GitHub Pages path
+    var path = window.location.pathname.replace(/^\/dog-parenting/, '') || '/';
+    window.location.replace('https://lazypawlife.com' + path + window.location.search + window.location.hash);
+  }
+})();
+</script>
+
+
   <meta charset="UTF-8" />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
