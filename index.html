@@ -400,7 +400,138 @@
     #btt-btn.show { opacity: 1; visibility: visible; }
     @media (max-width: 640px) { #btt-btn { bottom: 20px; right: 16px; width: 44px; height: 44px; font-size: 18px; } }
 
-  </style>
+  
+/* Top 3 Picks */
+.top3-picks {
+  max-width: 860px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+.top3-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  text-align: center;
+}
+.top3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.top3-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 14px 14px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+  position: relative;
+}
+.top3-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border-color: var(--accent);
+}
+.top3-badge {
+  font-size: .72rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.top3-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.top3-card h4 {
+  font-size: .85rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+.top3-card p {
+  font-size: .78rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Mobile: carousels become 2-col grid */
+@media (max-width: 640px) {
+  .top3-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .top3-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .top3-card img {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .top3-badge {
+    position: absolute;
+    top: -8px;
+    left: 12px;
+  }
+  .top3-card h4 {
+    font-size: .82rem;
+  }
+
+  /* Carousels -> 2-col grid */
+  .carousel-wrapper {
+    overflow-x: visible !important;
+    padding: 0 !important;
+  }
+  .carousel {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+    transform: none !important;
+    padding: 0 !important;
+  }
+  .carousel-item {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    scroll-snap-align: none !important;
+    transform: none !important;
+    min-width: 0 !important;
+  }
+  .carousel-btn {
+    display: none !important;
+  }
+  .carousel-dots {
+    display: none !important;
+  }
+  .carousel-section {
+    padding: 0 16px !important;
+  }
+  .label {
+    padding: 0 16px !important;
+  }
+}
+
+</style>
 
   <script type="application/ld+json">
 {
@@ -513,6 +644,31 @@
   <a class="share-btn" href="#" onclick="return sharePinterest()" target="_blank" aria-label="Share on Pinterest"><span class="icon">📌</span> Pinterest</a>
   <a class="share-btn" href="#" onclick="return shareEmail()" target="_blank" aria-label="Share via email"><span class="icon">✉️</span> Email</a>
   <button class="share-btn" onclick="copyLinkFromBtn(this)" aria-label="Copy link to clipboard"><span class="icon">🔗</span> Copy Link</button>
+</div>
+
+
+<div class="top3-picks">
+  <h2 class="top3-title">⚡ Top 3 Picks for Busy Owners</h2>
+  <div class="top3-grid">
+    <a href="https://www.amazon.com/dp/B09S8WMJY9?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.OJGI812ELRZ6&linkCode=tr1&tag=jamesma06-20&linkId=amzn1.campaign.OJGI812ELRZ6_1781189004075" class="top3-card" target="_blank" rel="noopener">
+      <span class="top3-badge">⏱ Best Time Saver</span>
+      <img src="images/feeder-1.jpg" alt="PETLIBRO 5G WiFi Auto Feeder" width="120" height="120" loading="lazy" decoding="async" />
+      <h4>PETLIBRO 5G WiFi Auto Feeder</h4>
+      <p>Schedule meals from your phone. Never wake up early again.</p>
+    </a>
+    <a href="https://www.amazon.com/Pooper-Scooper-Hands-Free-Bend-Free-Cleaning/dp/B0FDGJTTXT?crid=1R51GLCD3MFXO&dib=eyJ2IjoiMSJ9.xphtOi1vMsTSWHD1Chnjxb604OD3oHuNSl4i-oYk8PWIxSJd7xnjqNLGxAyRlhj3vFjj1McHG_P-NUE11MA0afj2ycDD-B0aU9g4P25M976RUy5OZOn-RQFRZapfELQ9K2_gK5fvUNBeaJeWF-lyB5FfDzfg07wOd3s0rSQ2ml1hnCHAIVXaqDYCW8yTm0FwB_kdIYxeYjWSNkZUVo3mXsHhVmxChfOHShaGBFvraUbWUXU5Srx0-V-o0sgNpk_1nGF72xfBl2oQFaJtMJqod9Y4V03VzHpvaJAYWSxozRQ.COMyMnezzp3VzIfb2p8IgbdiRsH-a881eGk-umthL0w&dib_tag=se&keywords=telescoping+poop+bag+wand&qid=1779817087&sprefix=telescoping+poop+bag+wand,aps,300&sr=8-1&linkCode=sl2&tag=jamesma06-20&linkId=5649dfbd607f210c1e752c007baa184b&language=en_US&ref_=as_li_ss_tl" class="top3-card" target="_blank" rel="noopener">
+      <span class="top3-badge">💰 Best Budget Buy</span>
+      <img src="images/poop-1.jpg" alt="Foldable Hands-Free Pooper Scooper" width="120" height="120" loading="lazy" decoding="async" />
+      <h4>Hands-Free Pooper Scooper</h4>
+      <p>No bending over. Under $20 and saves your back every walk.</p>
+    </a>
+    <a href="https://www.amazon.com/Furbo-Subscription-Designed-Detection-Emergency/dp/B0BWN22T25?crid=MG4U8SPFI9S&dib=eyJ2IjoiMSJ9.rnZyE5WINYjJfHQPbnJC_S8fmwwOnWRJM2Okk4lDe1a6VdvOG1d911T-J2xVad8AxCVRE-76e7VNWCjYIsO-t7VDRW-u6xVc88LheB_2n3vlINNB5vI9OvlhIu8ELnlIkmi6die5Xnf64xOiyopqnqoNcBOJu7G3eaBRP2AQM3W0nM_5GRZ_ox2yefYTV5I9iUNnEVYRw4_seT4FWKfuXaJ98TjcIqn5vJz4fD1vxWIDkVznKVeyIsdYss6IoWoyUIKEBkxfxCbrptU5O7nDXThOmkeKqGTkoLEd4TDiPLY.U8cE3RlEln-YqFsFfw22jMcLsrS0ApNBnSZfP3u6PiQ&dib_tag=se&keywords=Furbo&qid=1779893496&sprefix=furbo,aps,224&sr=8-6&th=1&linkCode=sl2&tag=jamesma06-20&linkId=f719e3be2970e67fbcc8ab8a09a7af2a&language=en_US&ref_=as_li_ss_tl" class="top3-card" target="_blank" rel="noopener">
+      <span class="top3-badge">🛡 Best Peace of Mind</span>
+      <img src="images/camera-1.jpg" alt="Furbo 360 Dog Camera" width="120" height="120" loading="lazy" decoding="async" />
+      <h4>Furbo 360 Dog Camera</h4>
+      <p>Toss treats &amp; check in from anywhere. Know they're safe.</p>
+    </a>
+  </div>
 </div>
 
 <div class="section-divider" id="weekday">☕ Monday — Friday</div>
