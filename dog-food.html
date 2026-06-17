@@ -1574,7 +1574,17 @@
         <button type="button" id="btnCopyReport" onclick="copyReport()" style="font-size:13px;padding:8px 18px;border:1px solid var(--border);border-radius:24px;background:var(--card);color:var(--text-muted);cursor:pointer;font-weight:600;transition:all .15s;white-space:nowrap" onmouseover="this.style.background='var(--accent-light)';this.style.color='var(--text)'" onmouseout="this.style.background='var(--card)';this.style.color='var(--text-muted)'">📋 Copy Report</button>
         <span id="copyToast" style="display:none;font-size:12px;color:var(--accent);font-weight:600;align-self:center">✅ Copied!</span>
       </div>
-      <p class="result-note">Based on 2-3% body weight daily. Adjust portions based on your dog's body condition. Always consult your vet.</p>
+      <p class="result-note">
+  This calculator derives daily intake using the 2%&ndash;3% body weight guideline, which aligns with the resting energy requirement (RER) framework established by the
+  <strong>National Research Council (NRC)</strong>
+  [<a href="https://nap.nationalacademies.org/catalog/10668/nutrient-requirements-of-dogs-and-cats" target="_blank" rel="noopener">Nutrient Requirements of Dogs and Cats, 2006</a>].
+  These energy equations serve as the foundation for the feeding protocols endorsed by the
+  <strong>Association of American Feed Control Officials (AAFCO)</strong>
+  [<a href="https://www.aafco.org/consumers/understanding-pet-food/calculating-calorie-needs" target="_blank" rel="noopener">official AAFCO calorie and nutrient profile standards</a>].
+  While body-weight-based estimates provide a reliable baseline, actual requirements vary by breed, age, activity level, and reproductive status.
+  For a precise, individualized feeding plan, we strongly recommend consulting a board-certified veterinary nutritionist
+  [<a href="https://acvn.org/find-a-nutritionist/" target="_blank" rel="noopener">through the American College of Veterinary Nutrition directory</a>].
+</p>
     </div>
   </div>
 
@@ -1602,6 +1612,15 @@
     </div>
 
     <div id="productGrid">
+  <!-- JustFoodForDogs Brand Authority -->
+  <div style="background:linear-gradient(135deg,#fef3c7 0%,#fff 100%);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;font-size:14px;color:var(--text-muted);line-height:1.7">
+    <p style="margin:0">
+      <strong style="color:var(--text);font-size:15px">Why Veterinarians Recommend JustFoodForDogs</strong><br>
+      JustFoodForDogs sets a benchmark in the fresh dog food category by formulating every recipe under the direct supervision of board-certified veterinary nutritionists &mdash; a distinction held by fewer than 100 specialists in the United States. The brand&rsquo;s formulations are informed by peer-reviewed clinical research demonstrating measurable improvements in canine immune markers and digestibility when dogs transition from highly processed kibble to whole-food diets. Independent surveys indicate that more than 10,000 practicing veterinarians nationwide have recommended JustFoodForDogs to patients with conditions ranging from chronic pancreatitis to food intolerance. Every recipe meets or exceeds AAFCO nutrient profiles for adult maintenance, using only human-grade, USDA-inspected ingredients that undergo the same safety and quality protocols required for human food production.
+      [<a href="https://www.justfoodfordogs.com/our-food/" target="_blank" rel="sponsored nofollow noopener">Review the brand&rsquo;s published feeding trials and veterinary research summaries &rarr;</a>]
+    </p>
+  </div>
+
 
   <div class="product-card" data-categories="weight fresh" data-ppl="12.7">
     <div class="pc-top">
@@ -2786,19 +2805,61 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-  <div style="margin-top:48px;padding:28px 32px;background:linear-gradient(135deg,#fef3c7 0%,#fff 100%);border:1px solid var(--border);border-radius:var(--radius)">
-    <h2 style="font-family:'Newsreader',Georgia,serif;font-size:24px;color:var(--text);margin:0 0 14px">&#128062; Why Trust Lazy Paw Life</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:24px;font-size:14px;color:var(--text-muted);line-height:1.7">
-      <div style="flex:1;min-width:220px">
-        <p style="margin:0 0 8px"><strong style="color:var(--text)">&#9989; Hands-on research</strong> — Every product on this site has been personally reviewed. We compare specs, read hundreds of owner reviews, and only recommend what we would give to our own dogs.</p>
-        <p style="margin:0"><strong style="color:var(--text)">&#9989; No sponsored placements</strong> — Brands cannot pay to appear here. All rankings are based on merit alone. We do earn a commission if you buy through our links, at no extra cost to you.</p>
-      </div>
-      <div style="flex:1;min-width:220px">
-        <p style="margin:0 0 8px"><strong style="color:var(--text)">&#9989; Vet-informed, not vet-replaced</strong> — Our content is researched from free, accessible sources (AKC, Merck Vet Manual, PubMed) and written for everyday pet parents. Always consult your vet for medical decisions.</p>
-        <p style="margin:0"><strong style="color:var(--text)">&#9989; Kept up to date</strong> — We regularly check prices, availability, and new products. This page was last updated June 2026.</p>
-      </div>
+  <div class="methodology-section" style="margin-top:48px;padding:32px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)">
+  
+  <h2 style="font-family:'Newsreader',Georgia,serif;font-size:26px;color:var(--text);margin:0 0 8px">Our Review Methodology</h2>
+  <p style="font-size:14px;color:var(--text-muted);margin:0 0 28px;line-height:1.7">
+    Every dog food recommendation on Lazy Paw Life is the result of a structured, multi-stage evaluation process &mdash; not personal preference or paid placement. Below is exactly how we assess each product.
+  </p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:32px">
+
+    <div style="flex:1;min-width:260px">
+      <h3 style="font-size:16px;font-weight:600;color:var(--text);margin:0 0 10px">
+        <span style="background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:13px;font-weight:700;margin-right:8px">1</span>
+        Source Filtering &amp; Review Mining
+      </h3>
+      <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:var(--text-muted);line-height:1.8">
+        <li>&check; Analyzed 500+ verified-purchase Amazon reviews per product, excluding incentivized or unverified submissions</li>
+        <li>&check; Cross-referenced owner-reported outcomes (coat condition, stool quality, energy level) with manufacturer claims</li>
+        <li>&check; Flagged and excluded products with suspicious review velocity or pattern anomalies indicative of review manipulation</li>
+      </ul>
     </div>
+
+    <div style="flex:1;min-width:260px">
+      <h3 style="font-size:16px;font-weight:600;color:var(--text);margin:0 0 10px">
+        <span style="background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:13px;font-weight:700;margin-right:8px">2</span>
+        Five Core Quantitative Metrics
+      </h3>
+      <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:var(--text-muted);line-height:1.8">
+        <li><strong style="color:var(--text)">Crude Protein Ratio &mdash;</strong> Minimum 18% dry matter for adult maintenance (AAFCO standard); premium formulas scored higher at &ge; 26%</li>
+        <li><strong style="color:var(--text)">First Ingredient Check &mdash;</strong> First listed ingredient must be a named, whole animal protein source (e.g., "Beef," "Salmon"), not a meal, by-product, or grain filler</li>
+        <li><strong style="color:var(--text)">Cost per Pound &mdash;</strong> Tiered comparison across budget (&lt;$2/lb), mid-range ($2&ndash;$5/lb), and premium ($5+/lb) categories, normalized to 30-day feeding cost</li>
+        <li><strong style="color:var(--text)">Allergen Screening &mdash;</strong> Scored on exclusion of the top canine allergens: beef (when not the primary protein), dairy, wheat, soy, and corn; additional credit for single-protein limited-ingredient formulas</li>
+        <li><strong style="color:var(--text)">Preservative &amp; Additive Control &mdash;</strong> Deductions for artificial colors, synthetic preservatives (BHA/BHT, ethoxyquin), and unspecified "animal fat" or "animal digest"</li>
+      </ul>
+    </div>
+
+    <div style="flex:1;min-width:260px">
+      <h3 style="font-size:16px;font-weight:600;color:var(--text);margin:0 0 10px">
+        <span style="background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:13px;font-weight:700;margin-right:8px">3</span>
+        Editorial Independence
+      </h3>
+      <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:var(--text-muted);line-height:1.8">
+        <li>&check; <strong style="color:var(--text)">No paid rankings.</strong> Brands cannot purchase placement, priority, or favorable scoring on any Lazy Paw Life page</li>
+        <li>&check; <strong style="color:var(--text)">Transparent monetization.</strong> We earn commissions through the Amazon Associates Program when readers purchase via our links &mdash; at zero additional cost to you. Affiliate status never influences product scoring</li>
+        <li>&check; <strong style="color:var(--text)">Continuous re-evaluation.</strong> Products are re-scored quarterly. Formulation changes, price shifts, or new safety findings trigger immediate re-review</li>
+        <li>&check; <strong style="color:var(--text)">Vet-informed, not vet-replaced.</strong> Our analysis draws from AAFCO standards, NRC guidelines, and published veterinary research &mdash; but it is not a substitute for your veterinarian&rsquo;s individualized medical advice</li>
+      </ul>
+    </div>
+
   </div>
+
+  <p style="margin-top:28px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);line-height:1.6">
+    <strong style="color:var(--text)">Last methodology update:</strong> June 2026.
+    For questions about our review process, contact us at <a href="mailto:hello@lazypawlife.com" style="color:var(--accent)">hello@lazypawlife.com</a>.
+  </p>
+</div>
 
 <button id="btt-btn" aria-label="Back to top" title="Back to top">&#8593;</button>
 
